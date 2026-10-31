@@ -243,7 +243,7 @@ export default function App() {
   const handleApplyCoupon = (e) => {
     e.preventDefault();
     const code = couponCode.trim().toUpperCase();
-    if (code === 'GALAXYVIP' || code === 'RAPIDVIP' || code === 'GALAXYFIRST' || code === 'RAPIDFIRST') {
+    if (code === 'WELCOME20' || code === 'GALAXYVIP' || code === 'RAPIDVIP' || code === 'GALAXYFIRST' || code === 'RAPIDFIRST') {
       setCouponDiscount(3.50);
       setCouponApplied(true);
       showToast('🎉 ¡Cupón aplicado: -$3.50!');
@@ -252,7 +252,7 @@ export default function App() {
       setCouponApplied(true);
       showToast('🎉 ¡Cupón aplicado: -$2.00!');
     } else {
-      showToast('⚠️ Cupón no válido. Prueba GALAXYVIP');
+      showToast('⚠️ Cupón no válido. Prueba WELCOME20 o GALAXYVIP');
     }
   };
 
@@ -273,7 +273,7 @@ export default function App() {
       items: cart.map(item => ({ name: item.name, quantity: item.quantity, price: item.price })),
       total: total,
       statusStep: 1, // Recibido en cocina
-      statusText: 'Recibido en cocina de Galaxy Hamburguesas',
+      statusText: 'Recibido en cocina de Galaxy Burgers',
       driverName: 'Asignando repartidor express...',
       eta: '18-20 minutos'
     };
@@ -306,7 +306,7 @@ export default function App() {
           driver = 'Sebastián V. (Moto Eléctrica #18)';
           eta = '6 minutos';
         } else if (nextStep === 4) {
-          text = '¡Orden Entregada! ¡Que disfrutes tu Galaxy Hamburguesa!';
+          text = '¡Orden Entregada! ¡Que disfrutes tu Galaxy Burger!';
           driver = 'Entregado por Sebastián V.';
           eta = 'Completado';
         }
@@ -390,10 +390,10 @@ export default function App() {
           </div>
           <div>
             <h1 style={{ fontSize: '1.05rem', fontWeight: '800', color: '#1C1917', lineHeight: 1.1 }}>
-              Galaxy Hamburguesas
+              Galaxy Burgers
             </h1>
             <div style={{ fontSize: '0.72rem', color: '#78716C', display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <span>📍 Av. Providencia 1240</span>
+              <span>📍 Caracas - Venezuela</span>
               <span>&bull;</span>
               <span style={{ color: '#059669', fontWeight: '700' }}>20 min</span>
             </div>
@@ -1103,7 +1103,7 @@ export default function App() {
                     fontSize: '0.85rem'
                   }}
                 >
-                  <span>🌐 Landing E-commerce de Hamburguesas</span>
+                  <span>🌐 Landing E-commerce Galaxy Burgers</span>
                   <span>→</span>
                 </a>
 
@@ -1190,12 +1190,12 @@ export default function App() {
                   boxShadow: 'var(--shadow-md)'
                 }}
               >
-                <span>📲 Instalar Galaxy Hamburguesas en el Inicio</span>
+                <span>📲 Instalar Galaxy Burgers en el Inicio</span>
               </button>
             )}
 
             <div style={{ textAlign: 'center', marginTop: '24px', color: '#A8A29E', fontSize: '0.72rem' }}>
-              &copy; 2026 Galaxy Hamburguesas Inc. Todos los derechos reservados. Arquitectura MasterGeniusjoa.
+              &copy; 2026 Galaxy Burgers Inc. Todos los derechos reservados. Arquitectura MasterGeniusjoa.
             </div>
           </div>
         )}
@@ -1234,7 +1234,7 @@ export default function App() {
               <span style={{ background: 'white', color: '#D97706', padding: '2px 8px', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: '800' }}>
                 {totalItemsCount}
               </span>
-              <span>Ver Carrito de Hamburguesas</span>
+              <span>Ver Carrito Galaxy Burgers</span>
             </div>
             <span>${total.toFixed(2)}</span>
           </button>

@@ -32,6 +32,9 @@ function hasBuild(dir) {
 // 1. Mobile PWA under /app
 if (hasBuild(pwaPath)) {
   app.use('/app', express.static(pwaPath));
+  app.get('/app', (req, res) => {
+    res.sendFile(path.join(pwaPath, 'index.html'));
+  });
   app.get('/app/*', (req, res) => {
     res.sendFile(path.join(pwaPath, 'index.html'));
   });
@@ -39,7 +42,7 @@ if (hasBuild(pwaPath)) {
   app.get('/app*', (req, res) => {
     res.send(`
       <div style="font-family:sans-serif;text-align:center;padding:50px;background:#fbf9f5;color:#1c1917;min-height:100vh;">
-        <h2>📱 Galaxy Hamburguesas &bull; PWA Mobile aún no compilada</h2>
+        <h2>📱 Galaxy Burgers &bull; PWA Mobile aún no compilada</h2>
         <p>Ejecuta <code>npm run build:pwa</code> o <code>npm run build:all</code> para sincronizar los artefactos en <code>server/public/pwa</code>.</p>
         <p><a href="/">Volver a Landing E-commerce</a> | <a href="/admin">Panel Admin</a></p>
       </div>
@@ -50,6 +53,9 @@ if (hasBuild(pwaPath)) {
 // 2. Control Panel under /admin
 if (hasBuild(adminPath)) {
   app.use('/admin', express.static(adminPath));
+  app.get('/admin', (req, res) => {
+    res.sendFile(path.join(adminPath, 'index.html'));
+  });
   app.get('/admin/*', (req, res) => {
     res.sendFile(path.join(adminPath, 'index.html'));
   });
@@ -57,7 +63,7 @@ if (hasBuild(adminPath)) {
   app.get('/admin*', (req, res) => {
     res.send(`
       <div style="font-family:sans-serif;text-align:center;padding:50px;background:#fbf9f5;color:#1c1917;min-height:100vh;">
-        <h2>⚙️ Galaxy Hamburguesas &bull; Panel Admin aún no compilado</h2>
+        <h2>⚙️ Galaxy Burgers &bull; Panel Admin aún no compilado</h2>
         <p>Ejecuta <code>npm run build:admin</code> o <code>npm run build:all</code> para sincronizar los artefactos en <code>server/public/admin</code>.</p>
         <p><a href="/">Volver a Landing E-commerce</a> | <a href="/app">PWA Mobile</a></p>
       </div>
@@ -78,7 +84,7 @@ if (hasBuild(ecommercePath)) {
       <html lang="es">
       <head>
         <meta charset="UTF-8" />
-        <title>Galaxy Hamburguesas &bull; Edición Comercial</title>
+        <title>Galaxy Burgers &bull; Edición Comercial</title>
         <style>
           body { font-family: system-ui, -apple-system, sans-serif; background: #fbf9f5; color: #1c1917; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
           .card { background: #ffffff; padding: 2.5rem; border-radius: 1.25rem; max-width: 650px; text-align: center; border: 1px solid #f1ece5; box-shadow: 0 20px 40px rgba(0,0,0,0.06); }
@@ -94,12 +100,12 @@ if (hasBuild(ecommercePath)) {
       </head>
       <body>
         <div class="card">
-          <h1>🍔 Galaxy Hamburguesas &bull; Plataforma Comercial</h1>
+          <h1>🍔 Galaxy Burgers &bull; Plataforma Comercial</h1>
           <div class="badge">Primera Versión Comercial v1.0</div>
           <p>Servidor backend activo. Para cargar la interfaz visual completa, ejecuta <code>npm run build:all</code>.</p>
           <div class="links">
-            <a class="btn" href="/app">📱 PWA Mobile</a>
-            <a class="btn btn-secondary" href="/admin">⚙️ Panel Admin</a>
+            <a class="btn" href="/app/">📱 PWA Mobile</a>
+            <a class="btn btn-secondary" href="/admin/">⚙️ Panel Admin</a>
             <a class="btn" style="background:#059669;" href="/api/health">🩺 Health Check</a>
             <a class="btn" style="background:#dc2626;" href="/api/products">🍔 Catálogo API</a>
           </div>
@@ -121,11 +127,11 @@ async function start() {
   await db.initDB();
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`=======================================================`);
-    console.log(`🍔 Galaxy Hamburguesas Platform ejecutándose en puerto ${PORT}`);
-    console.log(`   - Landing E-commerce: http://localhost:${PORT}/`);
-    console.log(`   - PWA Mobile App:     http://localhost:${PORT}/app`);
-    console.log(`   - Panel Administrativo: http://localhost:${PORT}/admin`);
-    console.log(`   - API Health:         http://localhost:${PORT}/api/health`);
+    console.log(`🍔 Galaxy Burgers Platform ejecutándose en puerto ${PORT}`);
+    console.log(`   - Landing E-commerce:   http://localhost:${PORT}/`);
+    console.log(`   - PWA Mobile App:       http://localhost:${PORT}/app/`);
+    console.log(`   - Panel Administrativo: http://localhost:${PORT}/admin/`);
+    console.log(`   - API Health:           http://localhost:${PORT}/api/health`);
     console.log(`=======================================================`);
   });
 }

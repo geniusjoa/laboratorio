@@ -1,7 +1,7 @@
 {
-  "name": "Galaxy Hamburguesas Móvil",
-  "short_name": "GalaxyBurger",
-  "description": "App PWA de Galaxy Hamburguesas: Ordena tus hamburguesas gourmet a la velocidad de la luz",
+  "name": "Galaxy Burgers Móvil",
+  "short_name": "GalaxyBurgers",
+  "description": "App PWA de Galaxy Burgers: Ordena tus hamburguesas gourmet a la velocidad de la luz en Caracas - Venezuela",
   "start_url": "/app/",
   "scope": "/app/",
   "display": "standalone",
