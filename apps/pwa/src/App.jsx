@@ -1144,6 +1144,28 @@ export default function App() {
                   <span>🩺 API Health Dokploy</span>
                   <span>→</span>
                 </a>
+
+                <a
+                  href="https://wa.me/584142899554"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '12px',
+                    borderRadius: '12px',
+                    background: '#ECFDF5',
+                    color: '#065F46',
+                    textDecoration: 'none',
+                    fontWeight: '700',
+                    fontSize: '0.85rem',
+                    border: '1px solid #A7F3D0'
+                  }}
+                >
+                  <span>💬 WhatsApp Soporte: +58 414-2899554</span>
+                  <span>→</span>
+                </a>
               </div>
             </div>
 
