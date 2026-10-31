@@ -5,59 +5,59 @@
 
 const title = "Galaxy Burgers | Hamburguesas Gourmet, Pizzas, Pollo & Delivery Express en Caracas";
 
-// 4 Productos Más Vendidos (Nuestros Bestsellers)
+// 4 Productos Más Vendidos (Nuestros Bestsellers de Terror)
 const bestsellers = [
   {
     id: "bs-1",
-    name: "Signature Burger",
+    name: "Rey Sangriento de las Burgers",
     category: "Hamburguesas",
-    tag: "MÁS VENDIDO",
+    tag: "💀 MASACRE DE SABOR",
     price: 5.49,
     rating: 4.98,
     image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=80",
-    description: "Cargada con abundante queso y salsa especial",
-    detailedDesc: "Medallón 100% res premium braseada al carbón, doble queso cheddar fundente, cebolla caramelizada, pepinillos y salsa secreta Galaxy en pan brioche tostado.",
-    specs: { meat: "200g Angus", prep: "10-12 min", calories: "780 kcal" },
-    ingredients: ["Carne Angus 200g", "Doble Cheddar Añejo", "Salsa Galaxy Secreta", "Pepinillos Agridulces", "Pan Brioche Glaseado"]
+    description: "220g Angus sellada al fuego infernal con doble cheddar y salsa de sangre secreta",
+    detailedDesc: "Medallón 100% res Angus infernal braseada al carbón maldito, doble queso cheddar fundente, cebolla caramelizada al bourbon de medianoche y salsa secreta Galaxy Blood en pan brioche negro tostado.",
+    specs: { meat: "220g Angus Feroz", prep: "10-12 min", calories: "850 kcal" },
+    ingredients: ["Carne Angus Infernal 220g", "Doble Cheddar Añejo Maldito", "Salsa Secreta Galaxy Blood", "Pepinillos de Ultratumba", "Pan Brioche de Medianoche"]
   },
   {
     id: "bs-2",
-    name: "Cheesy Pizza",
+    name: "Pizza Necrópolis Napolitana",
     category: "Pizzas",
-    tag: "MÁS VENDIDO",
+    tag: "⚰️ ALMAS PERDIDAS",
     price: 8.49,
     rating: 4.95,
     image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&auto=format&fit=crop&q=80",
-    description: "Vegetales frescos, hierbas italianas y queso fundido",
-    detailedDesc: "Masa madre fermentada 48 horas, salsa pomodoro San Marzano, mozzarella fior di latte hilada, orégano silvestre y vegetales frescos de temporada.",
-    specs: { meat: "Vegetariana", prep: "12-14 min", calories: "820 kcal" },
-    ingredients: ["Masa Madre 48h", "Mozzarella Fior di Latte", "Pomodoro San Marzano", "Albahaca Fresca", "Aceite Oliva Virgen Extra"]
+    description: "Masa madre de 48h con queso fior di latte fundido y salsa roja sangre San Marzano",
+    detailedDesc: "Masa madre fermentada en catacumbas por 48 horas, salsa pomodoro rojo sangre San Marzano, mozzarella fior di latte derretida como niebla espectral y orégano silvestre del bosque sombrío.",
+    specs: { meat: "Vegetariana Maldita", prep: "12-14 min", calories: "820 kcal" },
+    ingredients: ["Masa Madre 48h de Catacumbas", "Mozzarella Fior di Latte Espectral", "Pomodoro Rojo Sangre", "Albahaca del Cementerio", "Aceite Oliva Virgen"]
   },
   {
     id: "bs-3",
-    name: "Crispy Chicken",
+    name: "Crispy Chicken del Averno",
     category: "Pollo",
-    tag: "MÁS VENDIDO",
+    tag: "🔥 CRUJIDO INFERNAL",
     price: 5.99,
     rating: 4.92,
     image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=800&auto=format&fit=crop&q=80",
-    description: "Pollo frito dorado y perfectamente sazonado",
-    detailedDesc: "Tiras de pechuga jugosa marinada 24h en buttermilk y mix de 11 especias secretas, rebozado crujiente dorado servido con dip de miel y mostaza.",
-    specs: { meat: "220g Pollo", prep: "8-10 min", calories: "690 kcal" },
-    ingredients: ["Pechuga de Pollo Fresca", "Rebozado 11 Especias", "Buttermilk Marinada", "Dip Honey Mustard", "Sal Marina"]
+    description: "Pollo frito ensangrentado con rebozado diabólico de 11 especias ardientes",
+    detailedDesc: "Tiras de pechuga jugosa marinada 24h en elixir de buttermilk y mix de 11 especias secretas del averno, rebozado crujiente dorado servido con dip sangriento de miel y mostaza picante.",
+    specs: { meat: "220g Pollo Diabólico", prep: "8-10 min", calories: "690 kcal" },
+    ingredients: ["Pechuga de Pollo Fresca", "Rebozado 11 Especias del Averno", "Buttermilk Marinada", "Dip Sangriento Honey Mustard", "Sal Marina"]
   },
   {
     id: "bs-4",
-    name: "Loaded Fries",
+    name: "Loaded Fries del Cementerio",
     category: "Papas",
-    tag: "MÁS VENDIDO",
+    tag: "🪦 LAVA RADIACTIVA",
     price: 2.99,
     rating: 4.89,
     image: "https://images.unsplash.com/photo-1585109649139-366815a0d713?w=800&auto=format&fit=crop&q=80",
-    description: "Papas crujientes con queso fundido y tocineta",
-    detailedDesc: "Papas corte rústico doble fritura extra crocantes bañadas en salsa de queso cheddar fundido, trocitos de tocineta ahumada crujiente y cebollín fresco.",
-    specs: { meat: "Guarnición", prep: "6-8 min", calories: "540 kcal" },
-    ingredients: ["Papas Rústicas Seleccionadas", "Salsa Cheddar Artesanal", "Tocineta Ahumada", "Cebollín Fresco", "Páprika Dulce"]
+    description: "Papas crujientes bañadas en lava de queso fundido, tocineta crujiente y cebollín",
+    detailedDesc: "Papas rústicas extra crocantes desenterradas y fritas a alta temperatura, ahogadas en salsa espesa de queso cheddar radiactivo, tocineta ahumada crujiente y toque de ceniza de cebollín.",
+    specs: { meat: "Guarnición Maldita", prep: "6-8 min", calories: "540 kcal" },
+    ingredients: ["Papas Rústicas de Medianoche", "Lava Cheddar Radiactiva", "Tocineta Crujiente Ahumada", "Cebollín de Ultratumba", "Páprika Feroz"]
   }
 ];
 
@@ -233,38 +233,44 @@ const menuItems = [
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   
-  <!-- Fuentes: Bebas Neue, Caveat (Script) y Plus Jakarta Sans -->
+  <!-- Fuentes: Creepster (Terror Gótico), Bebas Neue, Caveat (Script) y Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Bebas+Neue&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      /* Paleta Visual Dark Gourmet con Ámbar Cálido (Galaxy Burgers) */
-      --bg-dark: #0B0C10;
-      --bg-dark-card: #14161E;
-      --bg-dark-card-hover: #1A1D27;
-      --bg-dark-surface: #1B1E28;
+      /* Paleta Visual Dark Horror Gourmet (Galaxy Burgers Halloween) */
+      --bg-dark: #050508;
+      --bg-dark-card: #0F0914;
+      --bg-dark-card-hover: #180D21;
+      --bg-dark-surface: #140A1A;
       
-      --primary-amber: #FF9F1C;
-      --primary-orange: #FFA200;
-      --primary-hover: #E08502;
-      --primary-glow: rgba(255, 159, 28, 0.35);
+      --blood-red: #DC2626;
+      --blood-dark: #7F1D1D;
+      --primary-amber: #FF7518;
+      --primary-orange: #EA580C;
+      --primary-hover: #C2410C;
+      --primary-glow: rgba(255, 117, 24, 0.45);
+      --toxic-green: #10B981;
+      --witch-purple: #7C3AED;
       
-      --accent-red: #E63946;
+      --accent-red: #EF4444;
       --text-white: #FFFFFF;
       --text-cream: #F3EED9;
       --text-muted: #9CA3AF;
       --text-subtle: #6B7280;
       
-      --border-dark: #232733;
-      --border-amber: rgba(255, 159, 28, 0.4);
+      --border-dark: #2A1733;
+      --border-amber: rgba(255, 117, 24, 0.45);
+      --border-blood: rgba(220, 38, 38, 0.5);
       
       --radius-sm: 8px;
       --radius-md: 14px;
       --radius-lg: 20px;
       --radius-full: 9999px;
       
+      --font-horror: 'Creepster', cursive, sans-serif;
       --font-display: 'Bebas Neue', 'Plus Jakarta Sans', sans-serif;
       --font-script: 'Caveat', cursive;
       --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
@@ -282,13 +288,16 @@ const menuItems = [
 
     body {
       font-family: var(--font-body);
-      background-color: var(--bg-dark);
+      background-color: #050308;
       color: var(--text-white);
       line-height: 1.5;
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 85% 15%, rgba(255, 159, 28, 0.08) 0%, transparent 45%),
-        radial-gradient(circle at 10% 40%, rgba(230, 57, 70, 0.05) 0%, transparent 40%);
+        radial-gradient(circle at 50% 0%, rgba(220, 38, 38, 0.22) 0%, transparent 60%),
+        radial-gradient(circle at 85% 20%, rgba(255, 87, 34, 0.16) 0%, transparent 50%),
+        radial-gradient(circle at 15% 45%, rgba(185, 28, 28, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 50% 90%, rgba(255, 69, 0, 0.2) 0%, transparent 60%),
+        linear-gradient(180deg, #050308 0%, #0d0611 50%, #050308 100%);
       background-attachment: fixed;
     }
 
@@ -704,10 +713,11 @@ const menuItems = [
       z-index: 10;
     }
     .category-strip-card {
-      background: #FFFFFF;
+      background: #0E0914;
+      border: 1px solid rgba(255, 87, 34, 0.45);
       border-radius: 24px;
       padding: 1.25rem 2rem;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 87, 34, 0.25);
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 1rem;
@@ -725,15 +735,15 @@ const menuItems = [
       cursor: pointer;
       text-decoration: none;
       transition: all 0.2s ease;
-      color: #1F2937;
+      color: #E5E7EB;
     }
     .cat-item-btn:hover {
-      background: #F9FAFB;
+      background: rgba(255, 87, 34, 0.15);
       transform: translateY(-3px);
     }
     .cat-item-btn.active {
-      background: #FFF7ED;
-      box-shadow: inset 0 0 0 2px var(--primary-amber);
+      background: rgba(255, 87, 34, 0.25);
+      box-shadow: inset 0 0 0 2px #FF5722, 0 0 15px rgba(255, 87, 34, 0.4);
     }
     .cat-icon-wrap {
       font-size: 2.2rem;
@@ -813,21 +823,21 @@ const menuItems = [
     }
 
     .bestseller-card {
-      background: var(--bg-dark-card);
-      border: 1px solid var(--border-dark);
+      background: #0E0914;
+      border: 1px solid rgba(255, 87, 34, 0.4);
       border-radius: var(--radius-lg);
       padding: 1rem;
       display: flex;
       flex-direction: column;
       position: relative;
       transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(220, 38, 38, 0.2);
     }
     .bestseller-card:hover {
       transform: translateY(-6px);
-      border-color: var(--border-amber);
-      background: var(--bg-dark-card-hover);
-      box-shadow: 0 16px 40px rgba(255, 159, 28, 0.15);
+      border-color: #FF5722;
+      background: #170E20;
+      box-shadow: 0 16px 45px rgba(255, 87, 34, 0.45), 0 0 25px rgba(220, 38, 38, 0.35);
     }
 
     .badge-bestseller {
@@ -1756,39 +1766,189 @@ const menuItems = [
     }
 
     /* ========================================================
-       🎃 AMBIENTACIÓN TEMÁTICA DE HALLOWEEN / NOCHE DE BRUJAS
+       💀 AMBIENTACIÓN TOTAL DE TERROR GÓTICO / NOCHE DE BRUJAS 🩸
        ======================================================== */
+    .horror-screen-vignette {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+      box-shadow: inset 0 0 130px rgba(0, 0, 0, 0.95), inset 0 0 50px rgba(185, 28, 28, 0.28);
+    }
+
+    .blood-drips-wrap {
+      width: 100%;
+      line-height: 0;
+      position: relative;
+      z-index: 79;
+      margin-top: -1px;
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.9));
+    }
+
+    .creepy-eyes {
+      position: absolute;
+      display: flex;
+      gap: 12px;
+      z-index: 12;
+      pointer-events: none;
+      animation: eyesBlink 4.5s infinite;
+    }
+    .creepy-eyes .eye {
+      width: 13px;
+      height: 7px;
+      background: radial-gradient(circle, #EF4444 35%, #991B1B 80%);
+      border-radius: 50%;
+      box-shadow: 0 0 12px #EF4444, 0 0 24px #DC2626;
+    }
+    .creepy-eyes.yellow .eye {
+      background: radial-gradient(circle, #FBBF24 35%, #D97706 80%);
+      box-shadow: 0 0 12px #FBBF24, 0 0 24px #B45309;
+    }
+    @keyframes eyesBlink {
+      0%, 88%, 94%, 100% { transform: scaleY(1); opacity: 0.95; }
+      90%, 92% { transform: scaleY(0.08); opacity: 0.1; }
+    }
+
+    .hanging-spider {
+      position: absolute;
+      top: 0;
+      left: 18%;
+      z-index: 15;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: spiderSwing 4.5s ease-in-out infinite alternate;
+      transform-origin: top center;
+      pointer-events: none;
+    }
+    .spider-thread {
+      width: 1px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+    .spider-body {
+      font-size: 1.5rem;
+      line-height: 1;
+      margin-top: -3px;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.9));
+    }
+    @keyframes spiderSwing {
+      0% { transform: rotate(-15deg); }
+      100% { transform: rotate(15deg); }
+    }
+
+    .floating-horror-skull {
+      position: absolute;
+      z-index: 10;
+      pointer-events: none;
+      user-select: none;
+    }
+    .skull-1 {
+      top: -15px;
+      left: -20px;
+      font-size: 2.2rem;
+      filter: drop-shadow(0 0 15px rgba(220, 38, 38, 0.8));
+      animation: skullHover 5s ease-in-out infinite alternate;
+    }
+    .skull-2 {
+      bottom: -10px;
+      left: 20px;
+      font-size: 2rem;
+      filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.7));
+      animation: skullHover 4s ease-in-out infinite alternate-reverse;
+    }
+    .tomb-1 {
+      bottom: 10px;
+      right: -25px;
+      font-size: 2.2rem;
+      filter: drop-shadow(0 0 12px rgba(124, 58, 237, 0.8));
+      animation: batFly2 6s ease-in-out infinite alternate;
+    }
+    .candle-1 {
+      top: 25px;
+      right: -20px;
+      font-size: 1.8rem;
+      filter: drop-shadow(0 0 15px rgba(255, 117, 24, 0.9));
+      animation: ghostHover 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes skullHover {
+      0% { transform: translate(0, 0) rotate(0deg); opacity: 0.85; }
+      50% { transform: translate(-10px, -18px) rotate(-12deg); opacity: 1; }
+      100% { transform: translate(8px, -28px) rotate(10deg); opacity: 0.75; }
+    }
+
+    .word-horror-sub {
+      display: block;
+      font-family: var(--font-horror);
+      font-size: 3.2rem;
+      letter-spacing: 0.08em;
+      color: #EF4444;
+      text-shadow: 0 0 15px #DC2626, 0 0 30px #7F1D1D, 0 0 45px #000000;
+      animation: horrorTorchFlicker 3s infinite alternate;
+      margin-bottom: 0.3rem;
+      line-height: 1;
+    }
+    .word-blood-drip {
+      display: block;
+      font-family: var(--font-horror);
+      font-size: 4.8rem;
+      color: #F87171;
+      letter-spacing: 0.08em;
+      text-shadow: 0 0 12px #B91C1C, 0 0 25px #7F1D1D, 2px 2px 0 #450A0A;
+      line-height: 0.95;
+      margin-bottom: 0.2rem;
+    }
+    .horror-glow-text {
+      color: #FF7518 !important;
+      font-family: var(--font-display);
+      font-size: 6.8rem !important;
+      letter-spacing: 0.04em;
+      text-shadow: 0 0 25px rgba(239, 68, 68, 0.75), 0 0 50px rgba(127, 29, 29, 0.95), 0 4px 10px #000000 !important;
+      animation: horrorRumble 4s ease-in-out infinite alternate;
+    }
+    @keyframes horrorTorchFlicker {
+      0%, 100% { opacity: 1; filter: brightness(1.1); }
+      30% { opacity: 0.82; filter: brightness(0.9); }
+      60% { opacity: 0.95; filter: brightness(1.2); }
+      85% { opacity: 0.78; filter: brightness(0.85); }
+    }
+    @keyframes horrorRumble {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px) scale(1.01); }
+    }
+
     .halloween-badge-pill {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: linear-gradient(135deg, rgba(234, 88, 12, 0.35) 0%, rgba(124, 58, 237, 0.35) 100%);
-      border: 1px solid #F97316;
-      color: #FFEDD5;
+      background: linear-gradient(135deg, rgba(185, 28, 28, 0.5) 0%, rgba(88, 28, 135, 0.5) 100%);
+      border: 1px solid #DC2626;
+      color: #FEE2E2;
       padding: 0.4rem 1.1rem;
       border-radius: var(--radius-full);
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 800;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      box-shadow: 0 0 20px rgba(249, 115, 22, 0.4), inset 0 0 10px rgba(168, 85, 247, 0.2);
+      box-shadow: 0 0 25px rgba(220, 38, 38, 0.5), inset 0 0 10px rgba(127, 29, 29, 0.4);
       animation: spookyAura 3s ease-in-out infinite alternate;
       margin-bottom: 1rem;
     }
     @keyframes spookyAura {
-      0% { box-shadow: 0 0 15px rgba(249, 115, 22, 0.35); border-color: #F97316; }
-      50% { box-shadow: 0 0 28px rgba(168, 85, 247, 0.55); border-color: #A855F7; }
-      100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); border-color: #EF4444; }
+      0% { box-shadow: 0 0 15px rgba(220, 38, 38, 0.45); border-color: #DC2626; }
+      50% { box-shadow: 0 0 35px rgba(147, 51, 234, 0.65); border-color: #9333EA; }
+      100% { box-shadow: 0 0 25px rgba(239, 68, 68, 0.6); border-color: #EF4444; }
     }
 
     .spooky-bat-float {
       position: absolute;
-      font-size: 1.8rem;
+      font-size: 2rem;
       pointer-events: none;
       user-select: none;
       z-index: 10;
-      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.9));
-      opacity: 0.85;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.95));
+      opacity: 0.9;
     }
     .bat-hero-1 {
       top: -20px;
@@ -1799,19 +1959,19 @@ const menuItems = [
       bottom: 40px;
       left: -25px;
       animation: batFly2 7s ease-in-out infinite alternate;
-      font-size: 2.2rem;
+      font-size: 2.4rem;
     }
     .ghost-hero {
       top: 30px;
       left: -20px;
       animation: ghostHover 4s ease-in-out infinite alternate;
-      font-size: 1.9rem;
+      font-size: 2.2rem;
     }
     .pumpkin-hero {
       bottom: -15px;
       right: -10px;
       animation: pumpkinWiggle 3.5s ease-in-out infinite;
-      font-size: 2.3rem;
+      font-size: 2.5rem;
     }
 
     @keyframes batFly1 {
@@ -1825,9 +1985,9 @@ const menuItems = [
       100% { transform: translateY(-10px) translateX(15px) rotate(8deg); }
     }
     @keyframes ghostHover {
-      0% { transform: translateY(0) scale(1); opacity: 0.7; }
-      50% { transform: translateY(-15px) translateX(-10px) scale(1.08); opacity: 0.95; }
-      100% { transform: translateY(-5px) translateX(8px) scale(1); opacity: 0.65; }
+      0% { transform: translateY(0) scale(1); opacity: 0.75; }
+      50% { transform: translateY(-15px) translateX(-10px) scale(1.08); opacity: 1; }
+      100% { transform: translateY(-5px) translateX(8px) scale(1); opacity: 0.7; }
     }
     @keyframes pumpkinWiggle {
       0%, 100% { transform: rotate(0deg) scale(1); }
@@ -1840,69 +2000,196 @@ const menuItems = [
       position: absolute;
       top: 0;
       right: 0;
-      font-size: 2.8rem;
-      opacity: 0.35;
+      font-size: 3rem;
+      opacity: 0.45;
       pointer-events: none;
       line-height: 1;
       user-select: none;
+      filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
     }
     .spooky-spiderweb-tl {
       position: absolute;
       top: 0;
       left: 0;
-      font-size: 2.8rem;
-      opacity: 0.35;
+      font-size: 3rem;
+      opacity: 0.45;
       pointer-events: none;
       line-height: 1;
       user-select: none;
+      filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
     }
 
-    /* Glow de Halloween en botones y badges */
+    /* Glow de Terror en botones y badges */
     .halloween-pill-glow {
-      border-color: rgba(249, 115, 22, 0.7) !important;
-      background: rgba(249, 115, 22, 0.08) !important;
-      box-shadow: 0 0 15px rgba(249, 115, 22, 0.25);
+      border-color: rgba(255, 87, 34, 0.7) !important;
+      background: rgba(220, 38, 38, 0.15) !important;
+      box-shadow: 0 0 25px rgba(255, 87, 34, 0.45);
     }
     .btn-halloween-order {
-      background: linear-gradient(135deg, #FF7518 0%, #EA580C 50%, #B91C1C 100%) !important;
+      background: linear-gradient(135deg, #DC2626 0%, #991B1B 50%, #450A0A 100%) !important;
       color: #FFFFFF !important;
-      box-shadow: 0 6px 20px rgba(234, 88, 12, 0.5) !important;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 6px 25px rgba(220, 38, 38, 0.6) !important;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+      border: 1px solid #EF4444 !important;
     }
     .btn-halloween-order:hover {
-      box-shadow: 0 8px 25px rgba(234, 88, 12, 0.7) !important;
-      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 30px rgba(239, 68, 68, 0.85) !important;
+      transform: translateY(-3px) scale(1.03);
     }
-    .spooky-word-glow {
-      color: #FF7518 !important;
-      text-shadow: 0 0 20px rgba(255, 117, 24, 0.6), 0 0 40px rgba(168, 85, 247, 0.4) !important;
+
+    /* Estilo de Fuego & Brasas Infernales inspirado en imagen/5750a1fa7a4ced11fceee22fa76fa813.jpg */
+    .btn-halloween-fire {
+      background: linear-gradient(135deg, #FF5722 0%, #E65100 45%, #B71C1C 100%) !important;
+      color: #FFFFFF !important;
+      font-weight: 900 !important;
+      letter-spacing: 0.08em !important;
+      box-shadow: 0 0 25px rgba(255, 87, 34, 0.65), 0 6px 20px rgba(183, 28, 28, 0.5) !important;
+      border: 1px solid #FF8A65 !important;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8) !important;
+      transition: all 0.25s ease !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.65rem !important;
+      animation: buttonFlamePulse 2.8s ease-in-out infinite alternate;
+    }
+    .btn-halloween-fire:hover {
+      background: linear-gradient(135deg, #FF7043 0%, #F4511E 45%, #C62828 100%) !important;
+      transform: translateY(-3px) scale(1.04) !important;
+      box-shadow: 0 0 35px rgba(255, 87, 34, 0.95), 0 8px 30px rgba(220, 38, 38, 0.75) !important;
+    }
+    @keyframes buttonFlamePulse {
+      0% { box-shadow: 0 0 20px rgba(255, 87, 34, 0.55), 0 4px 15px rgba(183, 28, 28, 0.4); }
+      100% { box-shadow: 0 0 35px rgba(255, 87, 34, 0.85), 0 8px 25px rgba(220, 38, 38, 0.65); }
+    }
+
+    /* Aura de Fuego y Brasas en Burger Chief */
+    .hero-hellfire-aura {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 490px;
+      height: 490px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 87, 34, 0.48) 0%, rgba(220, 38, 38, 0.38) 45%, rgba(127, 29, 29, 0.15) 70%, transparent 85%);
+      filter: blur(42px);
+      z-index: 0;
+      pointer-events: none;
+      animation: flamePulse 3.5s ease-in-out infinite alternate;
+    }
+    @keyframes flamePulse {
+      0% { transform: translate(-50%, -50%) scale(0.92); opacity: 0.75; filter: blur(35px); }
+      50% { transform: translate(-50%, -50%) scale(1.08); opacity: 1; filter: blur(48px); }
+      100% { transform: translate(-50%, -50%) scale(1.02); opacity: 0.85; filter: blur(40px); }
+    }
+
+    /* Chispas y Brasas al Rojo Vivo (Embers) estilo Burger Chief */
+    .embers-container {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .ember-spark {
+      position: absolute;
+      bottom: -20px;
+      width: 6px;
+      height: 6px;
+      background: radial-gradient(circle, #FFF7ED 20%, #FF5722 60%, #DC2626 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 10px #FF5722, 0 0 20px #DC2626, 0 0 35px #FF9800;
+      animation: floatEmberUp 7s infinite ease-out;
+      opacity: 0;
+    }
+    .spark-1 { left: 12%; animation-duration: 6.2s; animation-delay: 0.3s; width: 6px; height: 6px; }
+    .spark-2 { left: 28%; animation-duration: 8.5s; animation-delay: 1.8s; width: 8px; height: 8px; }
+    .spark-3 { left: 45%; animation-duration: 5.8s; animation-delay: 1.0s; width: 5px; height: 5px; }
+    .spark-4 { left: 62%; animation-duration: 7.8s; animation-delay: 2.7s; width: 7px; height: 7px; }
+    .spark-5 { left: 78%; animation-duration: 6.5s; animation-delay: 0.6s; width: 6px; height: 6px; }
+    .spark-6 { left: 89%; animation-duration: 9.2s; animation-delay: 2.2s; width: 9px; height: 9px; }
+    .spark-7 { left: 35%; animation-duration: 7.0s; animation-delay: 3.8s; width: 6px; height: 6px; }
+    .spark-8 { left: 95%; animation-duration: 6.0s; animation-delay: 1.5s; width: 8px; height: 8px; }
+
+    @keyframes floatEmberUp {
+      0% { transform: translateY(0) translateX(0) scale(0.6); opacity: 0; }
+      15% { opacity: 0.95; }
+      80% { opacity: 0.85; }
+      100% { transform: translateY(-560px) translateX(45px) scale(1.4); opacity: 0; }
+    }
+
+    /* Ticket Cupón Perforado Estilo Referencia 5750a1fa7a4ced11fceee22fa76fa813.jpg */
+    .fiery-promo-ticket-card {
+      background: linear-gradient(135deg, #FF5722 0%, #E65100 50%, #BF360C 100%);
+      border-radius: 26px;
+      padding: 2.5rem 3.2rem;
+      display: grid;
+      grid-template-columns: 1.15fr 0.75fr 1.1fr;
+      align-items: center;
+      gap: 2rem;
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      border: 3px dashed rgba(255, 255, 255, 0.45);
+      box-shadow: 0 20px 60px rgba(230, 81, 0, 0.5), 0 0 45px rgba(255, 87, 34, 0.4);
+    }
+    .ticket-notch-left, .ticket-notch-right {
+      position: absolute;
+      top: 50%;
+      width: 32px;
+      height: 32px;
+      background: #050308;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+    }
+    .ticket-notch-left {
+      left: -16px;
+      box-shadow: inset -4px 0 8px rgba(0,0,0,0.5);
+    }
+    .ticket-notch-right {
+      right: -16px;
+      box-shadow: inset 4px 0 8px rgba(0,0,0,0.5);
+    }
+
+    /* Animación de Rayos y Tormenta de Medianoche en Caracas */
+    @keyframes horrorLightning {
+      0%, 92%, 95%, 97%, 100% { background-color: #050308; }
+      93.5% { background-color: #170716; }
+      96% { background-color: #270815; }
+    }
+    .horror-lightning-ambient {
+      animation: horrorLightning 15s infinite ease-in-out;
     }
   </style>
 </head>
-<body>
+<body class="horror-lightning-ambient">
+
+  <!-- Viñeta de Terror en Bordes de Pantalla -->
+  <div class="horror-screen-vignette"></div>
 
   <!-- Barra Superior de Notificaciones Halloween -->
-  <div class="top-announcement" style="background: linear-gradient(90deg, #1A0B2E, #451A03, #1A0B2E); border-bottom: 1px solid #F97316;">
-    <span>🎃 <strong>GALAXY BURGERS &bull; NOCHE DE BRUJAS EN CARACAS</strong> &bull; ENTREGA EXPRESS EN 20 MINUTOS GARANTIZADA 🦇</span>
+  <div class="top-announcement" style="background: linear-gradient(90deg, #1C0A00, #3B0764, #1C0A00); border-bottom: 1px solid #DC2626;">
+    <span>💀 <strong>NOCHE DE BRUJAS &bull; GALAXY BURGERS CARACAS</strong> &bull; ENTREGA EXPRESS EN 20 MINUTOS O EL TERROR SE LIBERA 🩸</span>
     <span>•</span>
-    <a href="/app/">👻 Abrir App PWA Móvil &bull; Cupón Spooky: <strong>SPOOKY20</strong> (-$3.50)</a>
+    <a href="/app/">👻 Abrir App PWA Móvil &bull; Cupón Sangriento: <strong>SPOOKY20</strong> (-$3.50)</a>
   </div>
 
   <!-- Cabecera y Navegación -->
   <header>
     <div class="nav-container">
       <a href="/" class="brand-logo">
-        <div class="brand-icon-box" style="background: linear-gradient(135deg, #FF7518, #9333EA); box-shadow: 0 4px 15px rgba(255, 117, 24, 0.45);">🎃</div>
+        <div class="brand-icon-box" style="background: linear-gradient(135deg, #DC2626, #7C3AED); box-shadow: 0 4px 15px rgba(220, 38, 38, 0.6);">💀</div>
         <div class="brand-text">
-          <span class="brand-title">GALAXY BURGERS</span>
-          <span class="brand-subtitle" style="color: #FF7518;">🎃 EDICIÓN SPOOKY HALLOWEEN &bull; CARACAS 🦇</span>
+          <span class="brand-title" style="letter-spacing: 0.1em;">GALAXY BURGERS</span>
+          <span class="brand-subtitle" style="color: #EF4444; font-family: var(--font-horror); font-size: 0.82rem; letter-spacing: 0.15em;">🩸 TERROR EN CARACAS &bull; NOCHE DE BRUJAS 💀</span>
         </div>
       </a>
 
       <nav>
         <ul class="nav-menu">
-          <li><a href="/" class="nav-item active">INICIO 🎃</a></li>
-          <li><a href="#bestsellers" class="nav-item">MENÚ</a></li>
+          <li><a href="/" class="nav-item active">INICIO 💀</a></li>
+          <li><a href="#bestsellers" class="nav-item">MENÚ 🩸</a></li>
           <li><a href="#offers" class="nav-item">OFERTAS 👻</a></li>
           <li><a href="#about" class="nav-item">NOSOTROS</a></li>
           <li><a href="#contact" class="nav-item">CONTACTO</a></li>
@@ -1910,83 +2197,126 @@ const menuItems = [
       </nav>
 
       <div class="nav-actions">
-        <a href="/app/" class="btn-nav-outline" style="border-color: rgba(249, 115, 22, 0.5); color: #FED7AA;" title="Abrir PWA Móvil Galaxy Burgers">
-          <span>🎃 PWA Spooky</span>
+        <a href="/app/" class="btn-nav-outline" style="border-color: rgba(220, 38, 38, 0.6); color: #FCA5A5; background: rgba(185, 28, 28, 0.15);" title="Abrir PWA Móvil Galaxy Burgers">
+          <span>💀 PWA Sangrienta</span>
         </a>
         <button class="btn-nav-outline is-disabled" disabled aria-disabled="true" title="Admin (Inactivo)">
           <span>⚙️ Admin</span>
         </button>
         <button id="orderOnlineBtn" class="btn-pill-amber btn-halloween-order">
-          <span>PEDIR EN LÍNEA 🎃</span>
-          <span id="cartCountBadge" style="background:#0B0C10;color:#FF7518;border-radius:50%;padding:2px 7px;font-size:0.75rem;margin-left:4px;">0</span>
+          <span>PEDIR AL AVERNO 🩸</span>
+          <span id="cartCountBadge" style="background:#050508;color:#EF4444;border-radius:50%;padding:2px 7px;font-size:0.75rem;margin-left:4px;">0</span>
         </button>
       </div>
     </div>
+
+    <!-- Goteo de Sangre Realista bajo la Cabecera -->
+    <div class="blood-drips-wrap">
+      <svg viewBox="0 0 1200 24" preserveAspectRatio="none" style="display:block; width:100%; height:18px;">
+        <path d="M0,0 L1200,0 L1200,6 Q1185,20 1170,6 Q1150,22 1130,5 Q1110,14 1090,6 Q1065,24 1045,5 Q1020,15 995,6 Q970,22 950,5 Q925,16 900,6 Q875,23 855,5 Q830,15 805,6 Q780,24 760,5 Q735,16 710,6 Q685,23 665,5 Q640,15 615,6 Q590,24 570,5 Q545,16 520,6 Q495,22 475,5 Q450,15 425,6 Q400,24 380,5 Q355,16 330,6 Q305,22 285,5 Q260,15 235,6 Q210,24 190,5 Q165,16 140,6 Q115,22 95,5 Q70,15 45,6 Q25,20 0,5 Z" fill="#991B1B"></path>
+      </svg>
+    </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section con Brasas Ardientes estilo Burger Chief (Referencia 5750a1fa7a4ced11fceee22fa76fa813.jpg) -->
   <section class="hero-section" id="hero" style="position: relative;">
+    <!-- Chispas y Brasas al Rojo Vivo (Embers) estilo Burger Chief -->
+    <div class="embers-container">
+      <span class="ember-spark spark-1"></span>
+      <span class="ember-spark spark-2"></span>
+      <span class="ember-spark spark-3"></span>
+      <span class="ember-spark spark-4"></span>
+      <span class="ember-spark spark-5"></span>
+      <span class="ember-spark spark-6"></span>
+      <span class="ember-spark spark-7"></span>
+      <span class="ember-spark spark-8"></span>
+    </div>
+
+    <!-- Araña colgando en hilo de seda animado -->
+    <div class="hanging-spider">
+      <div class="spider-thread"></div>
+      <div class="spider-body">🕷️</div>
+    </div>
+
     <div class="hero-left">
-      <div class="halloween-badge-pill">🎃 EDICIÓN ESPECIAL NOCHE DE BRUJAS 2026 🦇</div>
-      <span class="script-sub" style="color: #FBBF24;">👻 ¿Te atreves con el terror del buen sabor cósmico?</span>
+      <div class="halloween-badge-pill">
+        🔥💀 BURGER CHIEF DEL AVERNO &bull; NOCHE DE BRUJAS EN CARACAS 🩸🔥
+      </div>
+      <span class="script-sub" style="color: #FF8A65; font-family: var(--font-horror); font-size: 2.3rem; letter-spacing: 0.08em; text-shadow: 0 0 14px #FF5722;">
+        ¡La Hamburguesa Más Sangrienta & Feroz de Caracas! 🌶️
+      </span>
       
       <h1 class="hero-main-title">
-        <span class="word-white">Espeluznantes</span>
-        <span class="word-amber spooky-word-glow">HAMBURGUESAS</span>
+        <span class="word-horror-sub">SANGRIENTAS & AL CARBÓN</span>
+        <span class="word-amber horror-glow-text">BURGER CHIEF</span>
       </h1>
 
       <div class="pill-features halloween-pill-glow">
-        <span>🎃 TRUCO O TRATO</span>
-        <span class="dot" style="color: #F97316;">•</span>
-        <span>🥩 100% ANGUS FEROZ</span>
-        <span class="dot" style="color: #F97316;">•</span>
-        <span>👻 SABOR DIABÓLICO</span>
-        <span class="dot" style="color: #F97316;">•</span>
-        <span>⚡ 20 MIN CARACAS</span>
+        <span>🌶️ PICANTE DIABÓLICO</span>
+        <span class="dot" style="color: #FF5722;">•</span>
+        <span>🥩 100% ANGUS AL FUEGO</span>
+        <span class="dot" style="color: #FF5722;">•</span>
+        <span>🩸 LAVA DE CHEDDAR</span>
+        <span class="dot" style="color: #FF5722;">•</span>
+        <span>⚡ 20 MIN O MUERTE</span>
       </div>
 
       <p class="hero-desc">
-        ¡Celebra la Noche de Brujas con las hamburguesas más exclusivas y terroríficamente deliciosas de Caracas! 100% Angus braseado al fuego vivo, queso cheddar derretido al punto brujo y pan brioche artesanal recién horneado cada mañana.
+        ¡Atrévete a probar la pesadilla gourmet de Caracas! Medallones 100% Angus forjados en llamas vivas y carbón ardiente, coronados con doble cheddar fundente, tocineta crujiente caramelizada, salsas de sangre secreta y pan brioche negro artesanal.
       </p>
 
       <div class="hero-ctas-row">
-        <a href="#bestsellers" class="btn-hero-order btn-halloween-order">
-          <span>PEDIR AHORA 🎃 →</span>
+        <a href="#bestsellers" class="btn-hero-order btn-halloween-fire">
+          <span>¡PEDIR AL AVERNO AHORA! 🌶️🔥</span>
         </a>
         <button id="watchVideoBtn" class="btn-watch-video">
-          <span class="play-icon-circle" style="border-color: #FF7518; color: #FF7518;">▶</span>
-          <span>VER VIDEO SPOOKY 🦇</span>
+          <span class="play-icon-circle" style="border-color: #FF5722; color: #FF5722; box-shadow: 0 0 12px #FF5722;">▶</span>
+          <span>VER RITUAL DE FUEGO 🔥</span>
         </button>
       </div>
 
       <!-- Sello 100% Fresco & Premium Spooky -->
-      <div class="fresh-stamp-badge" style="border-color: #FF7518; background: rgba(28, 10, 40, 0.85); box-shadow: 0 0 18px rgba(255, 117, 24, 0.4);">
-        <span class="stamp-stars" style="color: #FF7518;">🎃 🦇 🎃</span>
-        <span class="stamp-percent">100%</span>
-        <span class="stamp-label" style="color: #FF7518;">SABOR TERRORÍFICO</span>
-        <span class="stamp-stars" style="color: #FF7518;">★★★</span>
+      <div class="fresh-stamp-badge" style="border-color: #FF5722; background: rgba(35, 5, 5, 0.9); box-shadow: 0 0 25px rgba(255, 87, 34, 0.6);">
+        <span class="stamp-stars" style="color: #FF5722;">💀 🩸 💀</span>
+        <span class="stamp-percent" style="font-family: var(--font-horror); font-size: 1.8rem; color: #FF5722;">100%</span>
+        <span class="stamp-label" style="color: #FF8A65;">TERROR PURO</span>
+        <span class="stamp-stars" style="color: #FF5722;">★★★</span>
       </div>
     </div>
 
     <div class="hero-right">
       <div class="hero-showcase-box">
-        <!-- Decoraciones Flotantes Spooky de Halloween -->
+        <!-- Resplandor Infernal de Llamas de Brasas estilo Referencia 5750a1fa7a4ced11fceee22fa76fa813 -->
+        <div class="hero-hellfire-aura"></div>
+
+        <!-- Ojos siniestros en la penumbra -->
+        <div class="creepy-eyes" style="top: -15px; left: 30px;">
+          <span class="eye"></span><span class="eye"></span>
+        </div>
+        <div class="creepy-eyes yellow" style="bottom: 20px; right: 20px;">
+          <span class="eye"></span><span class="eye"></span>
+        </div>
+        
+        <!-- Elementos de Terror Flotantes -->
+        <span class="floating-horror-skull skull-1">💀</span>
+        <span class="floating-horror-skull skull-2">🩸</span>
+        <span class="floating-horror-skull tomb-1">🪦</span>
+        <span class="floating-horror-skull candle-1">🕯️</span>
         <span class="spooky-bat-float bat-hero-1">🦇</span>
         <span class="spooky-bat-float bat-hero-2">🦇</span>
-        <span class="spooky-bat-float ghost-hero">👻</span>
-        <span class="spooky-bat-float pumpkin-hero">🎃</span>
         <span class="spooky-spiderweb-tr">🕸️</span>
 
         <img 
           src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1100&auto=format&fit=crop&q=85" 
-          alt="Galaxy Burgers - Hamburguesa Deliciosa Signature Spooky Halloween" 
+          alt="Galaxy Burgers - Burger Chief Infernal Spooky Halloween" 
           class="hero-burger-img"
-          style="box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(255, 117, 24, 0.3); border-color: rgba(255, 117, 24, 0.45);"
+          style="box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), 0 0 50px rgba(255, 87, 34, 0.6); border: 2px solid rgba(255, 87, 34, 0.7); position: relative; z-index: 2;"
         />
         
-        <div class="hero-floating-pill" style="border-color: #FF7518; background: rgba(26, 11, 46, 0.95); box-shadow: 0 10px 25px rgba(255, 117, 24, 0.35);">
-          <span style="color:#FF7518;">🎃 4.98</span>
-          <span>Monster VIP Legendario</span>
+        <!-- Badge Flotante de Picante & Fuego -->
+        <div class="hero-floating-pill" style="border-color: #FF5722; background: rgba(25, 7, 10, 0.95); box-shadow: 0 10px 25px rgba(255, 87, 34, 0.6); z-index: 3;">
+          <span style="color:#FF5722; font-size:1.05rem;">🌶️🔥 4.98</span>
+          <span>Burger Chief del Averno</span>
         </div>
       </div>
     </div>
@@ -2036,9 +2366,9 @@ const menuItems = [
   <!-- Sección de Las Más Populares & Bestsellers -->
   <section class="bestsellers-section" id="bestsellers">
     <div class="section-title-wrap">
-      <span class="popular-picks-script" style="color: #FBBF24;">🎃 — Banquete de Noche de Brujas — 🦇</span>
+      <span class="popular-picks-script" style="color: #EF4444; font-family: var(--font-horror); font-size: 2.2rem; letter-spacing: 0.1em; text-shadow: 0 0 10px #B91C1C;">💀 — BANQUETE DE LAS ALMAS CONDENADAS — 🩸</span>
       <div class="bestsellers-heading-row">
-        <h2 class="bestsellers-heading">NUESTROS MÁS VENDIDOS &bull; HALLOWEEN EDITION</h2>
+        <h2 class="bestsellers-heading" style="color: #F87171; text-shadow: 0 0 20px #DC2626;">CREACIONES MACABRAS MÁS VENDIDAS</h2>
       </div>
     </div>
 
@@ -2072,26 +2402,36 @@ const menuItems = [
     </div>
   </section>
 
-  <!-- Banner Promocional de Delivery Halloween -->
+  <!-- Banner Promocional Ticket Cupón Perforado (Inspirado en Referencia 5750a1fa7a4ced11fceee22fa76fa813.jpg) -->
   <section class="promo-banner-section" id="offers">
-    <div class="promo-banner-card" style="background: linear-gradient(135deg, #1A0B2E 0%, #2E1065 50%, #451A03 100%); border-color: #F97316; box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(249, 115, 22, 0.25); position: relative; overflow: hidden;">
+    <div class="fiery-promo-ticket-card">
+      <div class="ticket-notch-left"></div>
+      <div class="ticket-notch-right"></div>
       <span class="spooky-spiderweb-tl">🕸️</span>
+      <div class="creepy-eyes" style="top: 15px; right: 40px;"><span class="eye"></span><span class="eye"></span></div>
+      
       <div class="promo-left">
-        <span class="promo-hungry-tag" style="background: #FF7518; color: #000; font-weight: 900;">🎃 ¿CON HAMBRE VAMPIRO?</span>
-        <span class="promo-deliver-script" style="color: #FED7AA;">¡Te lo Llevamos Volando en la Noche de Brujas! 🦇</span>
+        <span class="promo-hungry-tag" style="background: #050308; color: #FF5722; padding: 0.35rem 0.9rem; border-radius: 9999px; font-weight: 900; letter-spacing: 0.12em; border: 1px solid #FF5722; display: inline-flex; align-items: center; gap: 0.4rem;">
+          <span>🌶️ ¿HAMBRE INFERNAL? 💀</span>
+        </span>
+        <span class="promo-deliver-script" style="color: #FFFFFF; font-family: var(--font-horror); font-size: 2.7rem; text-shadow: 0 0 15px rgba(0,0,0,0.9), 2px 2px 4px rgba(0,0,0,0.8); margin-top: 0.4rem;">
+          ¡La Hamburguesa Más Jugosa con Delivery Express! 🔥
+        </span>
       </div>
 
       <div class="promo-center-art">
-        <div class="delivery-scooter-badge" style="background: #FF7518; box-shadow: 0 0 25px rgba(255, 117, 24, 0.6); font-size: 2.2rem;">
-          🎃
+        <div class="delivery-scooter-badge" style="background: #110508; border: 4px solid #FF5722; box-shadow: 0 0 35px rgba(255, 87, 34, 0.85); font-size: 2.8rem;">
+          🔥💀
         </div>
       </div>
 
       <div class="promo-right">
-        <div class="promo-get-tag" style="color: #FDBA74;">CUPÓN SPOOKY</div>
-        <div class="promo-percent" style="color: #FF7518;">20%<span>OFF</span></div>
-        <div class="promo-subtext">EN TU ORDEN DE HALLOWEEN</div>
-        <div class="coupon-code-pill" style="border-color: #FF7518; background: #FF7518; color: #000; font-weight: 900;">SPOOKY20</div>
+        <div class="promo-get-tag" style="color: #FFE0B2; font-weight: 900; letter-spacing: 0.15em;">TICKET VOUCHER HALLOWEEN</div>
+        <div class="promo-percent" style="color: #FFFFFF; text-shadow: 0 0 25px rgba(0,0,0,0.9), 3px 3px 6px rgba(0,0,0,0.85);">-20%<span>OFF</span></div>
+        <div class="promo-subtext" style="color: #FFE0B2; font-weight: 800; letter-spacing: 0.08em;">EN TU PRIMER BANQUETE DE TERROR EN CARACAS</div>
+        <div class="coupon-code-pill" style="border: 2px dashed #050308; background: #050308; color: #FF7043; font-weight: 900; font-size: 1.15rem; box-shadow: 0 0 20px rgba(0,0,0,0.6); letter-spacing: 0.18em;">
+          CUPÓN: SPOOKY20
+        </div>
       </div>
     </div>
   </section>
@@ -2100,8 +2440,8 @@ const menuItems = [
   <section class="catalog-section" id="full-menu">
     <div class="catalog-header">
       <div>
-        <span class="catalog-tag" style="color: #FBBF24;">🎃 Festín de Noche de Brujas &bull; 10 Creaciones de Autor</span>
-        <h2 class="catalog-main-title">EXPLORA NUESTRO MENÚ COMPLETO SPOOKY 🦇</h2>
+        <span class="catalog-tag" style="color: #EF4444; font-family: var(--font-horror); font-size: 1.25rem; letter-spacing: 0.08em;">🩸 FESTÍN SANGRIENTO EN CARACAS &bull; 10 RECETAS DE ULTRATUMBA 💀</span>
+        <h2 class="catalog-main-title" style="color: #FFFFFF; text-shadow: 0 0 15px rgba(220, 38, 38, 0.5);">MENÚ MACABRO COMPLETO 🦇</h2>
       </div>
 
       <!-- Barra de Filtros -->
@@ -2177,65 +2517,66 @@ const menuItems = [
     </div>
   </section>
 
-  <!-- Sección NOSOTROS: Galaxy Burgers Caracas -->
+  <!-- Sección NOSOTROS: Galaxy Burgers Caracas - Noche de Terror -->
   <section class="pwa-layer-section" id="about">
-    <div class="pwa-layer-card">
+    <div class="pwa-layer-card" style="border-color: rgba(220, 38, 38, 0.45); background: linear-gradient(135deg, #0A040D 0%, #17071F 100%); box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(220, 38, 38, 0.25); position: relative;">
+      <span class="spooky-spiderweb-tr">🕸️</span>
       <div>
-        <span class="pwa-sub-tag">SOBRE NOSOTROS &bull; GALAXY BURGERS CARACAS</span>
-        <h2 class="pwa-heading">Las Mejores y Más Exclusivas Hamburguesas de Caracas</h2>
+        <span class="pwa-sub-tag" style="color: #EF4444; font-family: var(--font-horror); font-size: 1.6rem; letter-spacing: 0.1em;">🩸 LA LEYENDA DEL SABOR MALDITO &bull; CARACAS 💀</span>
+        <h2 class="pwa-heading" style="color: #FFFFFF; text-shadow: 0 0 15px rgba(220, 38, 38, 0.5);">Las Más Oscuras, Exclusivas y Ferozmente Deliciosas Hamburguesas de Caracas</h2>
         <p class="pwa-text">
-          En <strong>Galaxy Burgers</strong> redefinimos el significado de la hamburguesa gourmet en Venezuela. Nacimos con la firme convicción de que Caracas merecía una experiencia gastronómica sin precedentes: hamburguesas de autor concebidas con los más altos estándares culinarios internacionales, fusionando maestría artesanal con perfiles de sabor audaces, cósmicos y rigurosamente exclusivos que no encontrarás en ningún otro rincón de la capital.
+          En <strong>Galaxy Burgers</strong> el terror se convierte en una obra de arte gastronómica. En las noches más oscuras de Caracas, cuando las llamas de las brasas arden con fuerza sobrenatural, forjamos las hamburguesas más exclusivas, audaces y temidas de la capital venezolana.
         </p>
         <p class="pwa-text">
-          Para nosotros, la excelencia es una obsesión innegociable. Cada una de nuestras recetas parte de una minuciosa selección de <strong>cortes 100% Angus prémium</strong>, molidos a diario en proporciones exactas para garantizar una textura inigualable, marmoleo sublime y máxima jugosidad. Nuestros medallones son sellados a fuego vivo sobre brasas de carbón vegetal y leña aromática, coronados con quesos madurados de autor, tocineta ahumada crujiente glaseada al bourbon y nuestras icónicas reducciones secretas de la casa. Todo esto abrazado por un pan brioche dorado de mantequilla pura, horneado fresco cada mañana en nuestros obradores caraqueños.
+          Nuestra receta de culto es implacable: cortes <strong>100% Angus importados</strong> sellados al punto exacto sobre leña ardiente para capturar jugos celestiales, coronados con cheddar añejo fundido como lava espesa, tocineta crujiente glaseada al bourbon y salsas de sangre secreta de autor, servidas en pan brioche horneado fresco cada mañana en nuestros hornos de Caracas.
         </p>
         <p class="pwa-text">
-          Galaxy Burgers es el templo de los paladares más exigentes de Caracas. Ya sea que desees compartir una velada memorable o pedir directo a tu hogar u oficina a través de nuestra moderna <strong>App PWA Móvil</strong>, garantizamos que tu orden llegará en menos de 20 minutos con empaque térmico especializado que conserva la temperatura, el crujido y el aroma de recién salido de la parrilla. ¡Descubre por qué somos la hamburguesa número uno y más exclusiva de Caracas!
+          Esta Noche de Brujas, no temas a la oscuridad; teme quedarte sin tu orden. Ya sea que vengas a vivir la experiencia o pidas volando a través de nuestra <strong>App PWA Móvil</strong>, garantizamos entrega express en 20 minutos con empaque térmico sellado. ¡Atrévete a probar el verdadero terror del buen gusto caraqueño!
         </p>
         <div class="pwa-buttons-group">
-          <a href="/app/" class="btn-pill-amber" title="Abrir PWA Móvil Galaxy Burgers">
-            <span>📱 PEDIR EN PWA MÓVIL 🚀</span>
+          <a href="/app/" class="btn-pill-amber btn-halloween-order" title="Abrir PWA Móvil Galaxy Burgers">
+            <span>💀 ORDENAR EN PWA DE TERROR 🩸</span>
           </a>
-          <a href="#bestsellers" class="btn-nav-outline" style="border-color: rgba(255, 159, 28, 0.4); color: var(--primary-amber);" title="Ver Menú Exclusivo">
-            <span>🍔 EXPLORAR NUESTRO MENÚ</span>
+          <a href="#bestsellers" class="btn-nav-outline" style="border-color: rgba(220, 38, 38, 0.6); color: #FCA5A5;" title="Ver Menú Exclusivo">
+            <span>⚰️ VER BANQUETE COMPLETO</span>
           </a>
         </div>
       </div>
 
       <div class="about-highlights-wrap">
-        <div class="about-badge-card">
-          <span class="about-kicker">🏆 EXCLUSIVIDAD CULINARIA</span>
-          <h3 class="about-card-title">¿Por Qué Galaxy Burgers es Única en Caracas?</h3>
+        <div class="about-badge-card" style="border-color: rgba(220, 38, 38, 0.5); background: rgba(14, 5, 20, 0.85); box-shadow: 0 15px 35px rgba(0,0,0,0.7), 0 0 25px rgba(220, 38, 38, 0.2);">
+          <span class="about-kicker" style="color: #EF4444;">🩸 PACTO DE CALIDAD INFERNAL</span>
+          <h3 class="about-card-title">¿Por Qué Nadie Sobrevive al Sabor de Galaxy Burgers?</h3>
           <p class="about-card-subtitle">
-            Cada creación es ensamblada al momento con devoción gastronómica y los insumos más selectos de la despensa local y mundial.
+            Ingredientes legendarios forjados con pasión extrema y devoción gourmet en el corazón de Caracas.
           </p>
 
           <div class="about-highlights-grid">
-            <div class="about-highlight-item">
+            <div class="about-highlight-item" style="border-color: rgba(220, 38, 38, 0.25);">
               <span class="about-highlight-icon">🥩</span>
               <div>
-                <div class="about-highlight-title">Carne 100% Angus Certificada</div>
+                <div class="about-highlight-title">Carne 100% Angus del Averno</div>
                 <div class="about-highlight-desc">Medallones de 220g braseados al carbón con sellado a fuego vivo para máxima terneza.</div>
               </div>
             </div>
 
-            <div class="about-highlight-item">
+            <div class="about-highlight-item" style="border-color: rgba(220, 38, 38, 0.25);">
               <span class="about-highlight-icon">🍞</span>
               <div>
                 <div class="about-highlight-title">Pan Brioche Dorado Artesanal</div>
-                <div class="about-highlight-desc">Elaborado con mantequilla de campo y masa madre, horneado diariamente en Caracas.</div>
+                <div class="about-highlight-desc">Elaborado con mantequilla pura y masa madre, horneado diariamente en Caracas.</div>
               </div>
             </div>
 
-            <div class="about-highlight-item">
+            <div class="about-highlight-item" style="border-color: rgba(220, 38, 38, 0.25);">
               <span class="about-highlight-icon">🧀</span>
               <div>
-                <div class="about-highlight-title">Quesos Madurados & Salsas de Autor</div>
-                <div class="about-highlight-desc">Cheddar añejo, emulsión de trufa y reducciones galácticas de receta secreta.</div>
+                <div class="about-highlight-title">Quesos Fundidos & Salsas Sangrientas</div>
+                <div class="about-highlight-desc">Cheddar añejado, emulsión de trufa y reducciones galácticas de receta secreta.</div>
               </div>
             </div>
 
-            <div class="about-highlight-item">
+            <div class="about-highlight-item" style="border-color: rgba(220, 38, 38, 0.25);">
               <span class="about-highlight-icon">⚡</span>
               <div>
                 <div class="about-highlight-title">Delivery Térmico VIP Caraqueño</div>
@@ -2245,7 +2586,7 @@ const menuItems = [
           </div>
 
           <div class="about-tech-tag">
-            <span>✨ Sabor Superior Caraqueño &bull; E-commerce & PWA de Alta Velocidad</span>
+            <span style="color: #FCA5A5;">✨ El Mayor Éxito Gourmet de Caracas &bull; Especial Noche de Brujas 🎃</span>
           </div>
         </div>
       </div>

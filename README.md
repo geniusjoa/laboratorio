@@ -4,12 +4,17 @@
 
 ---
 
-## 🎨 Referencia Visual y Rediseño de UI de la Landing E-commerce
+## 🎨 Referencias Visuales y Rediseño de UI de la Landing E-commerce
 
-La interfaz de usuario de la capa **Landing E-commerce** ha sido renovada adoptando la paleta de colores, componentes y estilo visual de la referencia gráfica ubicada en:
+La interfaz de usuario de la capa **Landing E-commerce** ha sido desarrollada e intensificada tomando como inspiración dos referencias visuales clave:
 
-📍 **Ruta local de la imagen de referencia:**  
-`D:\NetxCollege\Laboratorio\laboratorio\imagen\7109aefe8e230e92a685dfdb89915bfb.jpg`
+1. 📍 **Referencia de Estructura Base y Paleta Dark Gourmet:**  
+   `D:\NetxCollege\Laboratorio\laboratorio\imagen\7109aefe8e230e92a685dfdb89915bfb.jpg`  
+   *Proporciona la arquitectura de componentes, distribución del hero, category strip, grilla de 4 bestsellers y catálogo de creaciones de autor.*
+
+2. 📍 **Referencia de Diseño de Terror Infernal & Noche de Brujas (Halloween Extremo):**  
+   `D:\NetxCollege\Laboratorio\laboratorio\imagen\5750a1fa7a4ced11fceee22fa76fa813.jpg`  
+   *Estilo visual **Burger Chief** con textura de carbón volcánico oscuro, brasas al rojo vivo y chispas ardientes flotantes (`embers`), resplandor infernal de llamas (`hellfire aura`), tipografía de terror gótico (*Creepster* + *Bebas Neue* con glow de sangre y fuego), ají picante `🌶️`, botón de llamado a la acción ardiente `¡PEDIR AL AVERNO AHORA! 🌶️🔥` y ticket cupón perforado de descuento con muescas laterales.*
 
 ### Identidad de Marca y Adaptación al Español:
 * **Nombre Comercial Oficial:** **Galaxy Burgers**
@@ -18,6 +23,19 @@ La interfaz de usuario de la capa **Landing E-commerce** ha sido renovada adopta
   * 📞 **Teléfono:** `+58 414-2899554`
   * ✉️ **Correo Electrónico:** `contacto@galaxyburgers.com`
   * 📍 **Ubicación:** `Caracas - Venezuela`
+
+### 🎃 Ambientación de Terror Infernal de Halloween (Referencia 5750a1fa7a4ced11fceee22fa76fa813.jpg):
+* **Fondo de Carbón y Brasas Volcánicas:** Fondo negro ceniza con gradientes radiales de fuego líquido, destellos sutiles de relámpagos de tormenta y partículas de ascuas ardientes ascendentes en animación CSS continua.
+* **Hero "Burger Chief del Averno":**
+  * Título monumental: `SANGRIENTAS & AL CARBÓN BURGER CHIEF`.
+  * Aura de llamaradas y resplandor al rojo vivo detrás de la hamburguesa principal.
+  * Ojos demoníacos parpadeantes en la penumbra, calaveras flotantes, murciélagos animados y telarañas góticas.
+  * Píldora de frescura diabólica: `🌶️ PICANTE DIABÓLICO • 🥩 100% ANGUS AL FUEGO • 🩸 LAVA DE CHEDDAR • ⚡ 20 MIN O MUERTE`.
+  * Botón de orden con degradado de fuego ardiente: `¡PEDIR AL AVERNO AHORA! 🌶️🔥`.
+* **Ticket Cupón Promocional Perforado (-20% OFF):**
+  * Diseño fiel a la referencia `5750a1fa7a4ced11fceee22fa76fa813.jpg`: tarjeta en degradado de fuego vivo con muescas semicirculares laterales (*ticket notches*), borde punteado de corte, badge de entrega express diabólica y código de cupón **`SPOOKY20`**.
+* **Barra Flotante de Categorías y Tarjetas de Bestsellers:**
+  * Rediseñadas en obsidiana oscura con relieves en naranja y rojo fuego, eliminando fondos planos para una inmersión completa en la atmósfera de terror.
 
 ### Elementos Visuales y Paleta Adoptada:
 * **Paleta de Colores Dark Gourmet:**
@@ -83,8 +101,9 @@ laboratorio/
 │   │   ├── pwa/           # Despachado en la ruta '/app'
 │   │   └── admin/         # Despachado en la ruta '/admin'
 │   └── src/               # Código fuente del servidor (app.js, db.js, routes/api.js)
-├── imagen/                # Recursos visuales y referencia de diseño
-│   └── 7109aefe8e230e92a685dfdb89915bfb.jpg
+├── imagen/                # Recursos visuales y referencias de diseño
+│   ├── 7109aefe8e230e92a685dfdb89915bfb.jpg   # Referencia de estructura y paleta base
+│   └── 5750a1fa7a4ced11fceee22fa76fa813.jpg   # Referencia de terror Burger Chief / Noche de Brujas
 ├── Dockerfile             # Construcción multi-stage lista para Dokploy
 └── package.json           # Orquestador de scripts globales
 ```
