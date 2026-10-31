@@ -1307,12 +1307,102 @@ const menuItems = [
       color: #9CA3AF;
       font-size: 1.05rem;
       line-height: 1.6;
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
+    }
+    .pwa-text strong {
+      color: #FFFFFF;
+      font-weight: 700;
     }
     .pwa-buttons-group {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    /* Tarjeta de Destacados Sobre Nosotros */
+    .about-highlights-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .about-badge-card {
+      background: rgba(11, 12, 16, 0.75);
+      border: 1px solid var(--border-amber);
+      border-radius: 24px;
+      padding: 2.2rem 2rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      width: 100%;
+      backdrop-filter: blur(8px);
+    }
+    .about-kicker {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      color: var(--primary-amber);
+      display: inline-block;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+    .about-card-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+    .about-card-subtitle {
+      color: #9CA3AF;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 1.3rem;
+    }
+    .about-highlights-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+    }
+    .about-highlight-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 159, 28, 0.18);
+      border-radius: 14px;
+      padding: 0.85rem 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      transition: all 0.25s ease;
+    }
+    .about-highlight-item:hover {
+      border-color: var(--primary-amber);
+      background: rgba(255, 159, 28, 0.08);
+      transform: translateX(4px);
+    }
+    .about-highlight-icon {
+      font-size: 1.7rem;
+      line-height: 1;
+      filter: drop-shadow(0 2px 6px rgba(255, 159, 28, 0.3));
+      flex-shrink: 0;
+    }
+    .about-highlight-title {
+      color: #FFFFFF;
+      font-size: 0.92rem;
+      font-weight: 800;
+      margin-bottom: 0.15rem;
+    }
+    .about-highlight-desc {
+      color: #9CA3AF;
+      font-size: 0.78rem;
+      line-height: 1.35;
+    }
+    .about-tech-tag {
+      margin-top: 1.2rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #D1D5DB;
+      font-size: 0.76rem;
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: 0.02em;
     }
 
     /* Footer Institucional */
@@ -1952,30 +2042,76 @@ const menuItems = [
     </div>
   </section>
 
-  <!-- Resumen de Arquitectura PWA & Admin -->
+  <!-- Sección NOSOTROS: Galaxy Burgers Caracas -->
   <section class="pwa-layer-section" id="about">
     <div class="pwa-layer-card">
       <div>
-        <span class="pwa-sub-tag">ARQUITECTURA MASTERGENIUSJOA</span>
-        <h2 class="pwa-heading">E-commerce, PWA Móvil y Panel de Administración Conectados</h2>
+        <span class="pwa-sub-tag">SOBRE NOSOTROS &bull; GALAXY BURGERS CARACAS</span>
+        <h2 class="pwa-heading">Las Mejores y Más Exclusivas Hamburguesas de Caracas</h2>
         <p class="pwa-text">
-          Nuestra solución full-stack integra tres capas sincronizadas en un único ecosistema: esta Landing Comercial de alta conversión, una Progressive Web App (PWA) de pedidos directos y un Dashboard Administrativo con control de inventario en tiempo real y soporte MySQL.
+          En <strong>Galaxy Burgers</strong> redefinimos el significado de la hamburguesa gourmet en Venezuela. Nacimos con la firme convicción de que Caracas merecía una experiencia gastronómica sin precedentes: hamburguesas de autor concebidas con los más altos estándares culinarios internacionales, fusionando maestría artesanal con perfiles de sabor audaces, cósmicos y rigurosamente exclusivos que no encontrarás en ningún otro rincón de la capital.
+        </p>
+        <p class="pwa-text">
+          Para nosotros, la excelencia es una obsesión innegociable. Cada una de nuestras recetas parte de una minuciosa selección de <strong>cortes 100% Angus prémium</strong>, molidos a diario en proporciones exactas para garantizar una textura inigualable, marmoleo sublime y máxima jugosidad. Nuestros medallones son sellados a fuego vivo sobre brasas de carbón vegetal y leña aromática, coronados con quesos madurados de autor, tocineta ahumada crujiente glaseada al bourbon y nuestras icónicas reducciones secretas de la casa. Todo esto abrazado por un pan brioche dorado de mantequilla pura, horneado fresco cada mañana en nuestros obradores caraqueños.
+        </p>
+        <p class="pwa-text">
+          Galaxy Burgers es el templo de los paladares más exigentes de Caracas. Ya sea que desees compartir una velada memorable o pedir directo a tu hogar u oficina a través de nuestra moderna <strong>App PWA Móvil</strong>, garantizamos que tu orden llegará en menos de 20 minutos con empaque térmico especializado que conserva la temperatura, el crujido y el aroma de recién salido de la parrilla. ¡Descubre por qué somos la hamburguesa número uno y más exclusiva de Caracas!
         </p>
         <div class="pwa-buttons-group">
           <a href="/app/" class="btn-pill-amber" title="Abrir PWA Móvil Galaxy Burgers">
-            <span>📱 Abrir PWA Móvil</span>
+            <span>📱 PEDIR EN PWA MÓVIL 🚀</span>
           </a>
-          <button class="btn-nav-outline is-disabled" disabled aria-disabled="true" style="border-color: rgba(255,255,255,0.2); color: #888; opacity: 0.4; cursor: not-allowed; pointer-events: none;" title="Admin (Inactivo)">
-            <span>⚙️ Panel Administrativo</span>
-          </button>
+          <a href="#bestsellers" class="btn-nav-outline" style="border-color: rgba(255, 159, 28, 0.4); color: var(--primary-amber);" title="Ver Menú Exclusivo">
+            <span>🍔 EXPLORAR NUESTRO MENÚ</span>
+          </a>
         </div>
       </div>
 
-      <div style="text-align: center;">
-        <div style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-amber); border-radius: 20px; padding: 2.2rem; display: inline-block;">
-          <div style="font-size: 3.5rem; margin-bottom: 0.5rem;">⚡</div>
-          <h4 style="font-size: 1.25rem; font-family: var(--font-display); letter-spacing: 0.05em; color: var(--primary-amber); text-transform: uppercase;">Node.js + MySQL / In-Memory</h4>
-          <p style="color: #9CA3AF; font-size: 0.85rem; max-width: 220px; margin-top: 0.5rem;">APIs REST en <code>/api/*</code> con CI/CD automático en Dokploy.</p>
+      <div class="about-highlights-wrap">
+        <div class="about-badge-card">
+          <span class="about-kicker">🏆 EXCLUSIVIDAD CULINARIA</span>
+          <h3 class="about-card-title">¿Por Qué Galaxy Burgers es Única en Caracas?</h3>
+          <p class="about-card-subtitle">
+            Cada creación es ensamblada al momento con devoción gastronómica y los insumos más selectos de la despensa local y mundial.
+          </p>
+
+          <div class="about-highlights-grid">
+            <div class="about-highlight-item">
+              <span class="about-highlight-icon">🥩</span>
+              <div>
+                <div class="about-highlight-title">Carne 100% Angus Certificada</div>
+                <div class="about-highlight-desc">Medallones de 220g braseados al carbón con sellado a fuego vivo para máxima terneza.</div>
+              </div>
+            </div>
+
+            <div class="about-highlight-item">
+              <span class="about-highlight-icon">🍞</span>
+              <div>
+                <div class="about-highlight-title">Pan Brioche Dorado Artesanal</div>
+                <div class="about-highlight-desc">Elaborado con mantequilla de campo y masa madre, horneado diariamente en Caracas.</div>
+              </div>
+            </div>
+
+            <div class="about-highlight-item">
+              <span class="about-highlight-icon">🧀</span>
+              <div>
+                <div class="about-highlight-title">Quesos Madurados & Salsas de Autor</div>
+                <div class="about-highlight-desc">Cheddar añejo, emulsión de trufa y reducciones galácticas de receta secreta.</div>
+              </div>
+            </div>
+
+            <div class="about-highlight-item">
+              <span class="about-highlight-icon">⚡</span>
+              <div>
+                <div class="about-highlight-title">Delivery Térmico VIP Caraqueño</div>
+                <div class="about-highlight-desc">Empaque aislante prémium que garantiza entrega caliente en 20 min en Caracas.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-tech-tag">
+            <span>✨ Sabor Superior Caraqueño &bull; E-commerce & PWA de Alta Velocidad</span>
+          </div>
         </div>
       </div>
     </div>
