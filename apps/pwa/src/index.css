@@ -28,11 +28,20 @@
   --radius-full: 9999px;
 }
 
-* {
+*, html, body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='24'%3E🕷️%3C/text%3E%3C/svg%3E") 8 8, auto;
+}
+
+button, a, input, select, textarea, [role="button"] {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Ctext y='26' font-size='24'%3E🕷️%3C/text%3E%3Ctext x='16' y='16' font-size='14'%3E🕸️%3C/text%3E%3C/svg%3E") 8 8, pointer !important;
+}
+
+*:active {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Ctext y='26' font-size='24'%3E🕷️%3C/text%3E%3Ctext x='18' y='18' font-size='14'%3E🩸%3C/text%3E%3C/svg%3E") 8 8, auto !important;
 }
 
 body {

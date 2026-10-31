@@ -276,10 +276,25 @@ const menuItems = [
       --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
     }
 
-    * {
+    /* ========================================================
+       🕷️ CURSOR DEL MOUSE: ARAÑA DE TERROR DE HALLOWEEN 🕷️
+       ======================================================== */
+    *, html, body {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='24'%3E🕷️%3C/text%3E%3C/svg%3E") 8 8, auto;
+    }
+
+    a, button, [role="button"], input, select, textarea, label,
+    .btn-pill-amber, .btn-hero-order, .btn-nav-outline, .btn-watch-video,
+    .cat-item-btn, .btn-round-plus, .filter-btn, .social-btn, .open-spec-modal,
+    .app-store-badge, .add-to-cart-btn, .cart-close-btn, .modal-close-icon {
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Ctext y='26' font-size='24'%3E🕷️%3C/text%3E%3Ctext x='16' y='16' font-size='14'%3E🕸️%3C/text%3E%3C/svg%3E") 8 8, pointer !important;
+    }
+
+    *:active {
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Ctext y='26' font-size='24'%3E🕷️%3C/text%3E%3Ctext x='18' y='18' font-size='14'%3E🩸%3C/text%3E%3C/svg%3E") 8 8, auto !important;
     }
 
     html {
@@ -2165,6 +2180,11 @@ const menuItems = [
 </head>
 <body class="horror-lightning-ambient">
 
+  <!-- Hilo de Seda de la Araña del Cursor -->
+  <svg id="cursorSpiderThreadSvg" style="position:fixed; top:0; left:0; width:100vw; height:100vh; pointer-events:none; z-index:9998;">
+    <line id="spiderSilkThreadLine" x1="-100" y1="0" x2="-100" y2="0" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1.2" stroke-dasharray="3 2" />
+  </svg>
+
   <!-- Viñeta de Terror en Bordes de Pantalla -->
   <div class="horror-screen-vignette"></div>
 
@@ -3024,6 +3044,22 @@ const menuItems = [
         document.body.style.overflow = '';
       }
     });
+
+    // 6. Hilo de Seda de la Araña del Cursor
+    const silkLine = document.getElementById('spiderSilkThreadLine');
+    if (silkLine) {
+      window.addEventListener('mousemove', (e) => {
+        silkLine.setAttribute('x1', e.clientX.toString());
+        silkLine.setAttribute('y1', '0');
+        silkLine.setAttribute('x2', (e.clientX + 8).toString());
+        silkLine.setAttribute('y2', (e.clientY + 8).toString());
+      }, { passive: true });
+
+      document.addEventListener('mouseleave', () => {
+        silkLine.setAttribute('x1', '-100');
+        silkLine.setAttribute('x2', '-100');
+      });
+    }
   </script>
 </body>
 </html>

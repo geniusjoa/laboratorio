@@ -36,6 +36,11 @@ La interfaz de usuario de la capa **Landing E-commerce** ha sido desarrollada e 
   * Diseño fiel a la referencia `5750a1fa7a4ced11fceee22fa76fa813.jpg`: tarjeta en degradado de fuego vivo con muescas semicirculares laterales (*ticket notches*), borde punteado de corte, badge de entrega express diabólica y código de cupón **`SPOOKY20`**.
 * **Barra Flotante de Categorías y Tarjetas de Bestsellers:**
   * Rediseñadas en obsidiana oscura con relieves en naranja y rojo fuego, eliminando fondos planos para una inmersión completa en la atmósfera de terror.
+* **Puntero del Mouse de Araña & Hilo de Seda (Halloween Cursor):**
+  * El cursor del mouse se convierte en una araña siniestra (`🕷️`).
+  * Al pasar sobre botones y enlaces interactivos, se transforma en araña sobre telaraña (`🕷️🕸️`).
+  * Al hacer clic activo, la araña ataca dejando una gota de sangre (`🕷️🩸`).
+  * Un hilo de seda translúcido se suspende dinámicamente desde el techo de la pantalla siguiendo a la araña en tiempo real.
 
 ### Elementos Visuales y Paleta Adoptada:
 * **Paleta de Colores Dark Gourmet:**
