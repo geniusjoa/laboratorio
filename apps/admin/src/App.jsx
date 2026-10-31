@@ -1,6 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import IdempiereLogin from './components/IdempiereLogin';
 
 export default function App() {
+  // iDempiere ERP Session Management
+  const [authSession, setAuthSession] = useState(() => {
+    try {
+      const saved = localStorage.getItem('galaxy_idempiere_session');
+      return saved ? JSON.parse(saved) : null;
+    } catch (e) {
+      return null;
+    }
+  });
+
   const [metrics, setMetrics] = useState(null);
   const [health, setHealth] = useState(null);
   const [products, setProducts] = useState([]);
@@ -29,13 +40,38 @@ export default function App() {
     setTimeout(() => setToast(null), 3000);
   };
 
+  const handleLogout = async () => {
+    try {
+      await fetch('/api/auth/logout', {
+        method: 'POST',
+        headers: authSession?.token ? { 'Authorization': `Bearer ${authSession.token}` } : {}
+      });
+    } catch (e) {
+      console.warn('Error al notificar logout al servidor:', e);
+    }
+    localStorage.removeItem('galaxy_idempiere_session');
+    setAuthSession(null);
+    showToast('👋 Sesión cerrada en iDempiere ERP');
+  };
+
+  const getAuthHeaders = () => {
+    const headers = { 'Content-Type': 'application/json' };
+    if (authSession?.token) {
+      headers['Authorization'] = `Bearer ${authSession.token}`;
+    }
+    return headers;
+  };
+
   const fetchData = async () => {
+    if (!authSession) return;
     setLoading(true);
+    const headers = getAuthHeaders();
+
     try {
       const [healthRes, metricsRes, productsRes] = await Promise.all([
-        fetch('/api/health').then(r => r.ok ? r.json() : null).catch(() => null),
-        fetch('/api/metrics').then(r => r.ok ? r.json() : null).catch(() => null),
-        fetch('/api/products').then(r => r.ok ? r.json() : null).catch(() => null)
+        fetch('/api/health', { headers }).then(r => r.ok ? r.json() : null).catch(() => null),
+        fetch('/api/metrics', { headers }).then(r => r.ok ? r.json() : null).catch(() => null),
+        fetch('/api/products', { headers }).then(r => r.ok ? r.json() : null).catch(() => null)
       ]);
 
       if (healthRes) setHealth(healthRes);
@@ -58,8 +94,10 @@ export default function App() {
   };
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    if (authSession) {
+      fetchData();
+    }
+  }, [authSession]);
 
   // Update stock locally & simulate/sync
   const handleStockChange = (id, delta) => {
@@ -77,7 +115,10 @@ export default function App() {
   const handleDeleteProduct = async (id) => {
     if (!confirm('¿Seguro que deseas eliminar esta hamburguesa del catálogo?')) return;
     try {
-      await fetch(`/api/products/${id}`, { method: 'DELETE' });
+      await fetch(`/api/products/${id}`, {
+        method: 'DELETE',
+        headers: getAuthHeaders()
+      });
       setProducts(prev => prev.filter(p => p.id !== id));
       showToast('🗑️ Hamburguesa eliminada del catálogo');
     } catch (err) {
@@ -88,11 +129,14 @@ export default function App() {
 
   // Reset database demo products
   const handleResetCatalog = async () => {
-    if (!confirm('¿Restablecer el catálogo con las 10 variantes oficiales de Galaxy Hamburguesas?')) return;
+    if (!confirm('¿Restablecer el catálogo con las 10 variantes oficiales de Galaxy Burgers?')) return;
     try {
-      await fetch('/api/reset', { method: 'POST' });
+      await fetch('/api/reset', {
+        method: 'POST',
+        headers: getAuthHeaders()
+      });
       await fetchData();
-      showToast('🔄 Catálogo de Galaxy Hamburguesas restablecido con éxito');
+      showToast('🔄 Catálogo de Galaxy Burgers restablecido con éxito');
     } catch (err) {
       showToast('Error al restablecer catálogo');
     }
@@ -109,7 +153,7 @@ export default function App() {
     try {
       const res = await fetch('/api/products', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: getAuthHeaders(),
         body: JSON.stringify(newBurger)
       });
       const data = await res.json();
@@ -154,6 +198,18 @@ export default function App() {
 
   const dbStatus = health?.database || metrics?.database;
 
+  // Enforce iDempiere ERP Authentication Guard
+  if (!authSession) {
+    return (
+      <IdempiereLogin
+        onLoginSuccess={(session) => {
+          setAuthSession(session);
+          showToast('✅ Sesión iniciada en iDempiere ERP');
+        }}
+      />
+    );
+  }
+
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg)', color: 'var(--text)' }}>
       
@@ -196,20 +252,20 @@ export default function App() {
           <div style={{
             width: '42px',
             height: '42px',
-            background: 'linear-gradient(135deg, #F59E0B, #DC2626)',
+            background: 'linear-gradient(135deg, #FF9F1C, #D97706)',
             borderRadius: '12px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             fontSize: '1.4rem',
-            boxShadow: '0 4px 12px rgba(220, 38, 38, 0.2)'
+            boxShadow: '0 4px 12px rgba(217, 119, 6, 0.2)'
           }}>
             🍔
           </div>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <h1 style={{ fontSize: '1.25rem', fontWeight: '800', color: '#0F172A', letterSpacing: '-0.02em' }}>
-                Galaxy Hamburguesas
+                Galaxy Burgers
               </h1>
               <span style={{
                 background: '#FEF3C7',
@@ -224,12 +280,12 @@ export default function App() {
               </span>
             </div>
             <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-              Métricas de Clientes, Inventario de Hamburguesas & Estado de Base de Datos
+              Métricas de Clientes, Inventario de Hamburguesas & Integración iDempiere ERP
             </div>
           </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
           {/* Health indicator badge */}
           <div style={{
             display: 'flex',
@@ -252,12 +308,58 @@ export default function App() {
             </span>
           </div>
 
+          {/* iDempiere User & ERP Context Badge */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+            background: '#F1F5F9',
+            border: '1px solid #CBD5E1',
+            padding: '5px 12px',
+            borderRadius: '12px'
+          }}>
+            <div style={{
+              width: '28px',
+              height: '28px',
+              borderRadius: '50%',
+              background: '#0F172A',
+              color: '#FF9F1C',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '0.85rem'
+            }}>
+              👤
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ fontSize: '0.76rem', fontWeight: '800', color: '#0F172A', lineHeight: 1.1 }}>
+                {authSession.user?.name || authSession.user?.userName || 'iDempiere User'}
+              </div>
+              <div style={{ fontSize: '0.67rem', color: '#64748B', display: 'flex', gap: '5px' }}>
+                <span>Org: <strong>{authSession.parameters?.organizationId}</strong></span>
+                <span>•</span>
+                <span>Rol: <strong>{authSession.parameters?.roleId}</strong></span>
+              </div>
+            </div>
+            <span style={{
+              background: authSession.isMockFallback ? '#FEF3C7' : '#D1FAE5',
+              color: authSession.isMockFallback ? '#92400E' : '#065F46',
+              fontSize: '0.65rem',
+              fontWeight: '800',
+              padding: '2px 6px',
+              borderRadius: '6px',
+              border: `1px solid ${authSession.isMockFallback ? '#FDE68A' : '#A7F3D0'}`
+            }}>
+              {authSession.isMockFallback ? 'ERP Contingencia' : 'ERP Conectado'}
+            </span>
+          </div>
+
           <button
             onClick={fetchData}
             style={{
               background: '#F8F9FA',
               border: '1px solid var(--border)',
-              padding: '8px 14px',
+              padding: '8px 12px',
               borderRadius: '10px',
               fontSize: '0.82rem',
               fontWeight: '700',
@@ -278,13 +380,13 @@ export default function App() {
               background: '#0F172A',
               color: 'white',
               textDecoration: 'none',
-              padding: '8px 16px',
+              padding: '8px 14px',
               borderRadius: '10px',
               fontSize: '0.82rem',
               fontWeight: '700'
             }}
           >
-            🌐 Ir al E-commerce
+            🌐 E-commerce
           </a>
 
           <a
@@ -293,7 +395,7 @@ export default function App() {
               background: '#D97706',
               color: 'white',
               textDecoration: 'none',
-              padding: '8px 16px',
+              padding: '8px 14px',
               borderRadius: '10px',
               fontSize: '0.82rem',
               fontWeight: '700'
@@ -301,8 +403,53 @@ export default function App() {
           >
             📱 PWA Móvil
           </a>
+
+          <button
+            onClick={handleLogout}
+            style={{
+              background: '#FEE2E2',
+              border: '1px solid #FCA5A5',
+              color: '#B91C1C',
+              padding: '8px 14px',
+              borderRadius: '10px',
+              fontSize: '0.82rem',
+              fontWeight: '800',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px'
+            }}
+            title="Cerrar sesión iDempiere ERP"
+          >
+            <span>🚪 Salir</span>
+          </button>
         </div>
       </header>
+
+      {/* Contingency Warning Banner if active */}
+      {authSession.isMockFallback && (
+        <div style={{
+          background: '#FFFBEB',
+          borderBottom: '1px solid #FDE68A',
+          color: '#92400E',
+          padding: '10px 28px',
+          fontSize: '0.82rem',
+          fontWeight: '700',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '8px'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span>⚠️</span>
+            <span>{authSession.warning || `iDempiere ERP no respondió en ${authSession.idempiereUrl}. Modo de contingencia/simulación activo.`}</span>
+          </div>
+          <span style={{ fontSize: '0.74rem', background: '#FEF3C7', border: '1px solid #FDE68A', padding: '2px 8px', borderRadius: '4px' }}>
+            POST /api/v1/auth/tokens (plural) &bull; organizationId={authSession.parameters?.organizationId}
+          </span>
+        </div>
+      )}
 
       {/* Main Dashboard Wrapper */}
       <div style={{ maxWidth: '1360px', margin: '0 auto', padding: '28px 24px' }}>

@@ -123,24 +123,53 @@ laboratorio/
 ### 3️⃣ Capa 3: Panel de Administración (`apps/admin`)
 
 * **Tecnología:** [React 18](https://react.dev/) + [Vite](https://vitejs.dev/).
-* **Ruta de Acceso en Servidor:** `/admin` (SPA con gestión de datos).
+* **Ruta de Acceso en Servidor:** `/admin` (SPA con gestión de datos y control de acceso ERP).
+* **Módulo de Autenticación iDempiere ERP REST API v1:**
+  * **Barrera de Autenticación (Auth Guard):** Pantalla de inicio de sesión blindada que exige autenticación contra iDempiere ERP antes de acceder al panel de control.
+  * **Cumplimiento Estricto de Reglas iDempiere REST v1:**
+    * **Ruta de Token:** `POST /api/v1/auth/tokens` (obligatorio plural `/tokens`).
+    * **Headers:** `Content-Type: application/json`, `Accept: application/json`.
+    * **Payload Estricto:** Objeto `parameters` con clave obligatoria `organizationId` (nunca `orgId`):
+      ```json
+      {
+        "userName": "admin @ gardenworld.com",
+        "password": "GardenAdmin",
+        "parameters": {
+          "clientId": 11,
+          "roleId": 102,
+          "organizationId": 11,
+          "warehouseId": 103,
+          "language": "es_ES"
+        }
+      }
+      ```
+  * **Indicadores en Tiempo Real:** Contexto de Organización, Rol y Cliente visible en la cabecera del panel (`Org: 11`, `Rol: 102`), junto al estado de conexión con iDempiere y botón de cierre de sesión.
+  * **Tolerancia a Fallos y Modo de Contingencia:** En caso de indisponibilidad temporal del servidor ERP en red, el módulo entra en modo de contingencia resiliente emitiendo sesiones demo estructuradas para garantizar la continuidad operativa.
 * **Propósito y Capacidades:**
   * Panel de control integral para gerentes y operadores de cocina.
   * **Métricas en Tiempo Real:** Dashboard con recaudación diaria, tickets promedio, total de clientes registrados y estado del stock.
   * **Gestión de Catálogo (CRUD):** Visualización del inventario de productos, creación de nuevos platillos y eliminación de elementos en base de datos.
-  * **Monitoreo de Infraestructura:** Consumo de `/api/health` para auditar la latencia, memoria del proceso, tiempo de actividad (*uptime*) y estado de conectividad con la base de datos.
-  * **Sincronización Bidireccional:** Conexión continua con la API REST del backend para reflejar los cambios instantáneamente tanto en la Landing como en la PWA.
+  * **Monitoreo de Infraestructura:** Consumo de `/api/health` para auditar la latencia, memoria del proceso, tiempo de actividad (*uptime*), conectividad MySQL y estado de iDempiere ERP.
+  * **Sincronización Bidireccional:** Conexión continua con la API REST del backend con cabeceras `Authorization: Bearer <token>`.
 
 ---
 
 ## ⚙️ Capa Backend y Persistencia de Datos (`server`)
 
 * **Tecnología:** Node.js + Express 4.x.
+* **Servicio de Integración iDempiere ERP (`server/src/services/idempiereService.js`):**
+  * Cliente HTTP resiliente con timeout configurado vía `AbortController`.
+  * Integración contra `IDEMPIERE_BASE_URL` (predeterminado `http://localhost:8080`).
+  * Emisión, validación y descarte de Bearer Tokens en memoria y cabeceras HTTP.
 * **Persistencia Dual Inteligente (`server/src/db.js`):**
   1. **Modo Producción con MySQL:** Conexión mediante `mysql2/promise` con soporte para variables de entorno (`DB_HOST`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`, `DB_PORT`).
   2. **Modo Seguro con Mock In-Memory:** Si no se configuran credenciales de base de datos o el contenedor MySQL se encuentra inaccesible, el sistema activa automáticamente un fallback en memoria con el catálogo predeterminado de hamburguesas y clientes, garantizando alta disponibilidad sin caídas de servicio.
 * **Endpoints de la API REST (`/api/*`):**
-  * `GET /api/health`: Estado de salud, uptime, versión y conectividad de base de datos (ideal para Dokploy y Kubernetes).
+  * `POST /api/auth/idempiere-login`: Autenticación y obtención de tokens cumpliendo la especificación `/api/v1/auth/tokens` de iDempiere.
+  * `GET /api/auth/idempiere-status`: Chequeo de latencia y disponibilidad de iDempiere ERP.
+  * `GET /api/auth/verify`: Verificación de tokens Bearer activos.
+  * `POST /api/auth/logout`: Cierre y descarte de sesión.
+  * `GET /api/health`: Estado de salud, uptime, versión, MySQL e iDempiere (ideal para Dokploy y Kubernetes).
   * `GET /api/products`: Catálogo completo de platillos.
   * `POST /api/products`: Creación de nuevo producto con especificaciones de precio y categoría.
   * `DELETE /api/products/:id`: Eliminación de un producto existente.

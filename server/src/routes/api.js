@@ -1,23 +1,107 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../db');
-const dns = require('dns').promises;
-const os = require('os');
-const net = require('net');
+const idempiereService = require('../services/idempiereService');
 
 // Health Check Endpoint (For Dokploy & Admin Dashboard)
-router.get('/health', (req, res) => {
+router.get('/health', async (req, res) => {
   const dbStatus = db.getDbStatus();
+  const idempiereStatus = await idempiereService.getStatus();
+
   res.json({
     status: 'healthy',
     timestamp: new Date().toISOString(),
     uptime: process.uptime(),
     version: '1.0.0',
-    platform: 'Galaxy Hamburguesas Commercial v1.0',
-    brand: 'Galaxy Hamburguesas',
-    database: dbStatus
+    platform: 'Galaxy Burgers Full-Stack Platform v1.0',
+    brand: 'Galaxy Burgers',
+    database: dbStatus,
+    idempiere: {
+      url: idempiereStatus.configuredUrl,
+      reachable: idempiereStatus.isReachable,
+      sessionsActive: idempiereStatus.activeSessionsCount
+    }
   });
 });
+
+// ==========================================
+// iDempiere ERP REST API v1 Auth Endpoints
+// ==========================================
+
+// Login against iDempiere ERP REST v1 (/api/v1/auth/tokens)
+router.post('/auth/idempiere-login', async (req, res) => {
+  try {
+    const { userName, password, parameters, customBaseUrl } = req.body;
+
+    if (!userName || !password) {
+      return res.status(400).json({
+        success: false,
+        error: 'El nombre de usuario (userName) y la contraseña (password) son obligatorios.'
+      });
+    }
+
+    const result = await idempiereService.authenticate({
+      userName,
+      password,
+      parameters,
+      customBaseUrl
+    });
+
+    if (result.success) {
+      return res.json({
+        success: true,
+        message: 'Autenticación con iDempiere ERP exitosa',
+        data: result.data
+      });
+    }
+
+    return res.status(result.status || 401).json({
+      success: false,
+      error: result.error
+    });
+  } catch (error) {
+    console.error('[Auth Error]', error);
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Check connectivity with iDempiere ERP
+router.get('/auth/idempiere-status', async (req, res) => {
+  try {
+    const status = await idempiereService.getStatus(req.query.url);
+    res.json({ success: true, data: status });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Verify active Bearer Token
+router.get('/auth/verify', (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader) {
+    return res.status(401).json({ success: false, error: 'No se suministró cabecera Authorization.' });
+  }
+
+  const session = idempiereService.validateSession(authHeader);
+  if (!session) {
+    return res.status(401).json({ success: false, error: 'Sesión no válida o expirada.' });
+  }
+
+  res.json({ success: true, session });
+});
+
+// Logout endpoint
+router.post('/auth/logout', (req, res) => {
+  const authHeader = req.headers.authorization;
+  if (authHeader) {
+    idempiereService.logoutSession(authHeader);
+  }
+  res.json({ success: true, message: 'Sesión cerrada con éxito.' });
+});
+
+// ==========================================
+// Catalog & Business Endpoints
+// ==========================================
 
 // List all burgers
 router.get('/products', async (req, res) => {
