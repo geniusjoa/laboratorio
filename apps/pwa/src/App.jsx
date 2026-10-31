@@ -1193,6 +1193,10 @@ export default function App() {
                 <span>📲 Instalar Galaxy Hamburguesas en el Inicio</span>
               </button>
             )}
+
+            <div style={{ textAlign: 'center', marginTop: '24px', color: '#A8A29E', fontSize: '0.72rem' }}>
+              &copy; 2026 Galaxy Hamburguesas Inc. Todos los derechos reservados. Arquitectura MasterGeniusjoa.
+            </div>
           </div>
         )}
       </main>

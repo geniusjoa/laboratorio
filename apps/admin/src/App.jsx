@@ -940,6 +940,11 @@ export default function App() {
           </div>
         </div>
 
+        {/* Footer */}
+        <div style={{ textAlign: 'center', marginTop: '36px', paddingBottom: '20px', color: 'var(--text-muted)', fontSize: '0.8rem' }}>
+          &copy; 2026 Galaxy Hamburguesas Inc. Todos los derechos reservados. Arquitectura MasterGeniusjoa.
+        </div>
+
       </div>
 
       {/* Modal Add Burger */}
