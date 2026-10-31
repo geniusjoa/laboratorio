@@ -453,10 +453,18 @@ const menuItems = [
       align-items: center;
       gap: 0.4rem;
     }
-    .btn-nav-outline:hover {
+    .btn-nav-outline:hover:not(:disabled) {
       border-color: var(--primary-amber);
       color: var(--primary-amber);
       background: rgba(255, 159, 28, 0.05);
+    }
+    .btn-nav-outline:disabled,
+    .btn-nav-outline.is-disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      pointer-events: none;
+      filter: grayscale(1);
+      border-color: rgba(255, 255, 255, 0.15);
     }
 
     /* Hero Principal */
@@ -1689,12 +1697,12 @@ const menuItems = [
       </nav>
 
       <div class="nav-actions">
-        <a href="/app" class="btn-nav-outline" title="Acceso a PWA Móvil">
+        <button class="btn-nav-outline is-disabled" disabled aria-disabled="true" title="PWA (Inactivo)">
           <span>📱 PWA</span>
-        </a>
-        <a href="/admin" class="btn-nav-outline" title="Panel de Administración">
+        </button>
+        <button class="btn-nav-outline is-disabled" disabled aria-disabled="true" title="Admin (Inactivo)">
           <span>⚙️ Admin</span>
-        </a>
+        </button>
         <button id="orderOnlineBtn" class="btn-pill-amber">
           <span>PEDIR EN LÍNEA 👜</span>
           <span id="cartCountBadge" style="background:#0B0C10;color:#FF9F1C;border-radius:50%;padding:2px 7px;font-size:0.75rem;margin-left:4px;">0</span>
@@ -1954,12 +1962,12 @@ const menuItems = [
           Nuestra solución full-stack integra tres capas sincronizadas en un único ecosistema: esta Landing Comercial de alta conversión, una Progressive Web App (PWA) de pedidos directos y un Dashboard Administrativo con control de inventario en tiempo real y soporte MySQL.
         </p>
         <div class="pwa-buttons-group">
-          <a href="/app" class="btn-pill-amber">
+          <button class="btn-pill-amber is-disabled" disabled aria-disabled="true" style="opacity: 0.4; cursor: not-allowed; pointer-events: none;" title="PWA (Inactivo)">
             <span>📱 Abrir PWA Móvil</span>
-          </a>
-          <a href="/admin" class="btn-nav-outline" style="border-color: rgba(255,255,255,0.3); color: white;">
+          </button>
+          <button class="btn-nav-outline is-disabled" disabled aria-disabled="true" style="border-color: rgba(255,255,255,0.2); color: #888; opacity: 0.4; cursor: not-allowed; pointer-events: none;" title="Admin (Inactivo)">
             <span>⚙️ Panel Administrativo</span>
-          </a>
+          </button>
         </div>
       </div>
 
