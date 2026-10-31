@@ -9,7 +9,7 @@ const INITIAL_PRODUCTS = [
     price: 14.99,
     stock: 45,
     image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=80',
-    description: 'Nuestra creación cumbre: 220g de carne 100% Angus flameada a la leña de roble, triple queso cheddar añejo fundido, cebolla caramelizada al bourbon, panceta crocante glaseada y salsa secreta Rapid en pan brioche artesanal dorado con mantequilla clarificada.'
+    description: 'Nuestra creación cumbre: 220g de carne 100% Angus flameada a la leña de roble, triple queso cheddar añejo fundido, cebolla caramelizada al bourbon, panceta crocante glaseada y salsa secreta Galaxy en pan brioche artesanal dorado con mantequilla clarificada.'
   },
   {
     id: 2,
@@ -43,7 +43,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 5,
-    name: 'Smash Trufada Rapid',
+    name: 'Smash Trufada Galaxy',
     category: 'Smash',
     specialty: 'Nivel Gourmet ★★★★',
     price: 12.90,
@@ -136,7 +136,7 @@ const INITIAL_CUSTOMERS = [
     segment: 'Consumo Alto (> $100)',
     totalSpent: 162.20,
     ordersCount: 9,
-    favoriteBurger: 'Smash Trufada Rapid',
+    favoriteBurger: 'Smash Trufada Galaxy',
     lastOrder: 'Hace 3 días',
     status: 'Activo'
   },
@@ -218,7 +218,7 @@ async function initDB() {
   const port = parseInt(process.env.DB_PORT || '3306', 10);
 
   if (!host && !process.env.DATABASE_URL) {
-    console.log('⚡ [DB] Sin variables de entorno MySQL. Operando en modo In-Memory con catálogo de Hamburger Rapid.');
+    console.log('⚡ [DB] Sin variables de entorno MySQL. Operando en modo In-Memory con catálogo de Galaxy Hamburguesas.');
     isConnectedToMySQL = false;
     return;
   }
@@ -259,7 +259,7 @@ async function initDB() {
 
     const [rows] = await connection.query('SELECT COUNT(*) as count FROM products');
     if (rows[0].count === 0) {
-      console.log('🌱 [DB] Inicializando catálogo oficial de Hamburger Rapid en MySQL...');
+      console.log('🌱 [DB] Inicializando catálogo oficial de Galaxy Hamburguesas en MySQL...');
       for (const p of INITIAL_PRODUCTS) {
         await connection.query(
           'INSERT INTO products (name, category, specialty, price, stock, image, description) VALUES (?, ?, ?, ?, ?, ?, ?)',
@@ -320,7 +320,7 @@ async function addProduct({ name, category, specialty, price, stock, image, desc
     price: cleanPrice,
     stock: cleanStock,
     image: image || 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=80',
-    description: description || 'Hamburguesa artesanal de Hamburger Rapid con ingredientes frescos.'
+    description: description || 'Hamburguesa artesanal de Galaxy Hamburguesas con ingredientes frescos.'
   };
   inMemoryProducts.unshift(newProduct);
   return newProduct;
@@ -415,8 +415,8 @@ function getDbStatus() {
     mode: isConnectedToMySQL ? 'mysql' : 'in-memory',
     connected: isConnectedToMySQL,
     host: process.env.DB_HOST || (process.env.DATABASE_URL ? 'via-database-url' : 'localhost (in-memory mode)'),
-    database: process.env.DB_NAME || 'hamburger_rapid_db',
-    user: process.env.DB_USER || 'hamburger_admin',
+    database: process.env.DB_NAME || 'galaxy_hamburguesas_db',
+    user: process.env.DB_USER || 'galaxy_admin',
     table: 'products (10 variantes destacadas)',
     engine: isConnectedToMySQL ? 'MySQL 8.0 InnoDB' : 'In-Memory Engine (NextCollege Fast-Sync)',
     error: lastDbError

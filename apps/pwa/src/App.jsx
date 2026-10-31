@@ -12,7 +12,7 @@ const BURGERS = [
     rating: 4.98,
     calories: '850 kcal',
     image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&auto=format&fit=crop&q=80',
-    description: '220g carne 100% Angus a la leña, triple cheddar añejo, bacon glaseado al bourbon y salsa secreta en brioche artesanal.'
+    description: '220g carne 100% Angus a la leña, triple cheddar añejo, bacon glaseado al bourbon y salsa secreta Galaxy en brioche artesanal.'
   },
   {
     id: 2,
@@ -52,7 +52,7 @@ const BURGERS = [
   },
   {
     id: 5,
-    name: 'Smash Trufada Rapid',
+    name: 'Smash Trufada Galaxy',
     category: 'Smash',
     specialty: 'Nivel Gourmet ★★★★',
     specialtyClass: 'gourmet',
@@ -152,8 +152,8 @@ const OFFERS = [
     price: 13.90,
     oldPrice: 17.50,
     image: 'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&auto=format&fit=crop&q=80',
-    desc: '1 Smash Trufada Rapid + 1 Batido Clásico de Vainilla Bourbon con crema batida.',
-    items: ['Smash Trufada Rapid', 'Batido Vainilla Bourbon']
+    desc: '1 Smash Trufada Galaxy + 1 Batido Clásico de Vainilla Bourbon con crema batida.',
+    items: ['Smash Trufada Galaxy', 'Batido Vainilla Bourbon']
   }
 ];
 
@@ -243,16 +243,16 @@ export default function App() {
   const handleApplyCoupon = (e) => {
     e.preventDefault();
     const code = couponCode.trim().toUpperCase();
-    if (code === 'RAPIDVIP' || code === 'RAPIDFIRST') {
+    if (code === 'GALAXYVIP' || code === 'RAPIDVIP' || code === 'GALAXYFIRST' || code === 'RAPIDFIRST') {
       setCouponDiscount(3.50);
       setCouponApplied(true);
       showToast('🎉 ¡Cupón aplicado: -$3.50!');
-    } else if (code === 'RAPID10') {
+    } else if (code === 'GALAXY10' || code === 'RAPID10') {
       setCouponDiscount(2.00);
       setCouponApplied(true);
       showToast('🎉 ¡Cupón aplicado: -$2.00!');
     } else {
-      showToast('⚠️ Cupón no válido. Prueba RAPIDVIP');
+      showToast('⚠️ Cupón no válido. Prueba GALAXYVIP');
     }
   };
 
@@ -266,14 +266,14 @@ export default function App() {
   const handleSimulateCheckout = () => {
     if (cart.length === 0) return;
 
-    const newOrderNumber = `HR-${Math.floor(1000 + Math.random() * 9000)}`;
+    const newOrderNumber = `GX-${Math.floor(1000 + Math.random() * 9000)}`;
     const newOrder = {
       id: newOrderNumber,
       date: 'Hace un momento',
       items: cart.map(item => ({ name: item.name, quantity: item.quantity, price: item.price })),
       total: total,
       statusStep: 1, // Recibido en cocina
-      statusText: 'Recibido en cocina de Hamburger Rapid',
+      statusText: 'Recibido en cocina de Galaxy Hamburguesas',
       driverName: 'Asignando repartidor express...',
       eta: '18-20 minutos'
     };
@@ -306,7 +306,7 @@ export default function App() {
           driver = 'Sebastián V. (Moto Eléctrica #18)';
           eta = '6 minutos';
         } else if (nextStep === 4) {
-          text = '¡Orden Entregada! ¡Que disfrutes tu Hamburger Rapid!';
+          text = '¡Orden Entregada! ¡Que disfrutes tu Galaxy Hamburguesa!';
           driver = 'Entregado por Sebastián V.';
           eta = 'Completado';
         }
@@ -390,7 +390,7 @@ export default function App() {
           </div>
           <div>
             <h1 style={{ fontSize: '1.05rem', fontWeight: '800', color: '#1C1917', lineHeight: 1.1 }}>
-              Hamburger Rapid
+              Galaxy Hamburguesas
             </h1>
             <div style={{ fontSize: '0.72rem', color: '#78716C', display: 'flex', alignItems: 'center', gap: '4px' }}>
               <span>📍 Av. Providencia 1240</span>
@@ -476,14 +476,14 @@ export default function App() {
             }}>
               <div>
                 <span style={{ fontSize: '0.72rem', background: '#FEF3C7', color: '#92400E', padding: '3px 8px', borderRadius: '9999px', fontWeight: '800', textTransform: 'uppercase' }}>
-                  Cupón RAPIDVIP
+                  Cupón GALAXYVIP
                 </span>
                 <h3 style={{ fontSize: '1.05rem', fontWeight: '800', margin: '6px 0 2px' }}>$3.50 OFF en tu orden</h3>
                 <p style={{ fontSize: '0.75rem', color: '#A8A29E' }}>Válido para las 10 variantes gourmet</p>
               </div>
               <button
                 onClick={() => {
-                  setCouponCode('RAPIDVIP');
+                  setCouponCode('GALAXYVIP');
                   setIsCartOpen(true);
                 }}
                 style={{
@@ -718,7 +718,7 @@ export default function App() {
                 Promociones Exclusivas App
               </span>
               <h2 style={{ fontSize: '1.4rem', fontWeight: '800', color: '#1C1917', marginTop: '2px' }}>
-                Combos & Descuentos Rapid
+                Combos & Descuentos Galaxy
               </h2>
               <p style={{ color: '#78716C', fontSize: '0.82rem' }}>
                 Ahorra hasta un 30% en combinaciones con nuestras hamburguesas maestras.
@@ -1027,7 +1027,7 @@ export default function App() {
                     fontWeight: '800',
                     marginTop: '2px'
                   }}>
-                    👑 Socio Gold VIP &bull; Club Rapid
+                    👑 Socio Gold VIP &bull; Club Galaxy
                   </div>
                   <div style={{ fontSize: '0.75rem', color: '#78716C', marginTop: '2px' }}>
                     carlos.mendoza@email.com
@@ -1035,7 +1035,7 @@ export default function App() {
                 </div>
               </div>
 
-              {/* RapidPoints Balance */}
+              {/* GalaxyPoints Balance */}
               <div style={{
                 background: '#F6F1E9',
                 borderRadius: '14px',
@@ -1047,7 +1047,7 @@ export default function App() {
               }}>
                 <div>
                   <span style={{ fontSize: '0.72rem', color: '#78716C', fontWeight: '700', textTransform: 'uppercase' }}>
-                    RapidPoints Acumulados
+                    GalaxyPoints Acumulados
                   </span>
                   <div style={{ fontSize: '1.35rem', fontWeight: '800', color: '#1C1917' }}>
                     1,450 pts
@@ -1168,7 +1168,7 @@ export default function App() {
                   boxShadow: 'var(--shadow-md)'
                 }}
               >
-                <span>📲 Instalar Hamburger Rapid en el Inicio</span>
+                <span>📲 Instalar Galaxy Hamburguesas en el Inicio</span>
               </button>
             )}
           </div>
@@ -1246,7 +1246,7 @@ export default function App() {
               justifyContent: 'space-between'
             }}>
               <div>
-                <h3 style={{ fontSize: '1.2rem', fontWeight: '800', color: '#1C1917' }}>Tu Carrito Rapid</h3>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: '800', color: '#1C1917' }}>Tu Carrito Galaxy</h3>
                 <span style={{ fontSize: '0.75rem', color: '#78716C' }}>Entrega estimada: 18-20 min</span>
               </div>
               <button
@@ -1330,7 +1330,7 @@ export default function App() {
                   <form onSubmit={handleApplyCoupon} style={{ display: 'flex', gap: '8px', marginTop: '10px' }}>
                     <input
                       type="text"
-                      placeholder="Cupón (ej: RAPIDVIP)"
+                      placeholder="Cupón (ej: GALAXYVIP)"
                       value={couponCode}
                       onChange={(e) => setCouponCode(e.target.value)}
                       style={{
@@ -1362,7 +1362,7 @@ export default function App() {
                   </form>
                   {couponApplied && (
                     <div style={{ fontSize: '0.75rem', color: '#059669', fontWeight: '700' }}>
-                      ✔ Cupón RAPIDVIP aplicado con éxito (-$3.50)
+                      ✔ Cupón aplicado con éxito (-${couponDiscount.toFixed(2)})
                     </div>
                   )}
 

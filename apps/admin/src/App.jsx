@@ -88,11 +88,11 @@ export default function App() {
 
   // Reset database demo products
   const handleResetCatalog = async () => {
-    if (!confirm('¿Restablecer el catálogo con las 10 variantes oficiales de Hamburger Rapid?')) return;
+    if (!confirm('¿Restablecer el catálogo con las 10 variantes oficiales de Galaxy Hamburguesas?')) return;
     try {
       await fetch('/api/reset', { method: 'POST' });
       await fetchData();
-      showToast('🔄 Catálogo de Hamburger Rapid restablecido con éxito');
+      showToast('🔄 Catálogo de Galaxy Hamburguesas restablecido con éxito');
     } catch (err) {
       showToast('Error al restablecer catálogo');
     }
@@ -209,7 +209,7 @@ export default function App() {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <h1 style={{ fontSize: '1.25rem', fontWeight: '800', color: '#0F172A', letterSpacing: '-0.02em' }}>
-                Hamburger Rapid
+                Galaxy Hamburguesas
               </h1>
               <span style={{
                 background: '#FEF3C7',
@@ -495,7 +495,7 @@ export default function App() {
                 Base de Datos
               </span>
               <div style={{ fontSize: '0.95rem', fontWeight: '700', color: '#0F172A', marginTop: '2px' }}>
-                {dbStatus?.database || 'hamburger_rapid_db'}
+                {dbStatus?.database || 'galaxy_hamburguesas_db'}
               </div>
             </div>
 

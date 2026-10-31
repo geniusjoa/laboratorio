@@ -1,7 +1,7 @@
 {
-  "name": "Hamburger Rapid Móvil",
-  "short_name": "RapidBurger",
-  "description": "App PWA de Hamburger Rapid: Ordena tus hamburguesas gourmet a la velocidad de la luz",
+  "name": "Galaxy Hamburguesas Móvil",
+  "short_name": "GalaxyBurger",
+  "description": "App PWA de Galaxy Hamburguesas: Ordena tus hamburguesas gourmet a la velocidad de la luz",
   "start_url": "/app/",
   "scope": "/app/",
   "display": "standalone",

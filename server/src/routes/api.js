@@ -13,8 +13,8 @@ router.get('/health', (req, res) => {
     timestamp: new Date().toISOString(),
     uptime: process.uptime(),
     version: '1.0.0',
-    platform: 'Hamburger Rapid Commercial v1.0',
-    brand: 'Hamburger Rapid',
+    platform: 'Galaxy Hamburguesas Commercial v1.0',
+    brand: 'Galaxy Hamburguesas',
     database: dbStatus
   });
 });
@@ -82,7 +82,7 @@ router.get('/metrics', (req, res) => {
 router.post('/reset', async (req, res) => {
   try {
     await db.resetProducts();
-    res.json({ success: true, message: 'Catálogo de Hamburger Rapid restablecido.' });
+    res.json({ success: true, message: 'Catálogo de Galaxy Hamburguesas restablecido.' });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
   }
