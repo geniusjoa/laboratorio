@@ -159,7 +159,7 @@ laboratorio/
 * **Tecnología:** Node.js + Express 4.x.
 * **Servicio de Integración iDempiere ERP (`server/src/services/idempiereService.js`):**
   * Cliente HTTP resiliente con timeout configurado vía `AbortController`.
-  * Integración contra `IDEMPIERE_BASE_URL` (predeterminado `http://localhost:8080`).
+  * Integración contra `IDEMPIERE_BASE_URL` (predeterminado `https://test.idempiere.org:443`).
   * Emisión, validación y descarte de Bearer Tokens en memoria y cabeceras HTTP.
 * **Persistencia Dual Inteligente (`server/src/db.js`):**
   1. **Modo Producción con MySQL:** Conexión mediante `mysql2/promise` con soporte para variables de entorno (`DB_HOST`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`, `DB_PORT`).

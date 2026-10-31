@@ -28,7 +28,7 @@ export default function IdempiereLogin({ onLoginSuccess }) {
       roleId: 102,
       organizationId: 11,
       warehouseId: 103,
-      language: 'es_ES'
+      language: 'en_US'
     });
     setErrorMsg(null);
   };
@@ -151,13 +151,13 @@ export default function IdempiereLogin({ onLoginSuccess }) {
           lineHeight: 1.45
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: '800', color: '#0F172A', marginBottom: '4px' }}>
-            <span>⚡ Blindado Técnico ERP v1:</span>
-            <code style={{ background: '#E2E8F0', padding: '1px 5px', borderRadius: '4px', fontSize: '0.74rem' }}>
-              POST /api/v1/auth/tokens
+            <span>⚡ Servidor ERP:</span>
+            <code style={{ background: '#E2E8F0', padding: '1px 5px', borderRadius: '4px', fontSize: '0.74rem', color: '#0F172A' }}>
+              https://test.idempiere.org:443
             </code>
           </div>
           <div>
-            Parámetros agrupados en <code style={{ color: '#D97706', fontWeight: '700' }}>"parameters"</code> con clave obligatoria <code style={{ color: '#D97706', fontWeight: '700' }}>"organizationId"</code>.
+            Ruta: <code style={{ color: '#D97706', fontWeight: '700' }}>POST /api/v1/auth/tokens</code> con <code style={{ color: '#D97706', fontWeight: '700' }}>"parameters.organizationId"</code>.
           </div>
         </div>
 
@@ -379,7 +379,7 @@ export default function IdempiereLogin({ onLoginSuccess }) {
                     </label>
                     <input
                       type="text"
-                      placeholder="http://localhost:8080"
+                      placeholder="https://test.idempiere.org:443"
                       value={customBaseUrl}
                       onChange={(e) => setCustomBaseUrl(e.target.value)}
                       style={{ width: '100%', padding: '8px 10px', borderRadius: '8px', border: '1px solid #CBD5E1', fontSize: '0.82rem' }}
@@ -433,3 +433,4 @@ export default function IdempiereLogin({ onLoginSuccess }) {
     </div>
   );
 }
+

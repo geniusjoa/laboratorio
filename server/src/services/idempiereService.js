@@ -18,7 +18,7 @@
  *    }
  */
 
-const DEFAULT_IDEMPIERE_URL = process.env.IDEMPIERE_BASE_URL || 'http://localhost:8080';
+const DEFAULT_IDEMPIERE_URL = process.env.IDEMPIERE_BASE_URL || 'https://test.idempiere.org:443';
 
 // Active tokens store in memory for verification
 const activeSessions = new Map();
@@ -76,8 +76,12 @@ async function authenticate({ userName, password, parameters = {}, customBaseUrl
       const sessionData = {
         token,
         tokenType: data.tokenType || 'Bearer',
+        userId: data.userId || null,
+        menuTreeId: data.menuTreeId || null,
+        refreshToken: data.refresh_token || null,
         user: {
           userName: strictPayload.userName,
+          userId: data.userId || null,
           name: data.name || strictPayload.userName,
           email: data.email || strictPayload.userName
         },
@@ -198,3 +202,4 @@ module.exports = {
   logoutSession,
   getStatus
 };
+
