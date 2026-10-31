@@ -1754,147 +1754,281 @@ const menuItems = [
       .bestsellers-grid { grid-template-columns: 1fr; }
       .footer-content-wrap { grid-template-columns: 1fr; }
     }
+
+    /* ========================================================
+       🎃 AMBIENTACIÓN TEMÁTICA DE HALLOWEEN / NOCHE DE BRUJAS
+       ======================================================== */
+    .halloween-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, rgba(234, 88, 12, 0.35) 0%, rgba(124, 58, 237, 0.35) 100%);
+      border: 1px solid #F97316;
+      color: #FFEDD5;
+      padding: 0.4rem 1.1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      box-shadow: 0 0 20px rgba(249, 115, 22, 0.4), inset 0 0 10px rgba(168, 85, 247, 0.2);
+      animation: spookyAura 3s ease-in-out infinite alternate;
+      margin-bottom: 1rem;
+    }
+    @keyframes spookyAura {
+      0% { box-shadow: 0 0 15px rgba(249, 115, 22, 0.35); border-color: #F97316; }
+      50% { box-shadow: 0 0 28px rgba(168, 85, 247, 0.55); border-color: #A855F7; }
+      100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); border-color: #EF4444; }
+    }
+
+    .spooky-bat-float {
+      position: absolute;
+      font-size: 1.8rem;
+      pointer-events: none;
+      user-select: none;
+      z-index: 10;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.9));
+      opacity: 0.85;
+    }
+    .bat-hero-1 {
+      top: -20px;
+      right: 20px;
+      animation: batFly1 5s ease-in-out infinite alternate;
+    }
+    .bat-hero-2 {
+      bottom: 40px;
+      left: -25px;
+      animation: batFly2 7s ease-in-out infinite alternate;
+      font-size: 2.2rem;
+    }
+    .ghost-hero {
+      top: 30px;
+      left: -20px;
+      animation: ghostHover 4s ease-in-out infinite alternate;
+      font-size: 1.9rem;
+    }
+    .pumpkin-hero {
+      bottom: -15px;
+      right: -10px;
+      animation: pumpkinWiggle 3.5s ease-in-out infinite;
+      font-size: 2.3rem;
+    }
+
+    @keyframes batFly1 {
+      0% { transform: translateY(0) rotate(0deg) scale(1); }
+      50% { transform: translateY(-18px) translateX(15px) rotate(15deg) scale(1.1); }
+      100% { transform: translateY(-30px) translateX(-10px) rotate(-10deg) scale(0.95); }
+    }
+    @keyframes batFly2 {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(20px) translateX(-20px) rotate(-18deg) scale(1.15); }
+      100% { transform: translateY(-10px) translateX(15px) rotate(8deg); }
+    }
+    @keyframes ghostHover {
+      0% { transform: translateY(0) scale(1); opacity: 0.7; }
+      50% { transform: translateY(-15px) translateX(-10px) scale(1.08); opacity: 0.95; }
+      100% { transform: translateY(-5px) translateX(8px) scale(1); opacity: 0.65; }
+    }
+    @keyframes pumpkinWiggle {
+      0%, 100% { transform: rotate(0deg) scale(1); }
+      25% { transform: rotate(-8deg) scale(1.05); }
+      75% { transform: rotate(8deg) scale(1.05); }
+    }
+
+    /* Telarañas en esquinas */
+    .spooky-spiderweb-tr {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 2.8rem;
+      opacity: 0.35;
+      pointer-events: none;
+      line-height: 1;
+      user-select: none;
+    }
+    .spooky-spiderweb-tl {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 2.8rem;
+      opacity: 0.35;
+      pointer-events: none;
+      line-height: 1;
+      user-select: none;
+    }
+
+    /* Glow de Halloween en botones y badges */
+    .halloween-pill-glow {
+      border-color: rgba(249, 115, 22, 0.7) !important;
+      background: rgba(249, 115, 22, 0.08) !important;
+      box-shadow: 0 0 15px rgba(249, 115, 22, 0.25);
+    }
+    .btn-halloween-order {
+      background: linear-gradient(135deg, #FF7518 0%, #EA580C 50%, #B91C1C 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 6px 20px rgba(234, 88, 12, 0.5) !important;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+    .btn-halloween-order:hover {
+      box-shadow: 0 8px 25px rgba(234, 88, 12, 0.7) !important;
+      transform: translateY(-3px) scale(1.02);
+    }
+    .spooky-word-glow {
+      color: #FF7518 !important;
+      text-shadow: 0 0 20px rgba(255, 117, 24, 0.6), 0 0 40px rgba(168, 85, 247, 0.4) !important;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Barra Superior de Notificaciones -->
-  <div class="top-announcement">
-    <span>🔥 <strong>GALAXY BURGERS</strong> &bull; ENTREGA EXPRESS EN 20 MINUTOS GARANTIZADA</span>
+  <!-- Barra Superior de Notificaciones Halloween -->
+  <div class="top-announcement" style="background: linear-gradient(90deg, #1A0B2E, #451A03, #1A0B2E); border-bottom: 1px solid #F97316;">
+    <span>🎃 <strong>GALAXY BURGERS &bull; NOCHE DE BRUJAS EN CARACAS</strong> &bull; ENTREGA EXPRESS EN 20 MINUTOS GARANTIZADA 🦇</span>
     <span>•</span>
-    <a href="/app/">📱 Abrir App Móvil PWA &bull; Cupón: WELCOME20</a>
+    <a href="/app/">👻 Abrir App PWA Móvil &bull; Cupón Spooky: <strong>SPOOKY20</strong> (-$3.50)</a>
   </div>
 
   <!-- Cabecera y Navegación -->
   <header>
     <div class="nav-container">
       <a href="/" class="brand-logo">
-        <div class="brand-icon-box">🍔</div>
+        <div class="brand-icon-box" style="background: linear-gradient(135deg, #FF7518, #9333EA); box-shadow: 0 4px 15px rgba(255, 117, 24, 0.45);">🎃</div>
         <div class="brand-text">
           <span class="brand-title">GALAXY BURGERS</span>
-          <span class="brand-subtitle">SABOR CÓSMICO &bull; CARACAS</span>
+          <span class="brand-subtitle" style="color: #FF7518;">🎃 EDICIÓN SPOOKY HALLOWEEN &bull; CARACAS 🦇</span>
         </div>
       </a>
 
       <nav>
         <ul class="nav-menu">
-          <li><a href="/" class="nav-item active">INICIO</a></li>
+          <li><a href="/" class="nav-item active">INICIO 🎃</a></li>
           <li><a href="#bestsellers" class="nav-item">MENÚ</a></li>
-          <li><a href="#offers" class="nav-item">OFERTAS</a></li>
+          <li><a href="#offers" class="nav-item">OFERTAS 👻</a></li>
           <li><a href="#about" class="nav-item">NOSOTROS</a></li>
           <li><a href="#contact" class="nav-item">CONTACTO</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <a href="/app/" class="btn-nav-outline" title="Abrir PWA Móvil Galaxy Burgers">
-          <span>📱 PWA</span>
+        <a href="/app/" class="btn-nav-outline" style="border-color: rgba(249, 115, 22, 0.5); color: #FED7AA;" title="Abrir PWA Móvil Galaxy Burgers">
+          <span>🎃 PWA Spooky</span>
         </a>
         <button class="btn-nav-outline is-disabled" disabled aria-disabled="true" title="Admin (Inactivo)">
           <span>⚙️ Admin</span>
         </button>
-        <button id="orderOnlineBtn" class="btn-pill-amber">
-          <span>PEDIR EN LÍNEA 👜</span>
-          <span id="cartCountBadge" style="background:#0B0C10;color:#FF9F1C;border-radius:50%;padding:2px 7px;font-size:0.75rem;margin-left:4px;">0</span>
+        <button id="orderOnlineBtn" class="btn-pill-amber btn-halloween-order">
+          <span>PEDIR EN LÍNEA 🎃</span>
+          <span id="cartCountBadge" style="background:#0B0C10;color:#FF7518;border-radius:50%;padding:2px 7px;font-size:0.75rem;margin-left:4px;">0</span>
         </button>
       </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero-section" id="hero">
+  <section class="hero-section" id="hero" style="position: relative;">
     <div class="hero-left">
-      <span class="script-sub">¿Antojo de algo especial?</span>
+      <div class="halloween-badge-pill">🎃 EDICIÓN ESPECIAL NOCHE DE BRUJAS 2026 🦇</div>
+      <span class="script-sub" style="color: #FBBF24;">👻 ¿Te atreves con el terror del buen sabor cósmico?</span>
       
       <h1 class="hero-main-title">
-        <span class="word-white">Deliciosas</span>
-        <span class="word-amber">HAMBURGUESAS</span>
+        <span class="word-white">Espeluznantes</span>
+        <span class="word-amber spooky-word-glow">HAMBURGUESAS</span>
       </h1>
 
-      <div class="pill-features">
-        <span>CALIENTE</span>
-        <span class="dot">•</span>
-        <span>FRESCO</span>
-        <span class="dot">•</span>
-        <span>SABOR CÓSMICO</span>
+      <div class="pill-features halloween-pill-glow">
+        <span>🎃 TRUCO O TRATO</span>
+        <span class="dot" style="color: #F97316;">•</span>
+        <span>🥩 100% ANGUS FEROZ</span>
+        <span class="dot" style="color: #F97316;">•</span>
+        <span>👻 SABOR DIABÓLICO</span>
+        <span class="dot" style="color: #F97316;">•</span>
+        <span>⚡ 20 MIN CARACAS</span>
       </div>
 
       <p class="hero-desc">
-        Hamburguesas artesanales preparadas con ingredientes de primera calidad para una mordida perfecta. 100% Angus flameado a la brasa, queso fundente y pan brioche horneado a diario en Caracas.
+        ¡Celebra la Noche de Brujas con las hamburguesas más exclusivas y terroríficamente deliciosas de Caracas! 100% Angus braseado al fuego vivo, queso cheddar derretido al punto brujo y pan brioche artesanal recién horneado cada mañana.
       </p>
 
       <div class="hero-ctas-row">
-        <a href="#bestsellers" class="btn-hero-order">
-          <span>PEDIR AHORA →</span>
+        <a href="#bestsellers" class="btn-hero-order btn-halloween-order">
+          <span>PEDIR AHORA 🎃 →</span>
         </a>
         <button id="watchVideoBtn" class="btn-watch-video">
-          <span class="play-icon-circle">▶</span>
-          <span>VER VIDEO</span>
+          <span class="play-icon-circle" style="border-color: #FF7518; color: #FF7518;">▶</span>
+          <span>VER VIDEO SPOOKY 🦇</span>
         </button>
       </div>
 
-      <!-- Sello 100% Fresco & Premium -->
-      <div class="fresh-stamp-badge">
-        <span class="stamp-stars">★★★</span>
+      <!-- Sello 100% Fresco & Premium Spooky -->
+      <div class="fresh-stamp-badge" style="border-color: #FF7518; background: rgba(28, 10, 40, 0.85); box-shadow: 0 0 18px rgba(255, 117, 24, 0.4);">
+        <span class="stamp-stars" style="color: #FF7518;">🎃 🦇 🎃</span>
         <span class="stamp-percent">100%</span>
-        <span class="stamp-label">FRESCO & PREMIUM</span>
-        <span class="stamp-stars">★★★</span>
+        <span class="stamp-label" style="color: #FF7518;">SABOR TERRORÍFICO</span>
+        <span class="stamp-stars" style="color: #FF7518;">★★★</span>
       </div>
     </div>
 
     <div class="hero-right">
       <div class="hero-showcase-box">
+        <!-- Decoraciones Flotantes Spooky de Halloween -->
+        <span class="spooky-bat-float bat-hero-1">🦇</span>
+        <span class="spooky-bat-float bat-hero-2">🦇</span>
+        <span class="spooky-bat-float ghost-hero">👻</span>
+        <span class="spooky-bat-float pumpkin-hero">🎃</span>
+        <span class="spooky-spiderweb-tr">🕸️</span>
+
         <img 
           src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1100&auto=format&fit=crop&q=85" 
-          alt="Galaxy Burgers - Hamburguesa Deliciosa Signature" 
+          alt="Galaxy Burgers - Hamburguesa Deliciosa Signature Spooky Halloween" 
           class="hero-burger-img"
+          style="box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(255, 117, 24, 0.3); border-color: rgba(255, 117, 24, 0.45);"
         />
         
-        <div class="hero-floating-pill">
-          <span style="color:#FF9F1C;">⭐ 4.98</span>
-          <span>Nivel Legendario</span>
+        <div class="hero-floating-pill" style="border-color: #FF7518; background: rgba(26, 11, 46, 0.95); box-shadow: 0 10px 25px rgba(255, 117, 24, 0.35);">
+          <span style="color:#FF7518;">🎃 4.98</span>
+          <span>Monster VIP Legendario</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Barra Flotante de Categorías -->
+  <!-- Barra Flotante de Categorías Halloween -->
   <section class="category-strip-section" id="categories">
-    <div class="category-strip-card">
+    <div class="category-strip-card" style="border-color: rgba(249, 115, 22, 0.4); box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 25px rgba(249, 115, 22, 0.15);">
       <button class="cat-item-btn active" data-category="Hamburguesas">
-        <div class="cat-icon-wrap">🍔</div>
-        <div class="cat-title">HAMBURGUESAS</div>
-        <div class="cat-subtitle">Jugosas & Con Queso</div>
+        <div class="cat-icon-wrap" style="background: rgba(249, 115, 22, 0.2);">🍔</div>
+        <div class="cat-title">BURGERS MONSTRUO</div>
+        <div class="cat-subtitle">Jugosas & Queso Brujo</div>
       </button>
 
       <button class="cat-item-btn" data-category="Papas">
         <div class="cat-icon-wrap">🍟</div>
-        <div class="cat-title">PAPAS FRITAS</div>
-        <div class="cat-subtitle">Crujientes & Doradas</div>
+        <div class="cat-title">PAPAS FANTASMA</div>
+        <div class="cat-subtitle">Crujientes del Inframundo</div>
       </button>
 
       <button class="cat-item-btn" data-category="Pizzas">
         <div class="cat-icon-wrap">🍕</div>
-        <div class="cat-title">PIZZAS</div>
-        <div class="cat-subtitle">Calientes & Deliciosas</div>
+        <div class="cat-title">PIZZAS MALDITAS</div>
+        <div class="cat-subtitle">Sangrientas Napolitanas</div>
       </button>
 
       <button class="cat-item-btn" data-category="Bebidas">
         <div class="cat-icon-wrap">🥤</div>
-        <div class="cat-title">BEBIDAS</div>
-        <div class="cat-subtitle">Frías & Refrescantes</div>
+        <div class="cat-title">POCIONES HELADAS</div>
+        <div class="cat-subtitle">Shakes Fríos Cósmicos</div>
       </button>
 
       <button class="cat-item-btn" data-category="Pollo">
         <div class="cat-icon-wrap">🍗</div>
-        <div class="cat-title">POLLO</div>
-        <div class="cat-subtitle">Crujiente & Especiado</div>
+        <div class="cat-title">POLLO BRUJO</div>
+        <div class="cat-subtitle">Crujiente & Feroz</div>
       </button>
 
       <button class="cat-item-btn" data-category="Postres">
         <div class="cat-icon-wrap">🍨</div>
-        <div class="cat-title">POSTRES</div>
-        <div class="cat-subtitle">Delicias Dulces</div>
+        <div class="cat-title">POSTRES ULTRATUMBA</div>
+        <div class="cat-subtitle">Delicias de Terror</div>
       </button>
     </div>
   </section>
@@ -1902,9 +2036,9 @@ const menuItems = [
   <!-- Sección de Las Más Populares & Bestsellers -->
   <section class="bestsellers-section" id="bestsellers">
     <div class="section-title-wrap">
-      <span class="popular-picks-script">— Las Más Populares —</span>
+      <span class="popular-picks-script" style="color: #FBBF24;">🎃 — Banquete de Noche de Brujas — 🦇</span>
       <div class="bestsellers-heading-row">
-        <h2 class="bestsellers-heading">NUESTROS MÁS VENDIDOS</h2>
+        <h2 class="bestsellers-heading">NUESTROS MÁS VENDIDOS &bull; HALLOWEEN EDITION</h2>
       </div>
     </div>
 
@@ -1938,25 +2072,26 @@ const menuItems = [
     </div>
   </section>
 
-  <!-- Banner Promocional de Delivery -->
+  <!-- Banner Promocional de Delivery Halloween -->
   <section class="promo-banner-section" id="offers">
-    <div class="promo-banner-card">
+    <div class="promo-banner-card" style="background: linear-gradient(135deg, #1A0B2E 0%, #2E1065 50%, #451A03 100%); border-color: #F97316; box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(249, 115, 22, 0.25); position: relative; overflow: hidden;">
+      <span class="spooky-spiderweb-tl">🕸️</span>
       <div class="promo-left">
-        <span class="promo-hungry-tag">¿CON HAMBRE?</span>
-        <span class="promo-deliver-script">¡Te lo Llevamos a Casa!</span>
+        <span class="promo-hungry-tag" style="background: #FF7518; color: #000; font-weight: 900;">🎃 ¿CON HAMBRE VAMPIRO?</span>
+        <span class="promo-deliver-script" style="color: #FED7AA;">¡Te lo Llevamos Volando en la Noche de Brujas! 🦇</span>
       </div>
 
       <div class="promo-center-art">
-        <div class="delivery-scooter-badge">
-          🛵
+        <div class="delivery-scooter-badge" style="background: #FF7518; box-shadow: 0 0 25px rgba(255, 117, 24, 0.6); font-size: 2.2rem;">
+          🎃
         </div>
       </div>
 
       <div class="promo-right">
-        <div class="promo-get-tag">OBTÉN</div>
-        <div class="promo-percent">20%<span>OFF</span></div>
-        <div class="promo-subtext">EN TU PRIMER PEDIDO</div>
-        <div class="coupon-code-pill">WELCOME20</div>
+        <div class="promo-get-tag" style="color: #FDBA74;">CUPÓN SPOOKY</div>
+        <div class="promo-percent" style="color: #FF7518;">20%<span>OFF</span></div>
+        <div class="promo-subtext">EN TU ORDEN DE HALLOWEEN</div>
+        <div class="coupon-code-pill" style="border-color: #FF7518; background: #FF7518; color: #000; font-weight: 900;">SPOOKY20</div>
       </div>
     </div>
   </section>
@@ -1965,8 +2100,8 @@ const menuItems = [
   <section class="catalog-section" id="full-menu">
     <div class="catalog-header">
       <div>
-        <span class="catalog-tag">Carta Completa &bull; 10 Creaciones de Autor</span>
-        <h2 class="catalog-main-title">EXPLORA NUESTRO MENÚ COMPLETO</h2>
+        <span class="catalog-tag" style="color: #FBBF24;">🎃 Festín de Noche de Brujas &bull; 10 Creaciones de Autor</span>
+        <h2 class="catalog-main-title">EXPLORA NUESTRO MENÚ COMPLETO SPOOKY 🦇</h2>
       </div>
 
       <!-- Barra de Filtros -->
@@ -2189,10 +2324,10 @@ const menuItems = [
     </div>
 
     <div class="footer-bottom-bar">
-      <div>&copy; 2026 Galaxy Burgers. Todos los derechos reservados. Arquitectura MasterGeniusjoa.</div>
+      <div>&copy; 2026 Galaxy Burgers Caracas &bull; 🎃 ¡Feliz Halloween & Noche de Brujas! 🦇 &bull; Arquitectura MasterGeniusjoa.</div>
       <div style="display: flex; gap: 1.5rem;">
         <a href="/" style="color: #6B7280; text-decoration: none;">Landing E-commerce</a>
-        <a href="/app/" style="color: #6B7280; text-decoration: none;">Capa PWA</a>
+        <a href="/app/" style="color: #6B7280; text-decoration: none;">Capa PWA Spooky 🎃</a>
         <a href="/admin" style="color: #6B7280; text-decoration: none;">Panel Admin</a>
       </div>
     </div>
@@ -2202,12 +2337,12 @@ const menuItems = [
   <div id="cartDrawerBackdrop" class="cart-drawer-backdrop">
     <div class="cart-drawer">
       <div class="cart-header">
-        <h3>Tu Orden en Línea</h3>
+        <h3>Tu Orden en Línea 🎃</h3>
         <button id="closeCartBtn" class="cart-close-btn">&times;</button>
       </div>
 
       <div id="cartItemsContainer" class="cart-items-wrap">
-        <div class="cart-empty-text">Tu bolsa de Galaxy Burgers está vacía.<br/>Agrega hamburguesas o especialidades pulsando <strong>+</strong>.</div>
+        <div class="cart-empty-text">Tu bolsa de Galaxy Burgers está vacía.<br/>Agrega hamburguesas monstruo o especialidades pulsando <strong>+</strong>.</div>
       </div>
 
       <div class="cart-footer">
@@ -2215,8 +2350,8 @@ const menuItems = [
           <span>Total Estimado:</span>
           <span id="cartSubtotal" style="color: var(--primary-amber);">$0.00</span>
         </div>
-        <a href="/app/" class="btn-pill-amber" style="width: 100%; justify-content: center; padding: 0.85rem;">
-          <span>Continuar en PWA Móvil 🚀</span>
+        <a href="/app/" class="btn-pill-amber btn-halloween-order" style="width: 100%; justify-content: center; padding: 0.85rem;">
+          <span>Continuar Pedido Spooky en PWA 🎃</span>
         </a>
       </div>
     </div>

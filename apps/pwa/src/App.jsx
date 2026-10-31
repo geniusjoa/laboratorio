@@ -243,16 +243,16 @@ export default function App() {
   const handleApplyCoupon = (e) => {
     e.preventDefault();
     const code = couponCode.trim().toUpperCase();
-    if (code === 'WELCOME20' || code === 'GALAXYVIP' || code === 'RAPIDVIP' || code === 'GALAXYFIRST' || code === 'RAPIDFIRST') {
+    if (code === 'SPOOKY20' || code === 'WELCOME20' || code === 'GALAXYVIP' || code === 'RAPIDVIP' || code === 'GALAXYFIRST' || code === 'RAPIDFIRST') {
       setCouponDiscount(3.50);
       setCouponApplied(true);
-      showToast('🎉 ¡Cupón aplicado: -$3.50!');
+      showToast('🎃 ¡Cupón SPOOKY20 aplicado con éxito: -$3.50!');
     } else if (code === 'GALAXY10' || code === 'RAPID10') {
       setCouponDiscount(2.00);
       setCouponApplied(true);
       showToast('🎉 ¡Cupón aplicado: -$2.00!');
     } else {
-      showToast('⚠️ Cupón no válido. Prueba WELCOME20 o GALAXYVIP');
+      showToast('⚠️ Cupón no válido. Prueba SPOOKY20 o WELCOME20');
     }
   };
 
@@ -378,24 +378,24 @@ export default function App() {
           <div style={{
             width: '36px',
             height: '36px',
-            background: 'linear-gradient(135deg, #F59E0B, #DC2626)',
+            background: 'linear-gradient(135deg, #FF7518, #9333EA)',
             borderRadius: '10px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             fontSize: '1.2rem',
-            boxShadow: '0 4px 10px rgba(220, 38, 38, 0.2)'
+            boxShadow: '0 4px 10px rgba(255, 117, 24, 0.35)'
           }}>
-            🍔
+            🎃
           </div>
           <div>
             <h1 style={{ fontSize: '1.05rem', fontWeight: '800', color: '#1C1917', lineHeight: 1.1 }}>
-              Galaxy Burgers
+              Galaxy Burgers 🎃
             </h1>
             <div style={{ fontSize: '0.72rem', color: '#78716C', display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <span>📍 Caracas - Venezuela</span>
+              <span>📍 Caracas &bull; Noche de Brujas 🦇</span>
               <span>&bull;</span>
-              <span style={{ color: '#059669', fontWeight: '700' }}>20 min</span>
+              <span style={{ color: '#EA580C', fontWeight: '700' }}>20 min</span>
             </div>
           </div>
         </div>
@@ -475,19 +475,19 @@ export default function App() {
               boxShadow: 'var(--shadow-md)'
             }}>
               <div>
-                <span style={{ fontSize: '0.72rem', background: '#FEF3C7', color: '#92400E', padding: '3px 8px', borderRadius: '9999px', fontWeight: '800', textTransform: 'uppercase' }}>
-                  Cupón GALAXYVIP
+                <span style={{ fontSize: '0.72rem', background: '#FFEDD5', color: '#C2410C', padding: '3px 8px', borderRadius: '9999px', fontWeight: '800', textTransform: 'uppercase' }}>
+                  🎃 Cupón SPOOKY20
                 </span>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: '800', margin: '6px 0 2px' }}>$3.50 OFF en tu orden</h3>
-                <p style={{ fontSize: '0.75rem', color: '#A8A29E' }}>Válido para las 10 variantes gourmet</p>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: '800', margin: '6px 0 2px' }}>$3.50 OFF Especial Halloween</h3>
+                <p style={{ fontSize: '0.75rem', color: '#A8A29E' }}>Válido para todas las burgers en Caracas</p>
               </div>
               <button
                 onClick={() => {
-                  setCouponCode('GALAXYVIP');
+                  setCouponCode('SPOOKY20');
                   setIsCartOpen(true);
                 }}
                 style={{
-                  background: '#D97706',
+                  background: '#EA580C',
                   color: 'white',
                   border: 'none',
                   padding: '8px 14px',
@@ -497,7 +497,7 @@ export default function App() {
                   cursor: 'pointer'
                 }}
               >
-                Usar Cupón
+                Aplicar 🎃
               </button>
             </div>
 
