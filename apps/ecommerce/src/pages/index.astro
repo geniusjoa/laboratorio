@@ -1,15 +1,72 @@
 ---
 // apps/ecommerce/src/pages/index.astro
-// Galaxy Hamburguesas - Primera Versión Comercial v1.0
-// Paleta Clara Premium (Light Luxury Gourmet Fast-Food)
+// TASTYBITES | Gourmet Burgers & Fast Delivery
+// Visual Style: Inspired by TastyBites Brand & Dark Luxury Aesthetic
 
-const title = "Galaxy Hamburguesas | Hamburguesas Gourmet & Fast Delivery";
+const title = "TASTYBITES | Delicious Burgers, Pizza, Chicken & Fast Delivery";
 
-const burgers = [
+// 4 Primary Bestsellers (Directly matching the reference image)
+const bestsellers = [
+  {
+    id: "bs-1",
+    name: "Signature Burger",
+    category: "Burgers",
+    tag: "BEST SELLER",
+    price: 5.49,
+    rating: 4.98,
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=80",
+    description: "Loaded with cheese & special sauce",
+    detailedDesc: "Medallón 100% res premium braseada al carbón, doble queso cheddar fundente, cebolla caramelizada, pepinillos y salsa Tasty especial en pan brioche tostado.",
+    specs: { meat: "200g Angus", prep: "10-12 min", calories: "780 kcal" },
+    ingredients: ["Carne Angus 200g", "Doble Cheddar Añejo", "Salsa Tasty Secreta", "Pepinillos Agridulces", "Pan Brioche Glaseado"]
+  },
+  {
+    id: "bs-2",
+    name: "Cheesy Pizza",
+    category: "Pizza",
+    tag: "BEST SELLER",
+    price: 8.49,
+    rating: 4.95,
+    image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&auto=format&fit=crop&q=80",
+    description: "Fresh veggies, italian herbs & cheese",
+    detailedDesc: "Masa madre fermentada 48 horas, salsa pomodoro San Marzano, mozzarella fior di latte hilada, orégano silvestre y vegetales frescos de temporada.",
+    specs: { meat: "Vegetariana", prep: "12-14 min", calories: "820 kcal" },
+    ingredients: ["Masa Madre 48h", "Mozzarella Fior di Latte", "Pomodoro San Marzano", "Albahaca Fresca", "Aceite Oliva Virgen Extra"]
+  },
+  {
+    id: "bs-3",
+    name: "Crispy Chicken",
+    category: "Chicken",
+    tag: "BEST SELLER",
+    price: 5.99,
+    rating: 4.92,
+    image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=800&auto=format&fit=crop&q=80",
+    description: "Golden fried & perfectly seasoned",
+    detailedDesc: "Tiras de pechuga jugosa marinada 24h en buttermilk y mix de 11 especias secretas, rebozado crujiente dorado servido con dip de miel y mostaza.",
+    specs: { meat: "220g Pollo", prep: "8-10 min", calories: "690 kcal" },
+    ingredients: ["Pechuga de Pollo Fresca", "Rebozado 11 Especias", "Buttermilk Marinada", "Dip Honey Mustard", "Sal Marina"]
+  },
+  {
+    id: "bs-4",
+    name: "Loaded Fries",
+    category: "Fries",
+    tag: "BEST SELLER",
+    price: 2.99,
+    rating: 4.89,
+    image: "https://images.unsplash.com/photo-1585109649139-366815a0d713?w=800&auto=format&fit=crop&q=80",
+    description: "Crispy fries with cheese & sauce",
+    detailedDesc: "Patatas corte rústico doble fritura extra crocantes bañadas en salsa de queso cheddar fundido, bits de tocineta ahumada crujiente y cebollino.",
+    specs: { meat: "Guarnición", prep: "6-8 min", calories: "540 kcal" },
+    ingredients: ["Patatas Rústicas Seleccionadas", "Salsa Cheddar Artesanal", "Bacon Bits Ahumado", "Cebollino Fresco", "Páprika Dulce"]
+  }
+];
+
+// Complete Gourmet Burgers & Catalog
+const menuItems = [
   {
     id: 1,
     name: "Rey de las Burgers",
-    category: "Especiales",
+    category: "Burgers",
     specialty: "Nivel Legendario ★★★★★",
     specialtyLevel: "legendario",
     price: 14.99,
@@ -19,13 +76,13 @@ const burgers = [
     meatGrams: "220g Angus",
     prepTime: "12-15 min",
     image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900&auto=format&fit=crop&q=80",
-    description: "Nuestra creación cumbre: 220g de carne 100% Angus flameada a la leña de roble, triple queso cheddar añejo fundido, cebolla caramelizada al bourbon, panceta crocante glaseada y salsa secreta Galaxy en pan brioche artesanal dorado con mantequilla clarificada.",
-    ingredients: ["Carne 100% Angus 220g", "Triple Cheddar Añejo 12 Meses", "Cebolla Caramelizada al Bourbon", "Panceta Crujiente Glaseada con Maple", "Salsa Secreta Galaxy Smoke", "Pan Brioche de Mantequilla Clarificada"]
+    description: "Nuestra creación cumbre: 220g de carne 100% Angus flameada a la leña de roble, triple queso cheddar añejo fundido, cebolla caramelizada al bourbon y panceta crocante.",
+    ingredients: ["Carne 100% Angus 220g", "Triple Cheddar Añejo 12 Meses", "Cebolla Caramelizada al Bourbon", "Panceta Crujiente Glaseada", "Salsa Secreta Tasty Smoke", "Pan Brioche de Mantequilla"]
   },
   {
     id: 2,
     name: "Burger Real Clásica",
-    category: "Clásicas",
+    category: "Burgers",
     specialty: "Nivel Clásico ★★★",
     specialtyLevel: "clasico",
     price: 9.50,
@@ -35,13 +92,13 @@ const burgers = [
     meatGrams: "160g Res Prime",
     prepTime: "10-12 min",
     image: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=900&auto=format&fit=crop&q=80",
-    description: "La tradición elevada al máximo estándar: medallón de res 160g a la plancha de hierro fundido, queso americano derretido, lechuga romana crujiente, tomate fresco de huerta, pepinillos agridulces encurtidos en casa y aderezo imperial ahumado.",
-    ingredients: ["Medallón Res Prime 160g", "Queso Americano Fundente", "Lechuga Romana Fresca", "Rodajas Tomate Campestre", "Pepinillos Agridulces Artesanales", "Aderezo Imperial Ahumado"]
+    description: "La tradición elevada al máximo estándar: medallón de res 160g a la plancha de hierro, queso americano derretido, lechuga romana crujiente, tomate y pepinillos.",
+    ingredients: ["Medallón Res Prime 160g", "Queso Americano Fundente", "Lechuga Romana Fresca", "Rodajas Tomate Campestre", "Pepinillos Agridulces", "Aderezo Imperial Ahumado"]
   },
   {
     id: 3,
     name: "Burger Real Doble",
-    category: "Especiales",
+    category: "Burgers",
     specialty: "Nivel Superior ★★★★",
     specialtyLevel: "superior",
     price: 13.50,
@@ -51,29 +108,13 @@ const burgers = [
     meatGrams: "300g Doble Angus",
     prepTime: "12-14 min",
     image: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=900&auto=format&fit=crop&q=80",
-    description: "Doble impacto de sabor: dos medallones Angus de 150g cada uno sellados con costra crujiente, cuatro lonchas de queso cheddar artesanal, cebolla picada fina en brunoise, mostaza Dijon suave y salsa relish secreta de la casa.",
-    ingredients: ["Dos Medallones Angus (300g)", "Cuatro Lonchas Cheddar Madurado", "Cebolla Brunoise Crujiente", "Salsa Relish Casera", "Mostaza Suave a la Antigua", "Pan Brioche con Sésamo Tostado"]
+    description: "Doble impacto de sabor: dos medallones Angus de 150g sellados con costra crujiente, cuatro lonchas de queso cheddar artesanal, cebolla brunoise y salsa relish.",
+    ingredients: ["Dos Medallones Angus (300g)", "Cuatro Lonchas Cheddar Madurado", "Cebolla Brunoise Crujiente", "Salsa Relish Casera", "Mostaza Suave a la Antigua", "Pan Brioche con Sésamo"]
   },
   {
     id: 4,
-    name: "Burger Doble Especial",
-    category: "Especiales",
-    specialty: "Nivel Élite ★★★★★",
-    specialtyLevel: "elite",
-    price: 15.50,
-    rating: 4.99,
-    reviews: 1670,
-    calories: "960 kcal",
-    meatGrams: "320g Angus Black",
-    prepTime: "14-16 min",
-    image: "https://images.unsplash.com/photo-1583032015879-c5625bf948c2?w=900&auto=format&fit=crop&q=80",
-    description: "Edición gourmet reservada para conocedores: doble carne Angus premium con centro de queso gouda fundido, doble ración de panceta ahumada al manzano, aros de cebolla crocantes y crema suave de trufa negra con mayonesa japonesa.",
-    ingredients: ["Doble Carne Angus Black 320g", "Centro Queso Gouda Holandés", "Bacon Ahumado a la Madera de Manzano", "Aros de Cebolla Rebozados en Panko", "Crema de Trufa Negra Silvestre", "Pan Brioche Glaseado"]
-  },
-  {
-    id: 5,
     name: "Smash Trufada Galaxy",
-    category: "Smash",
+    category: "Burgers",
     specialty: "Nivel Gourmet ★★★★",
     specialtyLevel: "gourmet",
     price: 12.90,
@@ -83,13 +124,13 @@ const burgers = [
     meatGrams: "180g Smash Fino",
     prepTime: "8-10 min",
     image: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=900&auto=format&fit=crop&q=80",
-    description: "Doble smash ultrafino con encaje crocante inconfundible, emulsión de trufa blanca de Alba, queso suizo Emmental fundido y champiñones silvestres salteados con tomillo fresco.",
-    ingredients: ["Doble Smash Angus 180g", "Queso Emmental Suizo", "Champiñones Salteados al Tomillo", "Emulsión de Trufa Blanca de Alba", "Pan de Patata Extra Tierno"]
+    description: "Doble smash ultrafino con encaje crocante inconfundible, emulsión de trufa blanca de Alba, queso suizo Emmental fundido y champiñones silvestres salteados.",
+    ingredients: ["Doble Smash Angus 180g", "Queso Emmental Suizo", "Champiñones Salteados al Tomillo", "Emulsión de Trufa Blanca", "Pan de Patata Extra Tierno"]
   },
   {
-    id: 6,
+    id: 5,
     name: "Royal Crispy Chicken",
-    category: "Pollo",
+    category: "Chicken",
     specialty: "Nivel Dorado ★★★",
     specialtyLevel: "dorado",
     price: 11.90,
@@ -99,13 +140,13 @@ const burgers = [
     meatGrams: "200g Pechuga Crispy",
     prepTime: "10-12 min",
     image: "https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?w=900&auto=format&fit=crop&q=80",
-    description: "Suprema de pechuga marinada 24h en buttermilk y especias cajún, rebozado extra crujiente dorado a la perfección, ensalada coleslaw fresca con toques de manzana verde y miel de mostaza casera.",
-    ingredients: ["Suprema de Pollo en Buttermilk 200g", "Rebozado 11 Especias Secreta", "Coleslaw Fresco con Manzana Verde", "Salsa Honey Mustard Casera", "Pepinillos Dulces en Rodajas"]
+    description: "Suprema de pechuga marinada 24h en buttermilk y especias cajún, rebozado extra crujiente, ensalada coleslaw fresca y miel de mostaza casera.",
+    ingredients: ["Suprema de Pollo en Buttermilk 200g", "Rebozado 11 Especias Secreta", "Coleslaw Fresco con Manzana", "Salsa Honey Mustard Casera", "Pepinillos Dulces"]
   },
   {
-    id: 7,
+    id: 6,
     name: "Bacon BBQ Suprema",
-    category: "Clásicas",
+    category: "Burgers",
     specialty: "Nivel Superior ★★★★",
     specialtyLevel: "superior",
     price: 13.90,
@@ -115,56 +156,71 @@ const burgers = [
     meatGrams: "200g Res Braseada",
     prepTime: "12-14 min",
     image: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=900&auto=format&fit=crop&q=80",
-    description: "Para los devotos del ahumado: carne braseada a fuego vivo, cuádruple loncha de bacon crocante con sal marina, queso Monterey Jack fundido y generosa reducción de salsa BBQ artesanal al bourbon.",
-    ingredients: ["Carne Braseada al Fuego 200g", "Cuádruple Loncha Bacon Ahumado", "Queso Monterey Jack Cremoso", "Salsa BBQ al Bourbon de Kentucky", "Cebolla Morada Asada"]
+    description: "Para los devotos del ahumado: carne braseada a fuego vivo, cuádruple loncha de bacon crocante con sal marina, queso Monterey Jack y salsa BBQ al bourbon.",
+    ingredients: ["Carne Braseada al Fuego 200g", "Cuádruple Loncha Bacon Ahumado", "Queso Monterey Jack Cremoso", "Salsa BBQ al Bourbon", "Cebolla Morada Asada"]
+  },
+  {
+    id: 7,
+    name: "Truffle Parmesan Fries",
+    category: "Fries",
+    specialty: "Nivel Especial ★★★★",
+    specialtyLevel: "gourmet",
+    price: 4.90,
+    rating: 4.96,
+    reviews: 640,
+    calories: "490 kcal",
+    meatGrams: "Papas Rústicas",
+    prepTime: "6-8 min",
+    image: "https://images.unsplash.com/photo-1576107232684-1279f3908594?w=900&auto=format&fit=crop&q=80",
+    description: "Papas rústicas cortadas a mano con aceite de trufa blanca pura de Italia, lluvia de queso Parmigiano Reggiano 24 meses y perejil fresco picado fino.",
+    ingredients: ["Papas Agria Seleccionadas", "Aceite de Trufa Blanca", "Parmigiano Reggiano 24 Meses", "Sal Marina en Escamas", "Perejil Crespo"]
   },
   {
     id: 8,
-    name: "Smoked Cheese Monster",
-    category: "Especiales",
-    specialty: "Nivel Élite ★★★★★",
-    specialtyLevel: "elite",
-    price: 14.50,
-    rating: 4.96,
-    reviews: 1080,
-    calories: "980 kcal",
-    meatGrams: "220g Angus + Pulled Pork",
-    prepTime: "13-15 min",
-    image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=900&auto=format&fit=crop&q=80",
-    description: "Una erupción de sabor lácteo: disco de queso scamorza ahumado rebozado y frito que se funde sobre carne Angus jugosa, pulled pork desmechado a cocción lenta y cebolla morada encurtida.",
-    ingredients: ["Carne Angus 220g", "Disco de Queso Scamorza Frito", "Pulled Pork BBQ Suave", "Cebolla Morada Encurtida al Limón", "Mayonesa Ahumada de la Casa"]
+    name: "Pepperoni Passion Pizza",
+    category: "Pizza",
+    tag: "POPULAR",
+    price: 9.90,
+    rating: 4.93,
+    reviews: 820,
+    calories: "880 kcal",
+    meatGrams: "Masa Artesanal",
+    prepTime: "12-15 min",
+    image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=900&auto=format&fit=crop&q=80",
+    description: "Doble capa de pepperoni ahumado crujiente con borde de queso hilado, salsa de tomate dulce San Marzano y un toque de miel picante Hot Honey.",
+    ingredients: ["Pepperoni Premium Curado", "Masa Madre Estilo Napolitano", "Mozzarella Hilada", "Hot Honey con Habanero", "Orégano Seco"]
   },
   {
     id: 9,
-    name: "Veggie Avocado Gourmet",
-    category: "Gourmet",
-    specialty: "Nivel Verde Premium ★★★★",
-    specialtyLevel: "verde",
-    price: 10.90,
-    rating: 4.85,
-    reviews: 510,
-    calories: "590 kcal",
-    meatGrams: "170g Plant-based",
-    prepTime: "10-12 min",
-    image: "https://images.unsplash.com/photo-1520072959219-c595dc870360?w=900&auto=format&fit=crop&q=80",
-    description: "Opción 100% plant-based sin compromisos de sabor: medallón artesanal de quinoa roja, lentejas beluga y hongos shiitake, abanico de aguacate hass cremoso, brotes tiernos y mayonesa vegana de lima.",
-    ingredients: ["Medallón Quinoa & Shiitake 170g", "Abanico Aguacate Hass Fresco", "Brotes Tiernos de Espinaca & Rúcula", "Tomate Cherry Confitado", "Mayonesa Vegana de Lima y Cilantro"]
+    name: "Tasty Iced Cola & Shakes",
+    category: "Drinks",
+    specialty: "Refresco Frío",
+    specialtyLevel: "clasico",
+    price: 2.50,
+    rating: 4.88,
+    reviews: 430,
+    calories: "180 kcal",
+    meatGrams: "Bebida Helada",
+    prepTime: "2 min",
+    image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=900&auto=format&fit=crop&q=80",
+    description: "Refrescos artesanales servidos al punto de congelación en vaso térmico con hielo picado, rodaja de lima natural y sorbete ecológico.",
+    ingredients: ["Bebida Gasificada Seleccionada", "Hielo Cristalino Purificado", "Rodaja de Lima Fresca"]
   },
   {
     id: 10,
-    name: "Volcano Jalapeño Picante",
-    category: "Especiales",
-    specialty: "Nivel Fuego Bravo ★★★★",
-    specialtyLevel: "fuego",
-    price: 12.50,
-    rating: 4.89,
-    reviews: 730,
-    calories: "820 kcal",
-    meatGrams: "200g Angus Especiado",
-    prepTime: "11-13 min",
-    image: "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=900&auto=format&fit=crop&q=80",
-    description: "Intensidad picante equilibrada: carne Angus sazonada con pimientas tostadas, queso pepper jack fundente, rodajas de jalapeños encurtidos en tequila, nachos crocantes y suave crema alioli de chipotle.",
-    ingredients: ["Carne Angus Pimienta Negra 200g", "Queso Pepper Jack Fundido", "Jalapeños Encurtidos con Tequila", "Tortilla Chips Crocantes", "Alioli Suave de Chile Chipotle"]
+    name: "Chocolate Lava Sundae",
+    category: "Desserts",
+    specialty: "Postre Tentación ★★★★",
+    specialtyLevel: "gourmet",
+    price: 4.50,
+    rating: 4.97,
+    reviews: 910,
+    calories: "520 kcal",
+    meatGrams: "Postre Dulce",
+    prepTime: "5 min",
+    image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=900&auto=format&fit=crop&q=80",
+    description: "Copa de helado artesanal de vainilla Bourbon de Madagascar con corazón de brownie tibio de chocolate Belga 70% y salsa de caramelo salado.",
+    ingredients: ["Helado Vainilla Bourbon", "Brownie de Chocolate Belga 70%", "Salsa Caramelo Salado", "Nueces Pecanas Tostadas"]
   }
 ];
 ---
@@ -175,39 +231,42 @@ const burgers = [
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
+  
+  <!-- Google Fonts: Bebas Neue, Plus Jakarta Sans, Caveat (Script) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
   <style>
     :root {
-      --bg: #FBF9F5;
-      --surface: #FFFFFF;
-      --surface-subtle: #F6F2EC;
-      --border: #EFE7DE;
-      --border-hover: #DBC8B5;
+      /* Dark Aesthetic & Amber/Orange Palette (TastyBites Style) */
+      --bg-dark: #0B0C10;
+      --bg-dark-card: #14161E;
+      --bg-dark-card-hover: #1A1D27;
+      --bg-dark-surface: #1B1E28;
       
-      --text: #1C1917;
-      --text-muted: #78716C;
-      --text-light: #A8A29E;
+      --primary-amber: #FF9F1C;
+      --primary-orange: #FFA200;
+      --primary-hover: #E08502;
+      --primary-glow: rgba(255, 159, 28, 0.35);
       
-      --primary: #D97706;
-      --primary-dark: #B45309;
-      --primary-light: #FEF3C7;
+      --accent-red: #E63946;
+      --text-white: #FFFFFF;
+      --text-cream: #F3EED9;
+      --text-muted: #9CA3AF;
+      --text-subtle: #6B7280;
       
-      --accent-crimson: #DC2626;
-      --accent-crimson-bg: #FEE2E2;
-      
-      --accent-emerald: #059669;
-      --accent-emerald-bg: #D1FAE5;
+      --border-dark: #232733;
+      --border-amber: rgba(255, 159, 28, 0.4);
       
       --radius-sm: 8px;
       --radius-md: 14px;
       --radius-lg: 20px;
       --radius-full: 9999px;
       
-      --shadow-sm: 0 2px 8px rgba(120, 53, 15, 0.04);
-      --shadow-md: 0 10px 25px rgba(120, 53, 15, 0.07);
-      --shadow-lg: 0 20px 45px rgba(120, 53, 15, 0.1);
+      --font-display: 'Bebas Neue', 'Plus Jakarta Sans', sans-serif;
+      --font-script: 'Caveat', cursive;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
     }
 
     * {
@@ -216,945 +275,1679 @@ const burgers = [
       padding: 0;
     }
 
-    body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
+    html {
+      scroll-behavior: smooth;
     }
 
-    /* Top Announcement Bar */
-    .announcement {
-      background: #1C1917;
-      color: #FBBF24;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-align: center;
-      padding: 0.55rem 1rem;
-      letter-spacing: 0.05em;
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      line-height: 1.5;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 85% 15%, rgba(255, 159, 28, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 10% 40%, rgba(230, 57, 70, 0.05) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+
+    /* Top Quick Alert Bar */
+    .top-announcement {
+      background: #000000;
+      border-bottom: 1px solid #1E212B;
+      font-size: 0.78rem;
+      padding: 0.45rem 1rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 0.75rem;
+      gap: 1.25rem;
+      color: #D1D5DB;
     }
-    .announcement a {
+    .top-announcement strong {
+      color: var(--primary-amber);
+    }
+    .top-announcement a {
       color: #FFFFFF;
       text-decoration: underline;
-      margin-left: 0.5rem;
+      margin-left: 0.25rem;
+      font-weight: 700;
     }
 
-    /* Header & Navigation */
+    /* Navigation Bar */
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(251, 249, 245, 0.92);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-      transition: all 0.3s;
+      z-index: 80;
+      background: rgba(11, 12, 16, 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-dark);
     }
-    .header-container {
+
+    .nav-container {
       max-width: 1240px;
       margin: 0 auto;
-      padding: 1rem 1.5rem;
+      padding: 0.85rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .logo-container {
+
+    /* Brand Logo */
+    .brand-logo {
       display: flex;
       align-items: center;
       gap: 0.75rem;
       text-decoration: none;
-      color: var(--text);
     }
-    .logo-icon {
+    .brand-icon-box {
       width: 44px;
       height: 44px;
-      background: linear-gradient(135deg, #F59E0B, #DC2626);
+      background: linear-gradient(135deg, #FF9F1C, #E65100);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.5rem;
-      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+      box-shadow: 0 4px 15px rgba(255, 159, 28, 0.35);
     }
-    .logo-text h1 {
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      color: #1C1917;
-    }
-    .logo-text span {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      font-weight: 800;
-      color: var(--primary);
-      letter-spacing: 0.12em;
-    }
-    
-    .nav-links {
+    .brand-text {
       display: flex;
-      align-items: center;
-      gap: 1.75rem;
-      list-style: none;
+      flex-direction: column;
     }
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.92rem;
-      transition: color 0.2s;
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      letter-spacing: 0.06em;
+      line-height: 0.9;
+      color: #FFFFFF;
+      text-transform: uppercase;
     }
-    .nav-links a:hover {
-      color: var(--primary);
+    .brand-subtitle {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      color: var(--primary-amber);
+      text-transform: uppercase;
+      margin-top: 2px;
     }
 
-    .header-actions {
+    /* Nav Links */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-item {
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #D1D5DB;
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.2s;
+    }
+    .nav-item:hover {
+      color: var(--primary-amber);
+    }
+    .nav-item.active {
+      color: var(--primary-amber);
+    }
+    .nav-item.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--primary-amber);
+      border-radius: 2px;
+    }
+
+    /* Nav Actions */
+    .nav-actions {
       display: flex;
       align-items: center;
       gap: 0.85rem;
     }
-    .btn {
+
+    .btn-pill-amber {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.65rem 1.25rem;
-      border-radius: var(--radius-sm);
-      font-weight: 700;
+      gap: 0.6rem;
+      background: var(--primary-amber);
+      color: #0B0C10;
+      font-family: var(--font-body);
+      font-weight: 800;
       font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.65rem 1.4rem;
+      border-radius: var(--radius-full);
       text-decoration: none;
+      border: none;
       cursor: pointer;
-      transition: all 0.2s ease;
-      border: 1px solid transparent;
+      box-shadow: 0 4px 14px rgba(255, 159, 28, 0.35);
+      transition: all 0.25s ease;
     }
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
-    }
-    .btn-primary:hover {
-      background: var(--primary-dark);
+    .btn-pill-amber:hover {
+      background: #FFAF38;
       transform: translateY(-2px);
-      box-shadow: 0 8px 18px rgba(217, 119, 6, 0.35);
+      box-shadow: 0 6px 20px rgba(255, 159, 28, 0.45);
     }
-    .btn-outline {
-      background: var(--surface);
-      border-color: var(--border);
-      color: var(--text);
+
+    .btn-nav-outline {
+      background: transparent;
+      color: #E5E7EB;
+      border: 1px solid var(--border-dark);
+      padding: 0.55rem 1.1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
     }
-    .btn-outline:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-      background: var(--surface-subtle);
-    }
-    .btn-dark {
-      background: #1C1917;
-      color: white;
-    }
-    .btn-dark:hover {
-      background: #292524;
-      transform: translateY(-2px);
+    .btn-nav-outline:hover {
+      border-color: var(--primary-amber);
+      color: var(--primary-amber);
+      background: rgba(255, 159, 28, 0.05);
     }
 
     /* Hero Section */
-    .hero {
+    .hero-section {
       position: relative;
-      padding: 4.5rem 1.5rem 4rem;
       max-width: 1240px;
       margin: 0 auto;
+      padding: 4rem 1.5rem 3.5rem;
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
       align-items: center;
-      gap: 3.5rem;
+      gap: 3rem;
+      min-height: 580px;
     }
-    .hero-badge {
+
+    .hero-left {
+      position: relative;
+      z-index: 2;
+    }
+
+    .script-sub {
+      font-family: var(--font-script);
+      font-size: 2.2rem;
+      color: #FFFFFF;
+      font-weight: 600;
+      margin-bottom: -0.35rem;
+      display: block;
+      letter-spacing: 0.02em;
+      transform: rotate(-2deg);
+    }
+
+    .hero-main-title {
+      font-family: var(--font-display);
+      font-size: 5.4rem;
+      line-height: 0.88;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .hero-main-title .word-white {
+      color: #FFFFFF;
+      display: block;
+      font-family: var(--font-script);
+      font-size: 4rem;
+      text-transform: none;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+      letter-spacing: normal;
+    }
+    .hero-main-title .word-amber {
+      color: var(--primary-amber);
+      display: block;
+      font-size: 6.2rem;
+      letter-spacing: 0.02em;
+      text-shadow: 0 4px 25px rgba(255, 159, 28, 0.35);
+    }
+
+    .pill-features {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      background: var(--primary-light);
-      border: 1px solid #FDE68A;
-      color: var(--primary-dark);
-      padding: 0.45rem 1rem;
+      gap: 0.75rem;
+      padding: 0.45rem 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.35);
       border-radius: var(--radius-full);
       font-size: 0.82rem;
       font-weight: 800;
-      letter-spacing: 0.04em;
-      margin-bottom: 1.5rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      margin-bottom: 1.4rem;
+      background: rgba(255, 255, 255, 0.03);
     }
-    .hero-title {
-      font-size: 3.4rem;
-      font-weight: 800;
-      line-height: 1.12;
-      letter-spacing: -0.03em;
-      color: #1C1917;
-      margin-bottom: 1.25rem;
-    }
-    .hero-title .highlight {
-      background: linear-gradient(135deg, #D97706, #DC2626);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero-desc {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 2.25rem;
-      max-width: 580px;
-    }
-    .hero-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 3rem;
-    }
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-    }
-    .stat-item h4 {
-      font-size: 1.75rem;
-      font-weight: 800;
-      color: var(--text);
-    }
-    .stat-item p {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      font-weight: 600;
+    .pill-features span.dot {
+      color: var(--primary-amber);
+      font-size: 0.7rem;
     }
 
-    /* Hero Showcase Image */
-    .hero-showcase {
-      position: relative;
+    .hero-desc {
+      color: #D1D5DB;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      max-width: 520px;
+      margin-bottom: 2.2rem;
     }
-    .hero-img-wrap {
-      position: relative;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 25px 60px rgba(120, 53, 15, 0.15);
-      border: 6px solid #FFFFFF;
-      aspect-ratio: 4 / 3.8;
-      background: #EAE5DC;
+
+    .hero-ctas-row {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
     }
-    .hero-img-wrap img {
+
+    .btn-hero-order {
+      background: var(--primary-amber);
+      color: #0B0C10;
+      font-weight: 800;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      box-shadow: 0 5px 22px rgba(255, 159, 28, 0.45);
+      transition: all 0.25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .btn-hero-order:hover {
+      background: #FFAF38;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(255, 159, 28, 0.6);
+    }
+
+    .btn-watch-video {
+      background: transparent;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+      border: none;
+      padding: 0.5rem 0.5rem;
+      transition: opacity 0.2s;
+    }
+    .btn-watch-video:hover {
+      opacity: 0.85;
+      color: var(--primary-amber);
+    }
+    .play-icon-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 2px solid #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      padding-left: 3px;
+      transition: all 0.25s;
+    }
+    .btn-watch-video:hover .play-icon-circle {
+      border-color: var(--primary-amber);
+      background: rgba(255, 159, 28, 0.15);
+      color: var(--primary-amber);
+    }
+
+    /* Stamp 100% Fresh & Premium */
+    .fresh-stamp-badge {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 105px;
+      height: 105px;
+      border: 2px dashed rgba(255, 159, 28, 0.85);
+      border-radius: 50%;
+      text-align: center;
+      padding: 0.5rem;
+      background: rgba(11, 12, 16, 0.75);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      transform: rotate(-10deg);
+    }
+    .stamp-stars {
+      color: var(--primary-amber);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+    }
+    .stamp-percent {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      color: #FFFFFF;
+      line-height: 1;
+    }
+    .stamp-label {
+      font-size: 0.58rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--primary-amber);
+      line-height: 1.1;
+    }
+
+    /* Hero Right - Composite Delicious Burger */
+    .hero-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-showcase-box {
+      position: relative;
       width: 100%;
-      height: 100%;
+      max-width: 520px;
+    }
+    .hero-burger-img {
+      width: 100%;
+      height: auto;
+      border-radius: 24px;
       object-fit: cover;
-      transition: transform 0.6s ease;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+      border: 1px solid var(--border-dark);
+      transition: transform 0.5s ease;
     }
-    .hero-img-wrap:hover img {
-      transform: scale(1.04);
+    .hero-showcase-box:hover .hero-burger-img {
+      transform: scale(1.02);
     }
-    .floating-card {
+
+    /* Stamp positioned on image */
+    .stamp-position {
       position: absolute;
       bottom: -15px;
       left: -20px;
-      background: rgba(255, 255, 255, 0.95);
+      z-index: 5;
+    }
+
+    /* Floating Pill Badge on Hero */
+    .hero-floating-pill {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(11, 12, 16, 0.85);
       backdrop-filter: blur(10px);
-      border: 1px solid var(--border);
-      padding: 1rem 1.25rem;
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-lg);
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      max-width: 260px;
-    }
-    .floating-badge {
-      width: 44px;
-      height: 44px;
-      background: #FEF3C7;
-      color: #D97706;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-    }
-
-    /* Feature Pillars */
-    .pillars-section {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 3rem 1.5rem;
-    }
-    .pillars-container {
-      max-width: 1240px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-    }
-    .pillar-card {
-      display: flex;
-      gap: 1.15rem;
-      align-items: flex-start;
-    }
-    .pillar-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--surface-subtle);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      flex-shrink: 0;
-    }
-    .pillar-card h3 {
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 0.25rem;
-    }
-    .pillar-card p {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* Catalog Section */
-    .catalog-section {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 5rem 1.5rem;
-    }
-    .section-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 3rem;
-    }
-    .section-tag {
-      font-size: 0.78rem;
-      font-weight: 800;
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.85rem;
-      color: #1C1917;
-    }
-    .section-desc {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-    }
-
-    /* Filter Pills */
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.65rem;
-      margin-bottom: 3rem;
-    }
-    .filter-btn {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 0.6rem 1.25rem;
+      border: 1px solid var(--border-amber);
+      padding: 0.5rem 1rem;
       border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
       font-weight: 700;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .filter-btn:hover {
-      color: var(--text);
-      border-color: var(--border-hover);
-    }
-    .filter-btn.active {
-      background: #1C1917;
-      color: #FFFFFF;
-      border-color: #1C1917;
-      box-shadow: 0 4px 12px rgba(28, 25, 23, 0.2);
     }
 
-    /* Product Grid */
-    .burger-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 2rem;
+    /* Category Floating Bar (White Card Container) */
+    .category-strip-section {
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 10;
     }
-    .burger-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
+    .category-strip-card {
+      background: #FFFFFF;
+      border-radius: 24px;
+      padding: 1.25rem 2rem;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1rem;
+      align-items: center;
+    }
+    .cat-item-btn {
+      background: transparent;
+      border: none;
       display: flex;
       flex-direction: column;
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow-sm);
+      align-items: center;
+      text-align: center;
+      padding: 0.65rem 0.5rem;
+      border-radius: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      color: #1F2937;
+    }
+    .cat-item-btn:hover {
+      background: #F9FAFB;
+      transform: translateY(-3px);
+    }
+    .cat-item-btn.active {
+      background: #FFF7ED;
+      box-shadow: inset 0 0 0 2px var(--primary-amber);
+    }
+    .cat-icon-wrap {
+      font-size: 2.2rem;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+      transition: transform 0.2s;
+    }
+    .cat-item-btn:hover .cat-icon-wrap {
+      transform: scale(1.15);
+    }
+    .cat-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      letter-spacing: 0.05em;
+      color: #111827;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .cat-subtitle {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: #6B7280;
+      line-height: 1.1;
+    }
+
+    /* Popular Picks / Bestsellers Section */
+    .bestsellers-section {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 5rem;
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      margin-bottom: 3rem;
       position: relative;
     }
-    .burger-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--border-hover);
+    .popular-picks-script {
+      font-family: var(--font-script);
+      font-size: 2rem;
+      color: var(--primary-amber);
+      display: block;
+      margin-bottom: -0.25rem;
     }
-    
-    .card-thumb-wrap {
+    .bestsellers-heading-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .bestsellers-heading-row::before,
+    .bestsellers-heading-row::after {
+      content: "";
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary-amber));
+      flex: 1;
+      max-width: 160px;
+    }
+    .bestsellers-heading-row::after {
+      background: linear-gradient(90deg, var(--primary-amber), transparent);
+    }
+    .bestsellers-heading {
+      font-family: var(--font-display);
+      font-size: 3.2rem;
+      letter-spacing: 0.05em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    /* Bestseller 4-Card Grid */
+    .bestsellers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .bestseller-card {
+      background: var(--bg-dark-card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .bestseller-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-amber);
+      background: var(--bg-dark-card-hover);
+      box-shadow: 0 16px 40px rgba(255, 159, 28, 0.15);
+    }
+
+    /* Best seller golden circular badge */
+    .badge-bestseller {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: #FF9F1C;
+      color: #0B0C10;
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      padding: 0.3rem 0.65rem;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      z-index: 4;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-photo-wrap {
       position: relative;
       width: 100%;
-      height: 230px;
+      height: 200px;
+      border-radius: 14px;
       overflow: hidden;
-      background: #F3EDE4;
+      margin-bottom: 1rem;
+      background: #0f1118;
     }
-    .card-thumb-wrap img {
+    .card-photo-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
-    .burger-card:hover .card-thumb-wrap img {
+    .bestseller-card:hover .card-photo-wrap img {
       transform: scale(1.08);
     }
 
-    /* Specialty Badges */
-    .badge-specialty {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      padding: 0.35rem 0.85rem;
-      border-radius: var(--radius-full);
-      font-size: 0.72rem;
+    .bestseller-title {
+      font-size: 1.15rem;
       font-weight: 800;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      margin-bottom: 0.3rem;
+      line-height: 1.2;
     }
-    .specialty-legendario {
-      background: #FEF3C7;
-      color: #92400E;
-      border: 1px solid #F59E0B;
-    }
-    .specialty-elite {
-      background: #FEE2E2;
-      color: #991B1B;
-      border: 1px solid #F87171;
-    }
-    .specialty-superior {
-      background: #FFEDD5;
-      color: #9A3412;
-      border: 1px solid #FB923C;
-    }
-    .specialty-clasico {
-      background: #E0E7FF;
-      color: #3730A3;
-      border: 1px solid #818CF8;
-    }
-    .specialty-gourmet {
-      background: #F3E8FF;
-      color: #6B21A8;
-      border: 1px solid #C084FC;
-    }
-    .specialty-dorado {
-      background: #FEF9C3;
-      color: #854D0E;
-      border: 1px solid #EAB308;
-    }
-    .specialty-verde {
-      background: #DCFCE7;
-      color: #166534;
-      border: 1px solid #4ADE80;
-    }
-    .specialty-fuego {
-      background: #FFE4E6;
-      color: #9F1239;
-      border: 1px solid #FB7185;
+    .bestseller-short-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
     }
 
-    .rating-pill {
+    .bestseller-bottom-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 0.75rem;
+      border-top: 1px solid #1E222D;
+    }
+    .bestseller-price {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      letter-spacing: 0.03em;
+      color: var(--primary-amber);
+      line-height: 1;
+    }
+
+    /* Round Orange "+" Button */
+    .btn-round-plus {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--primary-amber);
+      color: #0B0C10;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(255, 159, 28, 0.4);
+      transition: all 0.2s ease;
+    }
+    .btn-round-plus:hover {
+      background: #FFAF38;
+      transform: scale(1.12);
+      box-shadow: 0 6px 18px rgba(255, 159, 28, 0.6);
+    }
+
+    /* Promo Delivery Banner (Vibrant Orange Card) */
+    .promo-banner-section {
+      max-width: 1240px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+    }
+    .promo-banner-card {
+      background: linear-gradient(105deg, #FF9F1C 0%, #F57C00 55%, #E65100 100%);
+      border-radius: 28px;
+      padding: 2.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 0.9fr 1fr;
+      align-items: center;
+      gap: 2rem;
+      color: #0B0C10;
+      box-shadow: 0 20px 50px rgba(255, 159, 28, 0.35);
+      position: relative;
+      overflow: hidden;
+      border: 2px dashed rgba(255, 255, 255, 0.35);
+    }
+    .promo-banner-card::before {
+      content: "";
       position: absolute;
-      top: 14px;
-      right: 14px;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 0.3rem 0.65rem;
+      top: -60px;
+      left: -60px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .promo-left {
+      position: relative;
+      z-index: 2;
+    }
+    .promo-hungry-tag {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: 0.08em;
+      color: #0B0C10;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 0.25rem;
+    }
+    .promo-deliver-script {
+      font-family: var(--font-script);
+      font-size: 3.4rem;
+      line-height: 0.95;
+      color: #0B0C10;
+      display: block;
+      font-weight: 700;
+    }
+
+    .promo-center-art {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .delivery-scooter-badge {
+      background: #FFFFFF;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+      font-size: 3.5rem;
+      border: 4px solid #FFE0B2;
+      animation: floatScooter 3s ease-in-out infinite;
+    }
+    @keyframes floatScooter {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .promo-right {
+      text-align: right;
+      position: relative;
+      z-index: 2;
+    }
+    .promo-get-tag {
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #261600;
+      margin-bottom: -0.2rem;
+    }
+    .promo-percent {
+      font-family: var(--font-display);
+      font-size: 4.8rem;
+      line-height: 0.9;
+      color: #0B0C10;
+    }
+    .promo-percent span {
+      font-size: 2.2rem;
+      vertical-align: top;
+      margin-left: 2px;
+    }
+    .promo-subtext {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #3E2400;
+      margin-bottom: 0.75rem;
+    }
+    .coupon-code-pill {
+      display: inline-block;
+      background: #FFFFFF;
+      color: #0B0C10;
+      font-weight: 900;
+      font-size: 0.95rem;
+      letter-spacing: 0.15em;
+      padding: 0.45rem 1.4rem;
+      border-radius: var(--radius-full);
+      border: 2px dashed #D97706;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Full Catalog Section */
+    .catalog-section {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 5rem;
+    }
+    .catalog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .catalog-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary-amber);
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+    .catalog-main-title {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      line-height: 1;
+    }
+
+    /* Filter Bar */
+    .filter-pills-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: #14161E;
+      border: 1px solid var(--border-dark);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.5rem 1.1rem;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover {
+      color: #FFFFFF;
+      border-color: var(--primary-amber);
+    }
+    .filter-btn.active {
+      background: var(--primary-amber);
+      color: #0B0C10;
+      border-color: var(--primary-amber);
+      box-shadow: 0 4px 14px rgba(255, 159, 28, 0.35);
+    }
+
+    /* Catalog Cards Grid */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .menu-card {
+      background: var(--bg-dark-card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+    .menu-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-amber);
+      box-shadow: 0 20px 45px rgba(255, 159, 28, 0.12);
+    }
+
+    .menu-thumb-wrap {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      background: #0f1118;
+    }
+    .menu-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .menu-card:hover .menu-thumb-wrap img {
+      transform: scale(1.08);
+    }
+
+    .specialty-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: rgba(11, 12, 16, 0.85);
+      border: 1px solid var(--primary-amber);
+      color: var(--primary-amber);
+      backdrop-filter: blur(8px);
+    }
+
+    .card-rating-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(11, 12, 16, 0.85);
+      padding: 0.25rem 0.6rem;
       border-radius: var(--radius-full);
       font-size: 0.75rem;
       font-weight: 800;
-      color: #1C1917;
+      color: #FFFFFF;
       display: flex;
       align-items: center;
-      gap: 0.3rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      gap: 0.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    .card-body {
-      padding: 1.5rem;
+    .menu-card-body {
+      padding: 1.4rem;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
-    .card-category {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--primary);
+    .menu-category-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      color: var(--primary-amber);
       margin-bottom: 0.35rem;
     }
-    .card-title {
+    .menu-card-title {
       font-size: 1.3rem;
       font-weight: 800;
-      color: #1C1917;
-      margin-bottom: 0.6rem;
-      line-height: 1.25;
+      color: #FFFFFF;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
     }
-    .card-desc {
-      font-size: 0.88rem;
+    .menu-card-desc {
+      font-size: 0.86rem;
       color: var(--text-muted);
-      line-height: 1.55;
+      line-height: 1.5;
       margin-bottom: 1.25rem;
       display: -webkit-box;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
       flex-grow: 1;
     }
 
-    .card-meta-chips {
+    .menu-chips-row {
       display: flex;
-      gap: 0.6rem;
+      gap: 0.5rem;
       margin-bottom: 1.25rem;
       flex-wrap: wrap;
     }
-    .meta-chip {
-      background: var(--surface-subtle);
+    .chip-item {
+      background: #1C202C;
       font-size: 0.72rem;
       font-weight: 700;
-      color: var(--text-muted);
+      color: #D1D5DB;
       padding: 0.25rem 0.6rem;
       border-radius: 6px;
+      border: 1px solid #282D3E;
     }
 
-    .card-footer {
+    .menu-card-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding-top: 1rem;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid #1E222D;
       gap: 0.75rem;
     }
-    .price-tag {
-      display: flex;
-      flex-direction: column;
-    }
-    .price-label {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      color: var(--text-light);
-      font-weight: 700;
-    }
-    .price-amount {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #1C1917;
-      letter-spacing: -0.02em;
+    .menu-price {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      color: var(--primary-amber);
+      line-height: 1;
     }
 
-    .btn-detail {
-      background: var(--surface-subtle);
-      border: 1px solid var(--border);
-      color: #1C1917;
-      padding: 0.55rem 1rem;
-      border-radius: var(--radius-sm);
-      font-size: 0.82rem;
+    .card-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-card-detail {
+      background: transparent;
+      border: 1px solid var(--border-dark);
+      color: #E5E7EB;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
       font-weight: 700;
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
       transition: all 0.2s;
     }
-    .btn-detail:hover {
-      background: #1C1917;
-      color: white;
-      border-color: #1C1917;
+    .btn-card-detail:hover {
+      border-color: var(--primary-amber);
+      color: var(--primary-amber);
+      background: rgba(255, 159, 28, 0.08);
     }
 
-    /* Interactive Modal for Details */
-    .modal-backdrop {
+    /* PWA Mobile Ecosystem Banner */
+    .pwa-layer-section {
+      max-width: 1240px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+    }
+    .pwa-layer-card {
+      background: linear-gradient(135deg, #12141C 0%, #1A1D28 100%);
+      border: 1px solid var(--border-amber);
+      border-radius: 28px;
+      padding: 3.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 3rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+    .pwa-layer-card::after {
+      content: "";
+      position: absolute;
+      bottom: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 159, 28, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .pwa-sub-tag {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      letter-spacing: 0.1em;
+      color: var(--primary-amber);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .pwa-heading {
+      font-size: 2.4rem;
+      font-weight: 900;
+      line-height: 1.15;
+      color: #FFFFFF;
+      margin-bottom: 1rem;
+    }
+    .pwa-text {
+      color: #9CA3AF;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    .pwa-buttons-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    footer {
+      background: #07080A;
+      border-top: 1px solid #191B24;
+      padding: 4.5rem 1.5rem 2.5rem;
+      color: #9CA3AF;
+    }
+    .footer-content-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-brand-box p {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      margin: 1.25rem 0 1.5rem;
+      max-width: 320px;
+    }
+    .footer-social-row {
+      display: flex;
+      gap: 0.75rem;
+    }
+    .social-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #14161E;
+      border: 1px solid #232733;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .social-btn:hover {
+      background: var(--primary-amber);
+      color: #0B0C10;
+      border-color: var(--primary-amber);
+    }
+
+    .footer-col-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .footer-links-list {
+      list-style: none;
+    }
+    .footer-links-list li {
+      margin-bottom: 0.7rem;
+    }
+    .footer-links-list a {
+      color: #9CA3AF;
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .footer-links-list a:hover {
+      color: var(--primary-amber);
+    }
+
+    .app-badges-col p {
+      font-size: 0.82rem;
+      margin-bottom: 1rem;
+      color: #9CA3AF;
+    }
+    .app-store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      background: #14161E;
+      border: 1px solid #282D3E;
+      border-radius: 12px;
+      padding: 0.6rem 1.15rem;
+      text-decoration: none;
+      color: #FFFFFF;
+      margin-bottom: 0.75rem;
+      transition: all 0.2s;
+      width: 100%;
+      max-width: 200px;
+    }
+    .app-store-badge:hover {
+      border-color: var(--primary-amber);
+      transform: translateY(-2px);
+    }
+    .badge-icon {
+      font-size: 1.6rem;
+    }
+    .badge-texts {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    .badge-sub {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      color: #9CA3AF;
+      letter-spacing: 0.06em;
+    }
+    .badge-main {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+
+    .footer-bottom-bar {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid #14161E;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: #6B7280;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Interactive Shopping Cart Drawer */
+    .cart-drawer-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(15, 23, 42, 0.6);
+      background: rgba(0, 0, 0, 0.75);
       backdrop-filter: blur(6px);
       z-index: 100;
+      display: none;
+      justify-content: flex-end;
+    }
+    .cart-drawer-backdrop.open {
+      display: flex;
+    }
+    .cart-drawer {
+      background: #12141C;
+      width: 100%;
+      max-width: 440px;
+      height: 100%;
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid var(--border-dark);
+      animation: slideInRight 0.3s ease-out;
+    }
+    @keyframes slideInRight {
+      from { transform: translateX(100%); }
+      to { transform: translateX(0); }
+    }
+    .cart-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--border-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .cart-header h3 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      letter-spacing: 0.05em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+    .cart-close-btn {
+      background: transparent;
+      border: none;
+      color: #FFFFFF;
+      font-size: 1.8rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .cart-items-wrap {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .cart-empty-text {
+      text-align: center;
+      color: #6B7280;
+      margin-top: 3rem;
+      font-size: 0.95rem;
+    }
+    .cart-item-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: #181B26;
+      border: 1px solid #232838;
+      border-radius: 12px;
+      padding: 0.75rem;
+    }
+    .cart-item-row img {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .cart-item-info {
+      flex: 1;
+    }
+    .cart-item-title {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+    .cart-item-price {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--primary-amber);
+    }
+    .cart-item-remove {
+      background: transparent;
+      border: none;
+      color: #EF4444;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+    .cart-footer {
+      padding: 1.5rem;
+      border-top: 1px solid var(--border-dark);
+      background: #0E1017;
+    }
+    .cart-subtotal-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    /* Modal for Detailed Specs */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 110;
       display: none;
       align-items: center;
       justify-content: center;
       padding: 1.5rem;
     }
-    .modal-backdrop.open {
+    .modal-overlay.open {
       display: flex;
     }
-    .modal-card {
-      background: var(--surface);
-      border-radius: var(--radius-lg);
-      max-width: 680px;
+    .modal-box {
+      background: #14161E;
+      border: 1px solid var(--border-amber);
+      border-radius: 24px;
+      max-width: 650px;
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
       position: relative;
-      border: 1px solid var(--border);
-      animation: modalIn 0.25s ease-out;
+      animation: modalFade 0.25s ease-out;
     }
-    @keyframes modalIn {
-      from { opacity: 0; transform: scale(0.96) translateY(10px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
+    @keyframes modalFade {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
     }
-    .modal-close-btn {
+    .modal-close-icon {
       position: absolute;
       top: 1rem;
       right: 1rem;
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid var(--border);
-      color: #1C1917;
-      font-size: 1.1rem;
+      background: rgba(11, 12, 16, 0.8);
+      border: 1px solid var(--border-dark);
+      color: #FFFFFF;
+      font-size: 1.2rem;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 10;
-      transition: background 0.2s;
     }
-    .modal-close-btn:hover {
-      background: #1C1917;
-      color: white;
-    }
-    .modal-img {
+    .modal-photo {
       width: 100%;
-      height: 280px;
+      height: 270px;
       object-fit: cover;
-      border-top-left-radius: var(--radius-lg);
-      border-top-right-radius: var(--radius-lg);
+      border-top-left-radius: 24px;
+      border-top-right-radius: 24px;
     }
-    .modal-content {
+    .modal-inner-padding {
       padding: 2rem;
     }
 
-    /* PWA Banner */
-    .app-cta-banner {
-      background: linear-gradient(135deg, #1C1917 0%, #292524 100%);
-      color: white;
-      border-radius: var(--radius-lg);
-      max-width: 1240px;
-      margin: 2rem auto 5rem;
-      padding: 3.5rem 3rem;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: center;
-      gap: 3rem;
+    /* Video Player Modal */
+    .video-modal-box {
+      background: #000000;
+      border: 1px solid var(--border-dark);
+      border-radius: 20px;
+      max-width: 750px;
+      width: 100%;
+      padding: 1.5rem;
       position: relative;
-      overflow: hidden;
-    }
-    .app-cta-banner::before {
-      content: "";
-      position: absolute;
-      top: -100px;
-      right: -100px;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(217, 119, 6, 0.25) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-    .app-cta-banner h2 {
-      font-size: 2.3rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-    .app-cta-banner p {
-      color: #A8A29E;
-      font-size: 1.05rem;
-      margin-bottom: 2rem;
-      line-height: 1.6;
     }
 
-    /* Footer */
-    footer {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      padding: 4rem 1.5rem 2.5rem;
-    }
-    .footer-container {
-      max-width: 1240px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.5fr repeat(3, 1fr);
-      gap: 3rem;
-      margin-bottom: 3.5rem;
-    }
-    .footer-col h5 {
-      font-size: 0.95rem;
-      font-weight: 800;
-      color: #1C1917;
-      margin-bottom: 1.2rem;
-    }
-    .footer-col ul {
-      list-style: none;
-    }
-    .footer-col li {
-      margin-bottom: 0.75rem;
-    }
-    .footer-col a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.88rem;
-      transition: color 0.2s;
-    }
-    .footer-col a:hover {
-      color: var(--primary);
-    }
-    .footer-bottom {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--text-light);
-      font-size: 0.82rem;
-      flex-wrap: wrap;
-      gap: 1rem;
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-section {
+        grid-template-columns: 1fr;
+        padding-top: 2rem;
+        gap: 2.5rem;
+      }
+      .hero-right {
+        order: -1;
+      }
+      .category-strip-card {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .bestsellers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .promo-banner-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .promo-right {
+        text-align: center;
+      }
+      .footer-content-wrap {
+        grid-template-columns: 1fr 1fr;
+      }
+      .pwa-layer-card {
+        grid-template-columns: 1fr;
+      }
     }
 
-    @media (max-width: 960px) {
-      .hero { grid-template-columns: 1fr; padding-top: 2rem; }
-      .hero-title { font-size: 2.6rem; }
-      .app-cta-banner { grid-template-columns: 1fr; padding: 2.5rem 2rem; }
-      .footer-container { grid-template-columns: 1fr 1fr; }
-      .nav-links { display: none; }
-    }
     @media (max-width: 640px) {
-      .footer-container { grid-template-columns: 1fr; }
-      .hero-stats { grid-template-columns: 1fr; }
+      .nav-menu { display: none; }
+      .hero-main-title .word-amber { font-size: 4.2rem; }
+      .category-strip-card { grid-template-columns: repeat(2, 1fr); }
+      .bestsellers-grid { grid-template-columns: 1fr; }
+      .footer-content-wrap { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Announcement -->
-  <div class="announcement">
-    <span>✨ GALAXY HAMBURGUESAS &bull; SABOR CÓSMICO & ENTREGA EXPRESS EN 20 MINUTOS GARANTIZADA</span>
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    <span>🔥 <strong>TASTYBITES GOURMET</strong> &bull; ENTREGA EXPRESS EN 20 MINUTOS GARANTIZADA</span>
     <span>•</span>
-    <a href="/app">Abrir PWA Móvil &bull; Pide con 20% OFF</a>
+    <a href="/app">📱 Abrir App Móvil PWA &bull; Código WELCOME20</a>
   </div>
 
-  <!-- Header -->
+  <!-- Header & Navigation -->
   <header>
-    <div class="header-container">
-      <a href="/" class="logo-container">
-        <div class="logo-icon">🍔</div>
-        <div class="logo-text">
-          <h1>Galaxy Hamburguesas</h1>
-          <span>Gourmet & Fast Delivery</span>
+    <div class="nav-container">
+      <a href="/" class="brand-logo">
+        <div class="brand-icon-box">🍔</div>
+        <div class="brand-text">
+          <span class="brand-title">TASTYBITES</span>
+          <span class="brand-subtitle">EAT. ENJOY. REPEAT.</span>
         </div>
       </a>
 
-      <ul class="nav-links">
-        <li><a href="#catalogo">Catálogo Destacado</a></li>
-        <li><a href="#experiencia">Experiencia Galaxy</a></li>
-        <li><a href="/app">📱 App Móvil PWA</a></li>
-        <li><a href="/admin">⚙️ Panel Admin</a></li>
-        <li><a href="/api/health">🩺 API Health</a></li>
-      </ul>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-item active">HOME</a></li>
+          <li><a href="#bestsellers" class="nav-item">MENU</a></li>
+          <li><a href="#offers" class="nav-item">OFFERS</a></li>
+          <li><a href="#about" class="nav-item">ABOUT US</a></li>
+          <li><a href="#contact" class="nav-item">CONTACT</a></li>
+        </ul>
+      </nav>
 
-      <div class="header-actions">
-        <a href="/admin" class="btn btn-outline">
+      <div class="nav-actions">
+        <a href="/app" class="btn-nav-outline" title="Acceso a PWA">
+          <span>📱 PWA</span>
+        </a>
+        <a href="/admin" class="btn-nav-outline" title="Panel de Administración">
           <span>⚙️ Admin</span>
         </a>
-        <a href="/app" class="btn btn-primary">
-          <span>📱 Pedir en la App</span>
-        </a>
+        <button id="orderOnlineBtn" class="btn-pill-amber">
+          <span>ORDER ONLINE 👜</span>
+          <span id="cartCountBadge" style="background:#0B0C10;color:#FF9F1C;border-radius:50%;padding:2px 7px;font-size:0.75rem;margin-left:4px;">0</span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span>👑 Primera Edición Comercial v1.0</span>
-        <span>&bull;</span>
-        <span>Carne 100% Angus</span>
+  <!-- Hero Section (Taste & Appetite Appeal) -->
+  <section class="hero-section" id="hero">
+    <div class="hero-left">
+      <span class="script-sub">Craving Something</span>
+      
+      <h1 class="hero-main-title">
+        <span class="word-white">Delicious</span>
+        <span class="word-amber">BURGERS</span>
+      </h1>
+
+      <div class="pill-features">
+        <span>HOT</span>
+        <span class="dot">•</span>
+        <span>FRESH</span>
+        <span class="dot">•</span>
+        <span>TASTY</span>
       </div>
-      
-      <h2 class="hero-title">
-        Hamburguesas <span class="highlight">legendarias</span> hechas al fuego vivo y entregadas a velocidad Galaxy.
-      </h2>
-      
+
       <p class="hero-desc">
-        Descubre nuestras 10 variantes maestras de autor: desde la emblemática <strong>Rey de las Burgers</strong> hasta la <strong>Burger Doble Especial</strong> con trufa negra y queso fundente en pan brioche horneado a diario.
+        Handcrafted burgers made with premium ingredients for a perfect bite. 100% Angus flameado a la brasa, queso fundente y pan brioche horneado al amanecer.
       </p>
 
-      <div class="hero-ctas">
-        <a href="#catalogo" class="btn btn-primary" style="padding: 0.85rem 1.75rem; font-size: 0.95rem;">
-          <span>🍔 Ver las 10 Hamburguesas</span>
+      <div class="hero-ctas-row">
+        <a href="#bestsellers" class="btn-hero-order">
+          <span>ORDER NOW →</span>
         </a>
-        <a href="/app" class="btn btn-dark" style="padding: 0.85rem 1.75rem; font-size: 0.95rem;">
-          <span>📱 Simular Pedido en PWA</span>
-        </a>
-        <a href="/admin" class="btn btn-outline" style="padding: 0.85rem 1.4rem; font-size: 0.95rem;">
-          <span>⚙️ Panel de Control</span>
-        </a>
+        <button id="watchVideoBtn" class="btn-watch-video">
+          <span class="play-icon-circle">▶</span>
+          <span>WATCH VIDEO</span>
+        </button>
       </div>
 
-      <div class="hero-stats">
-        <div class="stat-item">
-          <h4>20 min</h4>
-          <p>Garantía de entrega express</p>
-        </div>
-        <div class="stat-item">
-          <h4>100% Angus</h4>
-          <p>Carne certificada sin aditivos</p>
-        </div>
-        <div class="stat-item">
-          <h4>4.9 ★</h4>
-          <p>Más de 14,000 fanáticos</p>
-        </div>
+      <!-- Seal 100% Fresh & Premium -->
+      <div class="fresh-stamp-badge">
+        <span class="stamp-stars">★★★</span>
+        <span class="stamp-percent">100%</span>
+        <span class="stamp-label">FRESH & PREMIUM</span>
+        <span class="stamp-stars">★★★</span>
       </div>
     </div>
 
-    <div class="hero-showcase">
-      <div class="hero-img-wrap">
+    <div class="hero-right">
+      <div class="hero-showcase-box">
         <img 
-          src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1000&auto=format&fit=crop&q=85" 
-          alt="Rey de las Burgers - Galaxy Hamburguesas"
+          src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1100&auto=format&fit=crop&q=85" 
+          alt="TastyBites Signature Delicious Burger" 
+          class="hero-burger-img"
         />
-      </div>
-
-      <div class="floating-card">
-        <div class="floating-badge">👑</div>
-        <div>
-          <strong style="font-size: 0.9rem; display: block; color: #1C1917;">Rey de las Burgers</strong>
-          <span style="font-size: 0.75rem; color: #D97706; font-weight: 700;">Nivel Legendario &bull; $14.99</span>
+        
+        <div class="hero-floating-pill">
+          <span style="color:#FF9F1C;">⭐ 4.98</span>
+          <span>Nivel Legendario</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Feature Pillars -->
-  <section class="pillars-section" id="experiencia">
-    <div class="pillars-container">
-      <div class="pillar-card">
-        <div class="pillar-icon">🔥</div>
-        <div>
-          <h3>Carne 100% Angus a la Brasa</h3>
-          <p>Medallones sellados al fuego vivo de roble que atrapan el jugo y potencian un aroma ahumado irresistible.</p>
+  <!-- Category Strip (Floating White Card) -->
+  <section class="category-strip-section" id="categories">
+    <div class="category-strip-card">
+      <button class="cat-item-btn active" data-category="Burgers">
+        <div class="cat-icon-wrap">🍔</div>
+        <div class="cat-title">BURGERS</div>
+        <div class="cat-subtitle">Juicy & Cheesy</div>
+      </button>
+
+      <button class="cat-item-btn" data-category="Fries">
+        <div class="cat-icon-wrap">🍟</div>
+        <div class="cat-title">FRIES</div>
+        <div class="cat-subtitle">Crispy & Golden</div>
+      </button>
+
+      <button class="cat-item-btn" data-category="Pizza">
+        <div class="cat-icon-wrap">🍕</div>
+        <div class="cat-title">PIZZA</div>
+        <div class="cat-subtitle">Hot & Delicious</div>
+      </button>
+
+      <button class="cat-item-btn" data-category="Drinks">
+        <div class="cat-icon-wrap">🥤</div>
+        <div class="cat-title">DRINKS</div>
+        <div class="cat-subtitle">Chill & Refreshing</div>
+      </button>
+
+      <button class="cat-item-btn" data-category="Chicken">
+        <div class="cat-icon-wrap">🍗</div>
+        <div class="cat-title">CHICKEN</div>
+        <div class="cat-subtitle">Crispy & Spicy</div>
+      </button>
+
+      <button class="cat-item-btn" data-category="Desserts">
+        <div class="cat-icon-wrap">🍨</div>
+        <div class="cat-title">DESSERTS</div>
+        <div class="cat-subtitle">Sweet Treats</div>
+      </button>
+    </div>
+  </section>
+
+  <!-- Popular Picks & Bestsellers -->
+  <section class="bestsellers-section" id="bestsellers">
+    <div class="section-title-wrap">
+      <span class="popular-picks-script">— Popular Picks —</span>
+      <div class="bestsellers-heading-row">
+        <h2 class="bestsellers-heading">OUR BESTSELLERS</h2>
+      </div>
+    </div>
+
+    <div class="bestsellers-grid">
+      {bestsellers.map((item) => (
+        <div class="bestseller-card" data-category={item.category}>
+          <span class="badge-bestseller">{item.tag}</span>
+          
+          <div class="card-photo-wrap">
+            <img src={item.image} alt={item.name} loading="lazy" />
+          </div>
+
+          <h3 class="bestseller-title">{item.name}</h3>
+          <p class="bestseller-short-desc">{item.description}</p>
+
+          <div class="bestseller-bottom-row">
+            <span class="bestseller-price">${item.price.toFixed(2)}</span>
+            <button 
+              class="btn-round-plus add-to-cart-btn"
+              data-id={item.id}
+              data-name={item.name}
+              data-price={item.price.toFixed(2)}
+              data-image={item.image}
+              title={`Agregar ${item.name} al pedido`}
+            >
+              +
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Promotional Delivery Offer Banner -->
+  <section class="promo-banner-section" id="offers">
+    <div class="promo-banner-card">
+      <div class="promo-left">
+        <span class="promo-hungry-tag">HUNGRY?</span>
+        <span class="promo-deliver-script">We Deliver To You!</span>
+      </div>
+
+      <div class="promo-center-art">
+        <div class="delivery-scooter-badge">
+          🛵
         </div>
       </div>
-      <div class="pillar-card">
-        <div class="pillar-icon">🍞</div>
-        <div>
-          <h3>Brioche Artesanal Fresco</h3>
-          <p>Horneado tres veces al día con mantequilla clarificada para una textura esponjosa y corteza caramelizada.</p>
-        </div>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-icon">⚡</div>
-        <div>
-          <h3>Entrega Galaxy Térmica</h3>
-          <p>Packaging aislante multicapa que mantiene la temperatura perfecta y el crujiente intacto hasta tu puerta.</p>
-        </div>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-icon">📲</div>
-        <div>
-          <h3>Experiencia Móvil PWA</h3>
-          <p>Pide al instante, acumula puntos VIP y rastrea el avance de tu orden en tiempo real desde cualquier dispositivo.</p>
-        </div>
+
+      <div class="promo-right">
+        <div class="promo-get-tag">GET</div>
+        <div class="promo-percent">20%<span>OFF</span></div>
+        <div class="promo-subtext">ON YOUR FIRST ORDER</div>
+        <div class="coupon-code-pill">WELCOME20</div>
       </div>
     </div>
   </section>
 
-  <!-- Burger Catalog Section -->
-  <section class="catalog-section" id="catalogo">
-    <div class="section-header">
-      <span class="section-tag">Colección Exclusiva</span>
-      <h2 class="section-title">Nuestras 10 Variantes Destacadas</h2>
-      <p class="section-desc">
-        Hamburguesas clásicas puristas y creaciones especiales de especialidad con sellos de maestría gastronómica.
-      </p>
+  <!-- Full Master Menu & Gourmet Catalog -->
+  <section class="catalog-section" id="full-menu">
+    <div class="catalog-header">
+      <div>
+        <span class="catalog-tag">Carta Completa &bull; 10 Creaciones de Autor</span>
+        <h2 class="catalog-main-title">EXPLORA NUESTRO MENÚ COMPLETO</h2>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-pills-row">
+        <button class="filter-btn active" data-filter="all">Todos (10)</button>
+        <button class="filter-btn" data-filter="Burgers">Burgers</button>
+        <button class="filter-btn" data-filter="Chicken">Pollo Crispy</button>
+        <button class="filter-btn" data-filter="Fries">Papas & Sides</button>
+        <button class="filter-btn" data-filter="Pizza">Pizza</button>
+        <button class="filter-btn" data-filter="Desserts">Postres</button>
+      </div>
     </div>
 
-    <!-- Filter Buttons -->
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">Todas las Variantes (10)</button>
-      <button class="filter-btn" data-filter="Especiales">Especiales de la Casa</button>
-      <button class="filter-btn" data-filter="Clásicas">Clásicas Tradicionales</button>
-      <button class="filter-btn" data-filter="Smash">Smash Burgers</button>
-      <button class="filter-btn" data-filter="Pollo">Pollo Crispy</button>
-      <button class="filter-btn" data-filter="Gourmet">Gourmet & Plant-based</button>
-    </div>
-
-    <!-- Burger Cards Grid -->
-    <div class="burger-grid">
-      {burgers.map((burger) => (
-        <div class="burger-card" data-category={burger.category}>
-          <div class="card-thumb-wrap">
-            <img src={burger.image} alt={burger.name} loading="lazy" />
-            <div class={`badge-specialty specialty-${burger.specialtyLevel}`}>
-              {burger.specialty}
+    <div class="menu-grid">
+      {menuItems.map((item) => (
+        <div class="menu-card" data-category={item.category}>
+          <div class="menu-thumb-wrap">
+            <img src={item.image} alt={item.name} loading="lazy" />
+            <div class="specialty-tag">
+              {item.specialty || 'Especialidad'}
             </div>
-            <div class="rating-pill">
-              <span style="color: #F59E0B;">★</span>
-              <span>{burger.rating}</span>
+            <div class="card-rating-badge">
+              <span style="color: #FF9F1C;">★</span>
+              <span>{item.rating}</span>
             </div>
           </div>
 
-          <div class="card-body">
-            <span class="card-category">{burger.category}</span>
-            <h3 class="card-title">{burger.name}</h3>
-            <p class="card-desc">{burger.description}</p>
+          <div class="menu-card-body">
+            <span class="menu-category-label">{item.category}</span>
+            <h3 class="menu-card-title">{item.name}</h3>
+            <p class="menu-card-desc">{item.description}</p>
 
-            <div class="card-meta-chips">
-              <span class="meta-chip">🥩 {burger.meatGrams}</span>
-              <span class="meta-chip">⏱️ {burger.prepTime}</span>
-              <span class="meta-chip">🔥 {burger.calories}</span>
+            <div class="menu-chips-row">
+              <span class="chip-item">🥩 {item.meatGrams}</span>
+              <span class="chip-item">⏱️ {item.prepTime}</span>
+              <span class="chip-item">🔥 {item.calories}</span>
             </div>
 
-            <div class="card-footer">
-              <div class="price-tag">
-                <span class="price-label">Precio Online</span>
-                <span class="price-amount">${burger.price.toFixed(2)}</span>
-              </div>
+            <div class="menu-card-footer">
+              <div class="menu-price">${item.price.toFixed(2)}</div>
 
-              <button 
-                class="btn-detail open-modal-btn" 
-                data-id={burger.id}
-                data-name={burger.name}
-                data-price={burger.price.toFixed(2)}
-                data-specialty={burger.specialty}
-                data-level={burger.specialtyLevel}
-                data-category={burger.category}
-                data-image={burger.image}
-                data-desc={burger.description}
-                data-meat={burger.meatGrams}
-                data-calories={burger.calories}
-                data-prep={burger.prepTime}
-                data-ingredients={JSON.stringify(burger.ingredients)}
-              >
-                <span>🔍 Ver detalles</span>
-              </button>
+              <div class="card-actions-group">
+                <button 
+                  class="btn-card-detail open-spec-modal"
+                  data-name={item.name}
+                  data-price={item.price.toFixed(2)}
+                  data-category={item.category}
+                  data-specialty={item.specialty || ''}
+                  data-image={item.image}
+                  data-desc={item.description}
+                  data-meat={item.meatGrams}
+                  data-prep={item.prepTime}
+                  data-calories={item.calories}
+                  data-ingredients={JSON.stringify(item.ingredients)}
+                >
+                  Detalles
+                </button>
+                <button 
+                  class="btn-round-plus add-to-cart-btn"
+                  data-id={item.id}
+                  data-name={item.name}
+                  data-price={item.price.toFixed(2)}
+                  data-image={item.image}
+                  title={`Agregar ${item.name} al pedido`}
+                >
+                  +
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1162,172 +1955,340 @@ const burgers = [
     </div>
   </section>
 
-  <!-- Interactive Modal for Details -->
-  <div id="detailModal" class="modal-backdrop">
-    <div class="modal-card">
-      <button id="closeModalBtn" class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
-      <img id="modalImg" class="modal-img" src="" alt="Hamburguesa Detalle" />
-      
-      <div class="modal-content">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
-          <div>
-            <span id="modalCategory" style="font-size: 0.75rem; text-transform: uppercase; color: var(--primary); font-weight: 800; letter-spacing: 0.08em;"></span>
-            <h2 id="modalTitle" style="font-size: 1.85rem; font-weight: 800; color: #1C1917; margin-top: 0.2rem;"></h2>
-          </div>
-          <div id="modalSpecialtyBadge" class="badge-specialty" style="position: static;"></div>
-        </div>
-
-        <p id="modalDesc" style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.6; margin-bottom: 1.5rem;"></p>
-
-        <!-- Technical specifications -->
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; background: var(--surface-subtle); padding: 1.15rem; border-radius: var(--radius-md); margin-bottom: 1.5rem; text-align: center; border: 1px solid var(--border);">
-          <div>
-            <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Carne</span>
-            <div id="modalMeat" style="font-size: 0.95rem; font-weight: 800; color: #1C1917; margin-top: 0.2rem;"></div>
-          </div>
-          <div>
-            <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Preparación</span>
-            <div id="modalPrep" style="font-size: 0.95rem; font-weight: 800; color: #1C1917; margin-top: 0.2rem;"></div>
-          </div>
-          <div>
-            <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Calorías</span>
-            <div id="modalCalories" style="font-size: 0.95rem; font-weight: 800; color: #1C1917; margin-top: 0.2rem;"></div>
-          </div>
-        </div>
-
-        <!-- Ingredients List -->
-        <div style="margin-bottom: 2rem;">
-          <h4 style="font-size: 0.92rem; font-weight: 800; color: #1C1917; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">
-            Ingredientes Seleccionados:
-          </h4>
-          <ul id="modalIngredients" style="list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
-          </ul>
-        </div>
-
-        <!-- Footer Actions in Modal -->
-        <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 1.25rem; border-top: 1px solid var(--border); flex-wrap: wrap; gap: 1rem;">
-          <div>
-            <span style="font-size: 0.75rem; color: var(--text-light); text-transform: uppercase; font-weight: 700;">Precio de Venta</span>
-            <div id="modalPrice" style="font-size: 1.85rem; font-weight: 800; color: #1C1917;"></div>
-          </div>
-          <div style="display: flex; gap: 0.75rem;">
-            <a href="/app" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.92rem;">
-              <span>📱 Pedir en PWA Móvil</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PWA Showcase Banner -->
-  <section style="padding: 0 1.5rem;">
-    <div class="app-cta-banner">
+  <!-- PWA & Administration Architecture Highlight -->
+  <section class="pwa-layer-section" id="about">
+    <div class="pwa-layer-card">
       <div>
-        <span style="color: #F59E0B; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.5rem; display: block;">
-          Experiencia Móvil Galaxy Hamburguesas
-        </span>
-        <h2>¿Hambre ahora mismo? Pide desde nuestra App PWA sin descargas pesadas</h2>
-        <p>
-          Simula y procesa tu orden en segundos con nuestra progressive web app: Menú interactivo, combos con descuento, estado de preparación en tiempo real y Club VIP de puntos.
+        <span class="pwa-sub-tag">ARQUITECTURA MASTERGENIUSJOA</span>
+        <h2 class="pwa-heading">E-commerce, PWA Móvil y Panel de Administración Conectados</h2>
+        <p class="pwa-text">
+          Nuestra solución full-stack integra tres capas sincronizadas en un único ecosistema: esta Landing Comercial de alta conversión, una Progressive Web App (PWA) de pedidos directos y un Dashboard Administrativo con control de inventario en tiempo real y soporte MySQL.
         </p>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a href="/app" class="btn btn-primary" style="padding: 0.85rem 1.6rem; font-size: 0.95rem;">
-            <span>🚀 Lanzar PWA Móvil</span>
+        <div class="pwa-buttons-group">
+          <a href="/app" class="btn-pill-amber">
+            <span>📱 Abrir PWA Móvil</span>
           </a>
-          <a href="/admin" class="btn" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">
+          <a href="/admin" class="btn-nav-outline" style="border-color: rgba(255,255,255,0.3); color: white;">
             <span>⚙️ Panel Administrativo</span>
           </a>
         </div>
       </div>
 
       <div style="text-align: center;">
-        <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 2rem; display: inline-block;">
-          <div style="font-size: 3.5rem; margin-bottom: 0.5rem;">📱</div>
-          <h4 style="font-size: 1.1rem; margin-bottom: 0.35rem; color: white;">PWA Instalable</h4>
-          <p style="color: #A8A29E; font-size: 0.82rem; max-width: 200px;">Funciona en iOS, Android y escritorio con sincronización instantánea.</p>
+        <div style="background: rgba(255,255,255,0.04); border: 1px solid var(--border-amber); border-radius: 20px; padding: 2.2rem; display: inline-block;">
+          <div style="font-size: 3.5rem; margin-bottom: 0.5rem;">⚡</div>
+          <h4 style="font-size: 1.25rem; font-family: var(--font-display); letter-spacing: 0.05em; color: var(--primary-amber); text-transform: uppercase;">Node.js + MySQL / In-Memory</h4>
+          <p style="color: #9CA3AF; font-size: 0.85rem; max-width: 220px; margin-top: 0.5rem;">APIs REST en <code>/api/*</code> con CI/CD automático en Dokploy.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-col">
-        <div class="logo-container" style="margin-bottom: 1rem;">
-          <div class="logo-icon">🍔</div>
-          <div class="logo-text">
-            <h1>Galaxy Hamburguesas</h1>
-            <span>Edición Comercial v1.0</span>
+  <!-- Footer (Direct Match to Reference) -->
+  <footer id="contact">
+    <div class="footer-content-wrap">
+      <div class="footer-brand-box">
+        <a href="/" class="brand-logo" style="margin-bottom: 0.5rem;">
+          <div class="brand-icon-box" style="width: 38px; height: 38px; font-size: 1.3rem;">🍔</div>
+          <div class="brand-text">
+            <span class="brand-title" style="font-size: 1.6rem;">TASTYBITES</span>
+            <span class="brand-subtitle" style="font-size: 0.58rem;">EAT. ENJOY. REPEAT.</span>
           </div>
-        </div>
-        <p style="color: var(--text-muted); font-size: 0.88rem; max-width: 320px; line-height: 1.6; margin-bottom: 1.25rem;">
-          La cadena de hamburguesas gourmet de entrega ultrarrápida. Carne 100% Angus a la brasa, pan brioche artesanal y tecnología cloud de vanguardia.
+        </a>
+        <p>
+          We serve delicious food made with the best ingredients. Enjoy your meal, your way! Carne 100% Angus, horneado diario y delivery express.
         </p>
-        <div style="font-size: 0.8rem; color: var(--text-muted);">
-          📍 12 Sucursales activas &bull; Envíos a todo el radio metropolitano
+        <div class="footer-social-row">
+          <a href="#" class="social-btn" aria-label="Facebook">f</a>
+          <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+          <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-btn" aria-label="TikTok">♪</a>
+          <a href="#" class="social-btn" aria-label="YouTube">▶</a>
         </div>
       </div>
 
-      <div class="footer-col">
-        <h5>Hamburguesas</h5>
-        <ul>
-          <li><a href="#catalogo">Rey de las Burgers</a></li>
-          <li><a href="#catalogo">Burger Real Clásica</a></li>
-          <li><a href="#catalogo">Burger Real Doble</a></li>
-          <li><a href="#catalogo">Burger Doble Especial</a></li>
-          <li><a href="#catalogo">Smash Trufada Galaxy</a></li>
+      <div>
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="#bestsellers">Menu</a></li>
+          <li><a href="#offers">Offers</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
 
-      <div class="footer-col">
-        <h5>Plataforma</h5>
-        <ul>
-          <li><a href="/app">PWA Móvil de Pedidos</a></li>
-          <li><a href="/admin">Dashboard Administrativo</a></li>
-          <li><a href="/api/health">Health Check Dokploy</a></li>
-          <li><a href="/api/products">API Catálogo REST</a></li>
-          <li><a href="/api/metrics">Métricas de Clientes</a></li>
+      <div>
+        <h4 class="footer-col-title">Customer Care</h4>
+        <ul class="footer-links-list">
+          <li><a href="/app">My Orders</a></li>
+          <li><a href="#">Delivery Info</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
         </ul>
       </div>
 
-      <div class="footer-col">
-        <h5>Horarios & Soporte</h5>
-        <ul>
-          <li><a href="#">Lunes a Domingo: 11:30 - 23:30</a></li>
-          <li><a href="#">Delivery: Express 20 minutos</a></li>
-          <li><a href="https://wa.me/584142899554" target="_blank" rel="noopener noreferrer">WhatsApp: +58 414-2899554</a></li>
-          <li><a href="#">contacto@galaxyhamburguesas.com</a></li>
-        </ul>
+      <div class="app-badges-col">
+        <h4 class="footer-col-title">Contact Us</h4>
+        <p style="margin-bottom: 0.35rem; color: #FFFFFF;">📞 +1 (555) 123-4567</p>
+        <p style="margin-bottom: 0.35rem;">✉️ hello@tastybites.com</p>
+        <p style="margin-bottom: 1.5rem;">📍 123 Food Street, New York, NY 10001</p>
+
+        <h4 class="footer-col-title" style="font-size: 0.85rem; margin-bottom: 0.6rem;">DOWNLOAD OUR APP</h4>
+        
+        <a href="/app" class="app-store-badge">
+          <span class="badge-icon">🍏</span>
+          <div class="badge-texts">
+            <span class="badge-sub">Download on the</span>
+            <span class="badge-main">App Store</span>
+          </div>
+        </a>
+
+        <a href="/app" class="app-store-badge">
+          <span class="badge-icon">▶</span>
+          <div class="badge-texts">
+            <span class="badge-sub">GET IT ON</span>
+            <span class="badge-main">Google Play</span>
+          </div>
+        </a>
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <div>&copy; 2026 Galaxy Hamburguesas Inc. Todos los derechos reservados. Arquitectura MasterGeniusjoa.</div>
+    <div class="footer-bottom-bar">
+      <div>&copy; 2024 TastyBites. All Rights Reserved. Arquitectura MasterGeniusjoa.</div>
       <div style="display: flex; gap: 1.5rem;">
-        <a href="/" style="color: var(--text-muted); text-decoration: none;">Inicio</a>
-        <a href="/app" style="color: var(--text-muted); text-decoration: none;">App Móvil</a>
-        <a href="/admin" style="color: var(--text-muted); text-decoration: none;">Panel Admin</a>
+        <a href="/" style="color: #6B7280; text-decoration: none;">Landing E-commerce</a>
+        <a href="/app" style="color: #6B7280; text-decoration: none;">Capa PWA</a>
+        <a href="/admin" style="color: #6B7280; text-decoration: none;">Panel Admin</a>
       </div>
     </div>
   </footer>
 
-  <!-- Client-side Interactive Logic -->
+  <!-- Interactive Cart Drawer -->
+  <div id="cartDrawerBackdrop" class="cart-drawer-backdrop">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3>Tu Orden Online</h3>
+        <button id="closeCartBtn" class="cart-close-btn">&times;</button>
+      </div>
+
+      <div id="cartItemsContainer" class="cart-items-wrap">
+        <div class="cart-empty-text">Tu bolsa de TastyBites está vacía.<br/>Agrega hamburguesas o bestsellers pulsando <strong>+</strong>.</div>
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-subtotal-row">
+          <span>Total Estimado:</span>
+          <span id="cartSubtotal" style="color: var(--primary-amber);">$0.00</span>
+        </div>
+        <a href="/app" class="btn-pill-amber" style="width: 100%; justify-content: center; padding: 0.85rem;">
+          <span>Continuar en PWA Móvil 🚀</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detailed Specs Modal -->
+  <div id="specsModal" class="modal-overlay">
+    <div class="modal-box">
+      <button id="closeSpecsModal" class="modal-close-icon">&times;</button>
+      <img id="specsModalImg" class="modal-photo" src="" alt="Detalle" />
+      
+      <div class="modal-inner-padding">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.75rem;">
+          <div>
+            <span id="specsModalCat" style="font-size: 0.72rem; font-weight: 800; color: var(--primary-amber); letter-spacing: 0.1em; text-transform: uppercase;"></span>
+            <h2 id="specsModalTitle" style="font-size: 1.8rem; font-weight: 800; color: #FFFFFF; margin-top: 0.2rem;"></h2>
+          </div>
+          <div id="specsModalPrice" style="font-family: var(--font-display); font-size: 2.2rem; color: var(--primary-amber);"></div>
+        </div>
+
+        <p id="specsModalDesc" style="color: #D1D5DB; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;"></p>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; background: #1C202C; border: 1px solid #282D3E; padding: 1rem; border-radius: 14px; text-align: center; margin-bottom: 1.5rem;">
+          <div>
+            <span style="font-size: 0.68rem; color: #9CA3AF; text-transform: uppercase; font-weight: 700;">Carne / Base</span>
+            <div id="specsModalMeat" style="font-size: 0.92rem; font-weight: 800; color: #FFFFFF; margin-top: 0.2rem;"></div>
+          </div>
+          <div>
+            <span style="font-size: 0.68rem; color: #9CA3AF; text-transform: uppercase; font-weight: 700;">Preparación</span>
+            <div id="specsModalPrep" style="font-size: 0.92rem; font-weight: 800; color: #FFFFFF; margin-top: 0.2rem;"></div>
+          </div>
+          <div>
+            <span style="font-size: 0.68rem; color: #9CA3AF; text-transform: uppercase; font-weight: 700;">Calorías</span>
+            <div id="specsModalCalories" style="font-size: 0.92rem; font-weight: 800; color: #FFFFFF; margin-top: 0.2rem;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 2rem;">
+          <h4 style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary-amber); margin-bottom: 0.75rem;">
+            Ingredientes Seleccionados:
+          </h4>
+          <ul id="specsModalIngredients" style="list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+          </ul>
+        </div>
+
+        <div style="display: flex; gap: 1rem; align-items: center; justify-content: flex-end;">
+          <button id="addFromModalBtn" class="btn-pill-amber" style="padding: 0.75rem 1.75rem;">
+            <span>+ Agregar al Pedido</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="modal-overlay">
+    <div class="video-modal-box">
+      <button id="closeVideoModal" class="modal-close-icon">&times;</button>
+      <h3 style="font-family: var(--font-display); font-size: 1.8rem; letter-spacing: 0.05em; color: var(--primary-amber); margin-bottom: 1rem; text-transform: uppercase;">
+        TastyBites Craft & Gourmet Experience
+      </h3>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; background: #111;">
+        <iframe 
+          style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border: 0;"
+          src="https://www.youtube-nocookie.com/embed/g6t83dU4cgk?autoplay=0" 
+          title="TastyBites Burger Craft Video" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Client-side Scripts -->
   <script>
-    // 1. Filtering Logic
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const burgerCards = document.querySelectorAll('.burger-card');
+    // 1. Interactive Shopping Cart
+    interface CartItem {
+      id: string;
+      name: string;
+      price: number;
+      image: string;
+      qty: number;
+    }
 
-    filterButtons.forEach(btn => {
+    const cart: CartItem[] = [];
+    const cartCountBadge = document.getElementById('cartCountBadge');
+    const orderOnlineBtn = document.getElementById('orderOnlineBtn');
+    const cartDrawer = document.getElementById('cartDrawerBackdrop');
+    const closeCartBtn = document.getElementById('closeCartBtn');
+    const cartItemsContainer = document.getElementById('cartItemsContainer');
+    const cartSubtotal = document.getElementById('cartSubtotal');
+
+    function updateCartUI() {
+      const totalCount = cart.reduce((acc, item) => acc + item.qty, 0);
+      const totalPrice = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+
+      if (cartCountBadge) {
+        cartCountBadge.textContent = totalCount.toString();
+      }
+
+      if (cartSubtotal) {
+        cartSubtotal.textContent = `$${totalPrice.toFixed(2)}`;
+      }
+
+      if (cartItemsContainer) {
+        if (cart.length === 0) {
+          cartItemsContainer.innerHTML = `
+            <div class="cart-empty-text">Tu bolsa de TastyBites está vacía.<br/>Agrega hamburguesas o bestsellers pulsando <strong>+</strong>.</div>
+          `;
+        } else {
+          cartItemsContainer.innerHTML = cart.map((item, idx) => `
+            <div class="cart-item-row">
+              <img src="${item.image}" alt="${item.name}" />
+              <div class="cart-item-info">
+                <div class="cart-item-title">${item.name}</div>
+                <div class="cart-item-price">$${item.price.toFixed(2)} x ${item.qty}</div>
+              </div>
+              <button class="cart-item-remove" data-index="${idx}" title="Eliminar">&times;</button>
+            </div>
+          `).join('');
+
+          // Bind remove buttons
+          cartItemsContainer.querySelectorAll('.cart-item-remove').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              const target = e.currentTarget as HTMLElement;
+              const index = parseInt(target.getAttribute('data-index') || '0', 10);
+              cart.splice(index, 1);
+              updateCartUI();
+            });
+          });
+        }
+      }
+    }
+
+    // Add to cart buttons
+    document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.getAttribute('data-filter');
+        const id = btn.getAttribute('data-id') || '0';
+        const name = btn.getAttribute('data-name') || 'Item';
+        const price = parseFloat(btn.getAttribute('data-price') || '0');
+        const image = btn.getAttribute('data-image') || '';
 
-        burgerCards.forEach(card => {
-          const category = card.getAttribute('data-category');
-          if (filter === 'all' || category === filter) {
+        const existing = cart.find(i => i.name === name);
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({ id, name, price, image, qty: 1 });
+        }
+
+        updateCartUI();
+        cartDrawer?.classList.add('open');
+      });
+    });
+
+    orderOnlineBtn?.addEventListener('click', () => {
+      cartDrawer?.classList.add('open');
+    });
+
+    closeCartBtn?.addEventListener('click', () => {
+      cartDrawer?.classList.remove('open');
+    });
+
+    cartDrawer?.addEventListener('click', (e) => {
+      if (e.target === cartDrawer) {
+        cartDrawer.classList.remove('open');
+      }
+    });
+
+    // 2. Category Strip Interactive Filter
+    const catButtons = document.querySelectorAll('.cat-item-btn');
+    const catalogCards = document.querySelectorAll('.menu-card');
+
+    catButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        catButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const selectedCat = btn.getAttribute('data-category');
+
+        catalogCards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          if (selectedCat === cardCat || selectedCat === 'all') {
+            (card as HTMLElement).style.display = 'flex';
+          } else {
+            (card as HTMLElement).style.display = 'none';
+          }
+        });
+
+        const target = document.getElementById('full-menu');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // 3. Secondary Filter Pills for Full Catalog
+    const filterPills = document.querySelectorAll('.filter-btn');
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const filterVal = pill.getAttribute('data-filter');
+
+        catalogCards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          if (filterVal === 'all' || cardCat === filterVal) {
             (card as HTMLElement).style.display = 'flex';
           } else {
             (card as HTMLElement).style.display = 'none';
@@ -1336,29 +2297,29 @@ const burgers = [
       });
     });
 
-    // 2. Interactive Details Modal
-    const modal = document.getElementById('detailModal');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    const openModalBtns = document.querySelectorAll('.open-modal-btn');
+    // 4. Detailed Specs Modal
+    const specsModal = document.getElementById('specsModal');
+    const closeSpecsModal = document.getElementById('closeSpecsModal');
+    const openSpecBtns = document.querySelectorAll('.open-spec-modal');
 
-    const modalImg = document.getElementById('modalImg') as HTMLImageElement;
-    const modalTitle = document.getElementById('modalTitle');
-    const modalCategory = document.getElementById('modalCategory');
-    const modalSpecialtyBadge = document.getElementById('modalSpecialtyBadge');
-    const modalDesc = document.getElementById('modalDesc');
-    const modalMeat = document.getElementById('modalMeat');
-    const modalPrep = document.getElementById('modalPrep');
-    const modalCalories = document.getElementById('modalCalories');
-    const modalIngredients = document.getElementById('modalIngredients');
-    const modalPrice = document.getElementById('modalPrice');
+    const specsModalImg = document.getElementById('specsModalImg') as HTMLImageElement;
+    const specsModalCat = document.getElementById('specsModalCat');
+    const specsModalTitle = document.getElementById('specsModalTitle');
+    const specsModalPrice = document.getElementById('specsModalPrice');
+    const specsModalDesc = document.getElementById('specsModalDesc');
+    const specsModalMeat = document.getElementById('specsModalMeat');
+    const specsModalPrep = document.getElementById('specsModalPrep');
+    const specsModalCalories = document.getElementById('specsModalCalories');
+    const specsModalIngredients = document.getElementById('specsModalIngredients');
+    const addFromModalBtn = document.getElementById('addFromModalBtn');
 
-    openModalBtns.forEach(btn => {
+    let currentModalItem: any = null;
+
+    openSpecBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const name = btn.getAttribute('data-name');
         const price = btn.getAttribute('data-price');
-        const specialty = btn.getAttribute('data-specialty');
-        const level = btn.getAttribute('data-level');
-        const category = btn.getAttribute('data-category');
+        const cat = btn.getAttribute('data-category');
         const image = btn.getAttribute('data-image');
         const desc = btn.getAttribute('data-desc');
         const meat = btn.getAttribute('data-meat');
@@ -1366,53 +2327,91 @@ const burgers = [
         const calories = btn.getAttribute('data-calories');
         const ingredientsRaw = btn.getAttribute('data-ingredients');
 
-        if (modalImg) modalImg.src = image || '';
-        if (modalTitle) modalTitle.textContent = name || '';
-        if (modalCategory) modalCategory.textContent = category || '';
-        if (modalSpecialtyBadge) {
-          modalSpecialtyBadge.textContent = specialty || '';
-          modalSpecialtyBadge.className = `badge-specialty specialty-${level}`;
-        }
-        if (modalDesc) modalDesc.textContent = desc || '';
-        if (modalMeat) modalMeat.textContent = meat || '';
-        if (modalPrep) modalPrep.textContent = prep || '';
-        if (modalCalories) modalCalories.textContent = calories || '';
-        if (modalPrice) modalPrice.textContent = `$${price}`;
+        currentModalItem = { name, price: parseFloat(price || '0'), image };
 
-        if (modalIngredients && ingredientsRaw) {
+        if (specsModalImg && image) specsModalImg.src = image;
+        if (specsModalCat && cat) specsModalCat.textContent = cat;
+        if (specsModalTitle && name) specsModalTitle.textContent = name;
+        if (specsModalPrice && price) specsModalPrice.textContent = `$${price}`;
+        if (specsModalDesc && desc) specsModalDesc.textContent = desc;
+        if (specsModalMeat && meat) specsModalMeat.textContent = meat;
+        if (specsModalPrep && prep) specsModalPrep.textContent = prep;
+        if (specsModalCalories && calories) specsModalCalories.textContent = calories;
+
+        if (specsModalIngredients && ingredientsRaw) {
           try {
             const list = JSON.parse(ingredientsRaw);
-            modalIngredients.innerHTML = list.map((item: string) => `
-              <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.88rem; color: #57534E;">
-                <span style="color: #059669; font-weight: bold;">✔</span>
+            specsModalIngredients.innerHTML = list.map((item: string) => `
+              <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: #D1D5DB;">
+                <span style="color: #FF9F1C; font-weight: bold;">✔</span>
                 <span>${item}</span>
               </li>
             `).join('');
           } catch(e) {
-            modalIngredients.innerHTML = '';
+            specsModalIngredients.innerHTML = '';
           }
         }
 
-        modal?.classList.add('open');
+        specsModal?.classList.add('open');
         document.body.style.overflow = 'hidden';
       });
     });
 
-    closeModalBtn?.addEventListener('click', () => {
-      modal?.classList.remove('open');
+    addFromModalBtn?.addEventListener('click', () => {
+      if (currentModalItem) {
+        const existing = cart.find(i => i.name === currentModalItem.name);
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({ ...currentModalItem, id: Date.now().toString(), qty: 1 });
+        }
+        updateCartUI();
+        specsModal?.classList.remove('open');
+        document.body.style.overflow = '';
+        cartDrawer?.classList.add('open');
+      }
+    });
+
+    closeSpecsModal?.addEventListener('click', () => {
+      specsModal?.classList.remove('open');
       document.body.style.overflow = '';
     });
 
-    modal?.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('open');
+    specsModal?.addEventListener('click', (e) => {
+      if (e.target === specsModal) {
+        specsModal.classList.remove('open');
         document.body.style.overflow = '';
       }
     });
 
+    // 5. Video Modal
+    const videoModal = document.getElementById('videoModal');
+    const watchVideoBtn = document.getElementById('watchVideoBtn');
+    const closeVideoModal = document.getElementById('closeVideoModal');
+
+    watchVideoBtn?.addEventListener('click', () => {
+      videoModal?.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+
+    closeVideoModal?.addEventListener('click', () => {
+      videoModal?.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+
+    videoModal?.addEventListener('click', (e) => {
+      if (e.target === videoModal) {
+        videoModal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close on Escape key
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal?.classList.contains('open')) {
-        modal.classList.remove('open');
+      if (e.key === 'Escape') {
+        specsModal?.classList.remove('open');
+        videoModal?.classList.remove('open');
+        cartDrawer?.classList.remove('open');
         document.body.style.overflow = '';
       }
     });
