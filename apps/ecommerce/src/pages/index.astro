@@ -1,34 +1,34 @@
 ---
 // apps/ecommerce/src/pages/index.astro
-// TASTYBITES | Gourmet Burgers & Fast Delivery
-// Visual Style: Inspired by TastyBites Brand & Dark Luxury Aesthetic
+// Galaxy Burgers | Hamburguesas Gourmet & Delivery Express
+// Visual Style: Inspirado en la identidad Galaxy Burgers con Paleta Dark Gourmet y Ámbar
 
-const title = "TASTYBITES | Delicious Burgers, Pizza, Chicken & Fast Delivery";
+const title = "Galaxy Burgers | Hamburguesas Gourmet, Pizzas, Pollo & Delivery Express en Caracas";
 
-// 4 Primary Bestsellers (Directly matching the reference image)
+// 4 Productos Más Vendidos (Nuestros Bestsellers)
 const bestsellers = [
   {
     id: "bs-1",
     name: "Signature Burger",
-    category: "Burgers",
-    tag: "BEST SELLER",
+    category: "Hamburguesas",
+    tag: "MÁS VENDIDO",
     price: 5.49,
     rating: 4.98,
     image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=80",
-    description: "Loaded with cheese & special sauce",
-    detailedDesc: "Medallón 100% res premium braseada al carbón, doble queso cheddar fundente, cebolla caramelizada, pepinillos y salsa Tasty especial en pan brioche tostado.",
+    description: "Cargada con abundante queso y salsa especial",
+    detailedDesc: "Medallón 100% res premium braseada al carbón, doble queso cheddar fundente, cebolla caramelizada, pepinillos y salsa secreta Galaxy en pan brioche tostado.",
     specs: { meat: "200g Angus", prep: "10-12 min", calories: "780 kcal" },
-    ingredients: ["Carne Angus 200g", "Doble Cheddar Añejo", "Salsa Tasty Secreta", "Pepinillos Agridulces", "Pan Brioche Glaseado"]
+    ingredients: ["Carne Angus 200g", "Doble Cheddar Añejo", "Salsa Galaxy Secreta", "Pepinillos Agridulces", "Pan Brioche Glaseado"]
   },
   {
     id: "bs-2",
     name: "Cheesy Pizza",
-    category: "Pizza",
-    tag: "BEST SELLER",
+    category: "Pizzas",
+    tag: "MÁS VENDIDO",
     price: 8.49,
     rating: 4.95,
     image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&auto=format&fit=crop&q=80",
-    description: "Fresh veggies, italian herbs & cheese",
+    description: "Vegetales frescos, hierbas italianas y queso fundido",
     detailedDesc: "Masa madre fermentada 48 horas, salsa pomodoro San Marzano, mozzarella fior di latte hilada, orégano silvestre y vegetales frescos de temporada.",
     specs: { meat: "Vegetariana", prep: "12-14 min", calories: "820 kcal" },
     ingredients: ["Masa Madre 48h", "Mozzarella Fior di Latte", "Pomodoro San Marzano", "Albahaca Fresca", "Aceite Oliva Virgen Extra"]
@@ -36,12 +36,12 @@ const bestsellers = [
   {
     id: "bs-3",
     name: "Crispy Chicken",
-    category: "Chicken",
-    tag: "BEST SELLER",
+    category: "Pollo",
+    tag: "MÁS VENDIDO",
     price: 5.99,
     rating: 4.92,
     image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=800&auto=format&fit=crop&q=80",
-    description: "Golden fried & perfectly seasoned",
+    description: "Pollo frito dorado y perfectamente sazonado",
     detailedDesc: "Tiras de pechuga jugosa marinada 24h en buttermilk y mix de 11 especias secretas, rebozado crujiente dorado servido con dip de miel y mostaza.",
     specs: { meat: "220g Pollo", prep: "8-10 min", calories: "690 kcal" },
     ingredients: ["Pechuga de Pollo Fresca", "Rebozado 11 Especias", "Buttermilk Marinada", "Dip Honey Mustard", "Sal Marina"]
@@ -49,24 +49,24 @@ const bestsellers = [
   {
     id: "bs-4",
     name: "Loaded Fries",
-    category: "Fries",
-    tag: "BEST SELLER",
+    category: "Papas",
+    tag: "MÁS VENDIDO",
     price: 2.99,
     rating: 4.89,
     image: "https://images.unsplash.com/photo-1585109649139-366815a0d713?w=800&auto=format&fit=crop&q=80",
-    description: "Crispy fries with cheese & sauce",
-    detailedDesc: "Patatas corte rústico doble fritura extra crocantes bañadas en salsa de queso cheddar fundido, bits de tocineta ahumada crujiente y cebollino.",
+    description: "Papas crujientes con queso fundido y tocineta",
+    detailedDesc: "Papas corte rústico doble fritura extra crocantes bañadas en salsa de queso cheddar fundido, trocitos de tocineta ahumada crujiente y cebollín fresco.",
     specs: { meat: "Guarnición", prep: "6-8 min", calories: "540 kcal" },
-    ingredients: ["Patatas Rústicas Seleccionadas", "Salsa Cheddar Artesanal", "Bacon Bits Ahumado", "Cebollino Fresco", "Páprika Dulce"]
+    ingredients: ["Papas Rústicas Seleccionadas", "Salsa Cheddar Artesanal", "Tocineta Ahumada", "Cebollín Fresco", "Páprika Dulce"]
   }
 ];
 
-// Complete Gourmet Burgers & Catalog
+// Menú Maestro Completo de 10 Creaciones de Autor
 const menuItems = [
   {
     id: 1,
     name: "Rey de las Burgers",
-    category: "Burgers",
+    category: "Hamburguesas",
     specialty: "Nivel Legendario ★★★★★",
     specialtyLevel: "legendario",
     price: 14.99,
@@ -77,12 +77,12 @@ const menuItems = [
     prepTime: "12-15 min",
     image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900&auto=format&fit=crop&q=80",
     description: "Nuestra creación cumbre: 220g de carne 100% Angus flameada a la leña de roble, triple queso cheddar añejo fundido, cebolla caramelizada al bourbon y panceta crocante.",
-    ingredients: ["Carne 100% Angus 220g", "Triple Cheddar Añejo 12 Meses", "Cebolla Caramelizada al Bourbon", "Panceta Crujiente Glaseada", "Salsa Secreta Tasty Smoke", "Pan Brioche de Mantequilla"]
+    ingredients: ["Carne 100% Angus 220g", "Triple Cheddar Añejo 12 Meses", "Cebolla Caramelizada al Bourbon", "Panceta Crujiente Glaseada", "Salsa Secreta Galaxy Smoke", "Pan Brioche de Mantequilla"]
   },
   {
     id: 2,
     name: "Burger Real Clásica",
-    category: "Burgers",
+    category: "Hamburguesas",
     specialty: "Nivel Clásico ★★★",
     specialtyLevel: "clasico",
     price: 9.50,
@@ -92,13 +92,13 @@ const menuItems = [
     meatGrams: "160g Res Prime",
     prepTime: "10-12 min",
     image: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=900&auto=format&fit=crop&q=80",
-    description: "La tradición elevada al máximo estándar: medallón de res 160g a la plancha de hierro, queso americano derretido, lechuga romana crujiente, tomate y pepinillos.",
+    description: "La tradición elevada al máximo estándar: medallón de res 160g a la plancha de hierro fundido, queso americano derretido, lechuga romana crujiente, tomate y pepinillos.",
     ingredients: ["Medallón Res Prime 160g", "Queso Americano Fundente", "Lechuga Romana Fresca", "Rodajas Tomate Campestre", "Pepinillos Agridulces", "Aderezo Imperial Ahumado"]
   },
   {
     id: 3,
     name: "Burger Real Doble",
-    category: "Burgers",
+    category: "Hamburguesas",
     specialty: "Nivel Superior ★★★★",
     specialtyLevel: "superior",
     price: 13.50,
@@ -114,7 +114,7 @@ const menuItems = [
   {
     id: 4,
     name: "Smash Trufada Galaxy",
-    category: "Burgers",
+    category: "Hamburguesas",
     specialty: "Nivel Gourmet ★★★★",
     specialtyLevel: "gourmet",
     price: 12.90,
@@ -125,12 +125,12 @@ const menuItems = [
     prepTime: "8-10 min",
     image: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=900&auto=format&fit=crop&q=80",
     description: "Doble smash ultrafino con encaje crocante inconfundible, emulsión de trufa blanca de Alba, queso suizo Emmental fundido y champiñones silvestres salteados.",
-    ingredients: ["Doble Smash Angus 180g", "Queso Emmental Suizo", "Champiñones Salteados al Tomillo", "Emulsión de Trufa Blanca", "Pan de Patata Extra Tierno"]
+    ingredients: ["Doble Smash Angus 180g", "Queso Emmental Suizo", "Champiñones Salteados al Tomillo", "Emulsión de Trufa Blanca", "Pan de Papa Extra Tierno"]
   },
   {
     id: 5,
     name: "Royal Crispy Chicken",
-    category: "Chicken",
+    category: "Pollo",
     specialty: "Nivel Dorado ★★★",
     specialtyLevel: "dorado",
     price: 11.90,
@@ -140,13 +140,13 @@ const menuItems = [
     meatGrams: "200g Pechuga Crispy",
     prepTime: "10-12 min",
     image: "https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?w=900&auto=format&fit=crop&q=80",
-    description: "Suprema de pechuga marinada 24h en buttermilk y especias cajún, rebozado extra crujiente, ensalada coleslaw fresca y miel de mostaza casera.",
+    description: "Suprema de pechuga marinada 24h en buttermilk y especias cajún, rebozado extra crujiente, ensalada coleslaw fresca con toques de manzana y miel de mostaza casera.",
     ingredients: ["Suprema de Pollo en Buttermilk 200g", "Rebozado 11 Especias Secreta", "Coleslaw Fresco con Manzana", "Salsa Honey Mustard Casera", "Pepinillos Dulces"]
   },
   {
     id: 6,
     name: "Bacon BBQ Suprema",
-    category: "Burgers",
+    category: "Hamburguesas",
     specialty: "Nivel Superior ★★★★",
     specialtyLevel: "superior",
     price: 13.90,
@@ -156,13 +156,13 @@ const menuItems = [
     meatGrams: "200g Res Braseada",
     prepTime: "12-14 min",
     image: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=900&auto=format&fit=crop&q=80",
-    description: "Para los devotos del ahumado: carne braseada a fuego vivo, cuádruple loncha de bacon crocante con sal marina, queso Monterey Jack y salsa BBQ al bourbon.",
-    ingredients: ["Carne Braseada al Fuego 200g", "Cuádruple Loncha Bacon Ahumado", "Queso Monterey Jack Cremoso", "Salsa BBQ al Bourbon", "Cebolla Morada Asada"]
+    description: "Para los apasionados del sabor ahumado: carne braseada a fuego vivo, cuádruple loncha de tocineta crocante con sal marina, queso Monterey Jack y salsa BBQ al bourbon.",
+    ingredients: ["Carne Braseada al Fuego 200g", "Cuádruple Loncha Tocineta Ahumada", "Queso Monterey Jack Cremoso", "Salsa BBQ al Bourbon", "Cebolla Morada Asada"]
   },
   {
     id: 7,
-    name: "Truffle Parmesan Fries",
-    category: "Fries",
+    name: "Papas Rústicas con Trufa & Parmesano",
+    category: "Papas",
     specialty: "Nivel Especial ★★★★",
     specialtyLevel: "gourmet",
     price: 4.90,
@@ -172,14 +172,15 @@ const menuItems = [
     meatGrams: "Papas Rústicas",
     prepTime: "6-8 min",
     image: "https://images.unsplash.com/photo-1576107232684-1279f3908594?w=900&auto=format&fit=crop&q=80",
-    description: "Papas rústicas cortadas a mano con aceite de trufa blanca pura de Italia, lluvia de queso Parmigiano Reggiano 24 meses y perejil fresco picado fino.",
-    ingredients: ["Papas Agria Seleccionadas", "Aceite de Trufa Blanca", "Parmigiano Reggiano 24 Meses", "Sal Marina en Escamas", "Perejil Crespo"]
+    description: "Papas rústicas cortadas a mano con aceite de trufa blanca pura, lluvia de queso Parmigiano Reggiano madurado 24 meses y perejil fresco picado fino.",
+    ingredients: ["Papas Rústicas Seleccionadas", "Aceite de Trufa Blanca", "Parmigiano Reggiano 24 Meses", "Sal Marina en Escamas", "Perejil Crespo"]
   },
   {
     id: 8,
-    name: "Pepperoni Passion Pizza",
-    category: "Pizza",
-    tag: "POPULAR",
+    name: "Pizza Pepperoni Pasión",
+    category: "Pizzas",
+    specialty: "Horno a la Piedra",
+    specialtyLevel: "clasico",
     price: 9.90,
     rating: 4.93,
     reviews: 820,
@@ -192,8 +193,8 @@ const menuItems = [
   },
   {
     id: 9,
-    name: "Tasty Iced Cola & Shakes",
-    category: "Drinks",
+    name: "Bebidas Heladas Galaxy & Shakes",
+    category: "Bebidas",
     specialty: "Refresco Frío",
     specialtyLevel: "clasico",
     price: 2.50,
@@ -203,13 +204,13 @@ const menuItems = [
     meatGrams: "Bebida Helada",
     prepTime: "2 min",
     image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=900&auto=format&fit=crop&q=80",
-    description: "Refrescos artesanales servidos al punto de congelación en vaso térmico con hielo picado, rodaja de lima natural y sorbete ecológico.",
-    ingredients: ["Bebida Gasificada Seleccionada", "Hielo Cristalino Purificado", "Rodaja de Lima Fresca"]
+    description: "Bebidas y refrescos servidos al punto óptimo de frío en vaso térmico con hielo purificado, rodaja de limón fresco y sorbete ecológico.",
+    ingredients: ["Bebida Gasificada Seleccionada", "Hielo Cristalino Purificado", "Rodaja de Limón Fresco"]
   },
   {
     id: 10,
-    name: "Chocolate Lava Sundae",
-    category: "Desserts",
+    name: "Sundae Volcán de Chocolate",
+    category: "Postres",
     specialty: "Postre Tentación ★★★★",
     specialtyLevel: "gourmet",
     price: 4.50,
@@ -219,7 +220,7 @@ const menuItems = [
     meatGrams: "Postre Dulce",
     prepTime: "5 min",
     image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=900&auto=format&fit=crop&q=80",
-    description: "Copa de helado artesanal de vainilla Bourbon de Madagascar con corazón de brownie tibio de chocolate Belga 70% y salsa de caramelo salado.",
+    description: "Copa de helado artesanal de vainilla Bourbon con corazón de brownie tibio de chocolate Belga al 70% y salsa caliente de caramelo salado.",
     ingredients: ["Helado Vainilla Bourbon", "Brownie de Chocolate Belga 70%", "Salsa Caramelo Salado", "Nueces Pecanas Tostadas"]
   }
 ];
@@ -232,14 +233,14 @@ const menuItems = [
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   
-  <!-- Google Fonts: Bebas Neue, Plus Jakarta Sans, Caveat (Script) -->
+  <!-- Fuentes: Bebas Neue, Caveat (Script) y Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      /* Dark Aesthetic & Amber/Orange Palette (TastyBites Style) */
+      /* Paleta Visual Dark Gourmet con Ámbar Cálido (Galaxy Burgers) */
       --bg-dark: #0B0C10;
       --bg-dark-card: #14161E;
       --bg-dark-card-hover: #1A1D27;
@@ -291,7 +292,7 @@ const menuItems = [
       background-attachment: fixed;
     }
 
-    /* Top Quick Alert Bar */
+    /* Barra Superior de Notificaciones */
     .top-announcement {
       background: #000000;
       border-bottom: 1px solid #1E212B;
@@ -313,7 +314,7 @@ const menuItems = [
       font-weight: 700;
     }
 
-    /* Navigation Bar */
+    /* Navegación y Cabecera */
     header {
       position: sticky;
       top: 0;
@@ -332,7 +333,7 @@ const menuItems = [
       justify-content: space-between;
     }
 
-    /* Brand Logo */
+    /* Logo Galaxy Burgers */
     .brand-logo {
       display: flex;
       align-items: center;
@@ -371,7 +372,7 @@ const menuItems = [
       margin-top: 2px;
     }
 
-    /* Nav Links */
+    /* Menú de Enlaces */
     .nav-menu {
       display: flex;
       align-items: center;
@@ -406,7 +407,7 @@ const menuItems = [
       border-radius: 2px;
     }
 
-    /* Nav Actions */
+    /* Acciones de Cabecera */
     .nav-actions {
       display: flex;
       align-items: center;
@@ -458,7 +459,7 @@ const menuItems = [
       background: rgba(255, 159, 28, 0.05);
     }
 
-    /* Hero Section */
+    /* Hero Principal */
     .hero-section {
       position: relative;
       max-width: 1240px;
@@ -609,7 +610,7 @@ const menuItems = [
       color: var(--primary-amber);
     }
 
-    /* Stamp 100% Fresh & Premium */
+    /* Sello 100% Fresco & Premium */
     .fresh-stamp-badge {
       display: inline-flex;
       flex-direction: column;
@@ -645,7 +646,7 @@ const menuItems = [
       line-height: 1.1;
     }
 
-    /* Hero Right - Composite Delicious Burger */
+    /* Hero Derecho - Imagen de Hamburguesa */
     .hero-right {
       position: relative;
       display: flex;
@@ -670,15 +671,6 @@ const menuItems = [
       transform: scale(1.02);
     }
 
-    /* Stamp positioned on image */
-    .stamp-position {
-      position: absolute;
-      bottom: -15px;
-      left: -20px;
-      z-index: 5;
-    }
-
-    /* Floating Pill Badge on Hero */
     .hero-floating-pill {
       position: absolute;
       top: 15px;
@@ -695,7 +687,7 @@ const menuItems = [
       font-weight: 700;
     }
 
-    /* Category Floating Bar (White Card Container) */
+    /* Barra Flotante de Categorías */
     .category-strip-section {
       max-width: 1200px;
       margin: 0 auto 4rem;
@@ -760,7 +752,7 @@ const menuItems = [
       line-height: 1.1;
     }
 
-    /* Popular Picks / Bestsellers Section */
+    /* Sección de Los Más Vendidos */
     .bestsellers-section {
       max-width: 1240px;
       margin: 0 auto;
@@ -805,7 +797,7 @@ const menuItems = [
       line-height: 1;
     }
 
-    /* Bestseller 4-Card Grid */
+    /* Grilla de 4 Bestsellers */
     .bestsellers-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -830,7 +822,6 @@ const menuItems = [
       box-shadow: 0 16px 40px rgba(255, 159, 28, 0.15);
     }
 
-    /* Best seller golden circular badge */
     .badge-bestseller {
       position: absolute;
       top: 14px;
@@ -897,7 +888,6 @@ const menuItems = [
       line-height: 1;
     }
 
-    /* Round Orange "+" Button */
     .btn-round-plus {
       width: 38px;
       height: 38px;
@@ -920,7 +910,7 @@ const menuItems = [
       box-shadow: 0 6px 18px rgba(255, 159, 28, 0.6);
     }
 
-    /* Promo Delivery Banner (Vibrant Orange Card) */
+    /* Banner Promocional de Delivery */
     .promo-banner-section {
       max-width: 1240px;
       margin: 0 auto 5rem;
@@ -1043,7 +1033,7 @@ const menuItems = [
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    /* Full Catalog Section */
+    /* Catálogo Completo */
     .catalog-section {
       max-width: 1240px;
       margin: 0 auto;
@@ -1075,7 +1065,6 @@ const menuItems = [
       line-height: 1;
     }
 
-    /* Filter Bar */
     .filter-pills-row {
       display: flex;
       align-items: center;
@@ -1104,7 +1093,6 @@ const menuItems = [
       box-shadow: 0 4px 14px rgba(255, 159, 28, 0.35);
     }
 
-    /* Catalog Cards Grid */
     .menu-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -1263,7 +1251,7 @@ const menuItems = [
       background: rgba(255, 159, 28, 0.08);
     }
 
-    /* PWA Mobile Ecosystem Banner */
+    /* Sección de Arquitectura PWA & Admin */
     .pwa-layer-section {
       max-width: 1240px;
       margin: 0 auto 5rem;
@@ -1319,7 +1307,7 @@ const menuItems = [
       flex-wrap: wrap;
     }
 
-    /* Footer */
+    /* Footer Institucional */
     footer {
       background: #07080A;
       border-top: 1px solid #191B24;
@@ -1391,7 +1379,7 @@ const menuItems = [
 
     .app-badges-col p {
       font-size: 0.82rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.6rem;
       color: #9CA3AF;
     }
     .app-store-badge {
@@ -1447,7 +1435,7 @@ const menuItems = [
       gap: 1rem;
     }
 
-    /* Interactive Shopping Cart Drawer */
+    /* Drawer de Carrito de Compras */
     .cart-drawer-backdrop {
       position: fixed;
       inset: 0;
@@ -1510,6 +1498,7 @@ const menuItems = [
       color: #6B7280;
       margin-top: 3rem;
       font-size: 0.95rem;
+      line-height: 1.6;
     }
     .cart-item-row {
       display: flex;
@@ -1559,7 +1548,7 @@ const menuItems = [
       font-weight: 800;
     }
 
-    /* Modal for Detailed Specs */
+    /* Modal de Especificaciones */
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -1618,7 +1607,7 @@ const menuItems = [
       padding: 2rem;
     }
 
-    /* Video Player Modal */
+    /* Modal de Video */
     .video-modal-box {
       background: #000000;
       border: 1px solid var(--border-dark);
@@ -1671,86 +1660,86 @@ const menuItems = [
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
+  <!-- Barra Superior de Notificaciones -->
   <div class="top-announcement">
-    <span>🔥 <strong>TASTYBITES GOURMET</strong> &bull; ENTREGA EXPRESS EN 20 MINUTOS GARANTIZADA</span>
+    <span>🔥 <strong>GALAXY BURGERS</strong> &bull; ENTREGA EXPRESS EN 20 MINUTOS GARANTIZADA</span>
     <span>•</span>
-    <a href="/app">📱 Abrir App Móvil PWA &bull; Código WELCOME20</a>
+    <a href="/app">📱 Abrir App Móvil PWA &bull; Cupón: WELCOME20</a>
   </div>
 
-  <!-- Header & Navigation -->
+  <!-- Cabecera y Navegación -->
   <header>
     <div class="nav-container">
       <a href="/" class="brand-logo">
         <div class="brand-icon-box">🍔</div>
         <div class="brand-text">
-          <span class="brand-title">TASTYBITES</span>
-          <span class="brand-subtitle">EAT. ENJOY. REPEAT.</span>
+          <span class="brand-title">GALAXY BURGERS</span>
+          <span class="brand-subtitle">SABOR CÓSMICO &bull; CARACAS</span>
         </div>
       </a>
 
       <nav>
         <ul class="nav-menu">
-          <li><a href="/" class="nav-item active">HOME</a></li>
-          <li><a href="#bestsellers" class="nav-item">MENU</a></li>
-          <li><a href="#offers" class="nav-item">OFFERS</a></li>
-          <li><a href="#about" class="nav-item">ABOUT US</a></li>
-          <li><a href="#contact" class="nav-item">CONTACT</a></li>
+          <li><a href="/" class="nav-item active">INICIO</a></li>
+          <li><a href="#bestsellers" class="nav-item">MENÚ</a></li>
+          <li><a href="#offers" class="nav-item">OFERTAS</a></li>
+          <li><a href="#about" class="nav-item">NOSOTROS</a></li>
+          <li><a href="#contact" class="nav-item">CONTACTO</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <a href="/app" class="btn-nav-outline" title="Acceso a PWA">
+        <a href="/app" class="btn-nav-outline" title="Acceso a PWA Móvil">
           <span>📱 PWA</span>
         </a>
         <a href="/admin" class="btn-nav-outline" title="Panel de Administración">
           <span>⚙️ Admin</span>
         </a>
         <button id="orderOnlineBtn" class="btn-pill-amber">
-          <span>ORDER ONLINE 👜</span>
+          <span>PEDIR EN LÍNEA 👜</span>
           <span id="cartCountBadge" style="background:#0B0C10;color:#FF9F1C;border-radius:50%;padding:2px 7px;font-size:0.75rem;margin-left:4px;">0</span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section (Taste & Appetite Appeal) -->
+  <!-- Hero Section -->
   <section class="hero-section" id="hero">
     <div class="hero-left">
-      <span class="script-sub">Craving Something</span>
+      <span class="script-sub">¿Antojo de algo especial?</span>
       
       <h1 class="hero-main-title">
-        <span class="word-white">Delicious</span>
-        <span class="word-amber">BURGERS</span>
+        <span class="word-white">Deliciosas</span>
+        <span class="word-amber">HAMBURGUESAS</span>
       </h1>
 
       <div class="pill-features">
-        <span>HOT</span>
+        <span>CALIENTE</span>
         <span class="dot">•</span>
-        <span>FRESH</span>
+        <span>FRESCO</span>
         <span class="dot">•</span>
-        <span>TASTY</span>
+        <span>SABOR CÓSMICO</span>
       </div>
 
       <p class="hero-desc">
-        Handcrafted burgers made with premium ingredients for a perfect bite. 100% Angus flameado a la brasa, queso fundente y pan brioche horneado al amanecer.
+        Hamburguesas artesanales preparadas con ingredientes de primera calidad para una mordida perfecta. 100% Angus flameado a la brasa, queso fundente y pan brioche horneado a diario en Caracas.
       </p>
 
       <div class="hero-ctas-row">
         <a href="#bestsellers" class="btn-hero-order">
-          <span>ORDER NOW →</span>
+          <span>PEDIR AHORA →</span>
         </a>
         <button id="watchVideoBtn" class="btn-watch-video">
           <span class="play-icon-circle">▶</span>
-          <span>WATCH VIDEO</span>
+          <span>VER VIDEO</span>
         </button>
       </div>
 
-      <!-- Seal 100% Fresh & Premium -->
+      <!-- Sello 100% Fresco & Premium -->
       <div class="fresh-stamp-badge">
         <span class="stamp-stars">★★★</span>
         <span class="stamp-percent">100%</span>
-        <span class="stamp-label">FRESH & PREMIUM</span>
+        <span class="stamp-label">FRESCO & PREMIUM</span>
         <span class="stamp-stars">★★★</span>
       </div>
     </div>
@@ -1759,7 +1748,7 @@ const menuItems = [
       <div class="hero-showcase-box">
         <img 
           src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1100&auto=format&fit=crop&q=85" 
-          alt="TastyBites Signature Delicious Burger" 
+          alt="Galaxy Burgers - Hamburguesa Deliciosa Signature" 
           class="hero-burger-img"
         />
         
@@ -1771,53 +1760,53 @@ const menuItems = [
     </div>
   </section>
 
-  <!-- Category Strip (Floating White Card) -->
+  <!-- Barra Flotante de Categorías -->
   <section class="category-strip-section" id="categories">
     <div class="category-strip-card">
-      <button class="cat-item-btn active" data-category="Burgers">
+      <button class="cat-item-btn active" data-category="Hamburguesas">
         <div class="cat-icon-wrap">🍔</div>
-        <div class="cat-title">BURGERS</div>
-        <div class="cat-subtitle">Juicy & Cheesy</div>
+        <div class="cat-title">HAMBURGUESAS</div>
+        <div class="cat-subtitle">Jugosas & Con Queso</div>
       </button>
 
-      <button class="cat-item-btn" data-category="Fries">
+      <button class="cat-item-btn" data-category="Papas">
         <div class="cat-icon-wrap">🍟</div>
-        <div class="cat-title">FRIES</div>
-        <div class="cat-subtitle">Crispy & Golden</div>
+        <div class="cat-title">PAPAS FRITAS</div>
+        <div class="cat-subtitle">Crujientes & Doradas</div>
       </button>
 
-      <button class="cat-item-btn" data-category="Pizza">
+      <button class="cat-item-btn" data-category="Pizzas">
         <div class="cat-icon-wrap">🍕</div>
-        <div class="cat-title">PIZZA</div>
-        <div class="cat-subtitle">Hot & Delicious</div>
+        <div class="cat-title">PIZZAS</div>
+        <div class="cat-subtitle">Calientes & Deliciosas</div>
       </button>
 
-      <button class="cat-item-btn" data-category="Drinks">
+      <button class="cat-item-btn" data-category="Bebidas">
         <div class="cat-icon-wrap">🥤</div>
-        <div class="cat-title">DRINKS</div>
-        <div class="cat-subtitle">Chill & Refreshing</div>
+        <div class="cat-title">BEBIDAS</div>
+        <div class="cat-subtitle">Frías & Refrescantes</div>
       </button>
 
-      <button class="cat-item-btn" data-category="Chicken">
+      <button class="cat-item-btn" data-category="Pollo">
         <div class="cat-icon-wrap">🍗</div>
-        <div class="cat-title">CHICKEN</div>
-        <div class="cat-subtitle">Crispy & Spicy</div>
+        <div class="cat-title">POLLO</div>
+        <div class="cat-subtitle">Crujiente & Especiado</div>
       </button>
 
-      <button class="cat-item-btn" data-category="Desserts">
+      <button class="cat-item-btn" data-category="Postres">
         <div class="cat-icon-wrap">🍨</div>
-        <div class="cat-title">DESSERTS</div>
-        <div class="cat-subtitle">Sweet Treats</div>
+        <div class="cat-title">POSTRES</div>
+        <div class="cat-subtitle">Delicias Dulces</div>
       </button>
     </div>
   </section>
 
-  <!-- Popular Picks & Bestsellers -->
+  <!-- Sección de Las Más Populares & Bestsellers -->
   <section class="bestsellers-section" id="bestsellers">
     <div class="section-title-wrap">
-      <span class="popular-picks-script">— Popular Picks —</span>
+      <span class="popular-picks-script">— Las Más Populares —</span>
       <div class="bestsellers-heading-row">
-        <h2 class="bestsellers-heading">OUR BESTSELLERS</h2>
+        <h2 class="bestsellers-heading">NUESTROS MÁS VENDIDOS</h2>
       </div>
     </div>
 
@@ -1851,12 +1840,12 @@ const menuItems = [
     </div>
   </section>
 
-  <!-- Promotional Delivery Offer Banner -->
+  <!-- Banner Promocional de Delivery -->
   <section class="promo-banner-section" id="offers">
     <div class="promo-banner-card">
       <div class="promo-left">
-        <span class="promo-hungry-tag">HUNGRY?</span>
-        <span class="promo-deliver-script">We Deliver To You!</span>
+        <span class="promo-hungry-tag">¿CON HAMBRE?</span>
+        <span class="promo-deliver-script">¡Te lo Llevamos a Casa!</span>
       </div>
 
       <div class="promo-center-art">
@@ -1866,15 +1855,15 @@ const menuItems = [
       </div>
 
       <div class="promo-right">
-        <div class="promo-get-tag">GET</div>
+        <div class="promo-get-tag">OBTÉN</div>
         <div class="promo-percent">20%<span>OFF</span></div>
-        <div class="promo-subtext">ON YOUR FIRST ORDER</div>
+        <div class="promo-subtext">EN TU PRIMER PEDIDO</div>
         <div class="coupon-code-pill">WELCOME20</div>
       </div>
     </div>
   </section>
 
-  <!-- Full Master Menu & Gourmet Catalog -->
+  <!-- Menú Completo & Creaciones de Autor -->
   <section class="catalog-section" id="full-menu">
     <div class="catalog-header">
       <div>
@@ -1882,14 +1871,14 @@ const menuItems = [
         <h2 class="catalog-main-title">EXPLORA NUESTRO MENÚ COMPLETO</h2>
       </div>
 
-      <!-- Filter Bar -->
+      <!-- Barra de Filtros -->
       <div class="filter-pills-row">
         <button class="filter-btn active" data-filter="all">Todos (10)</button>
-        <button class="filter-btn" data-filter="Burgers">Burgers</button>
-        <button class="filter-btn" data-filter="Chicken">Pollo Crispy</button>
-        <button class="filter-btn" data-filter="Fries">Papas & Sides</button>
-        <button class="filter-btn" data-filter="Pizza">Pizza</button>
-        <button class="filter-btn" data-filter="Desserts">Postres</button>
+        <button class="filter-btn" data-filter="Hamburguesas">Hamburguesas</button>
+        <button class="filter-btn" data-filter="Pollo">Pollo Crispy</button>
+        <button class="filter-btn" data-filter="Papas">Papas & Sides</button>
+        <button class="filter-btn" data-filter="Pizzas">Pizzas</button>
+        <button class="filter-btn" data-filter="Postres">Postres</button>
       </div>
     </div>
 
@@ -1955,7 +1944,7 @@ const menuItems = [
     </div>
   </section>
 
-  <!-- PWA & Administration Architecture Highlight -->
+  <!-- Resumen de Arquitectura PWA & Admin -->
   <section class="pwa-layer-section" id="about">
     <div class="pwa-layer-card">
       <div>
@@ -1984,19 +1973,19 @@ const menuItems = [
     </div>
   </section>
 
-  <!-- Footer (Direct Match to Reference) -->
+  <!-- Footer Institucional -->
   <footer id="contact">
     <div class="footer-content-wrap">
       <div class="footer-brand-box">
         <a href="/" class="brand-logo" style="margin-bottom: 0.5rem;">
           <div class="brand-icon-box" style="width: 38px; height: 38px; font-size: 1.3rem;">🍔</div>
           <div class="brand-text">
-            <span class="brand-title" style="font-size: 1.6rem;">TASTYBITES</span>
-            <span class="brand-subtitle" style="font-size: 0.58rem;">EAT. ENJOY. REPEAT.</span>
+            <span class="brand-title" style="font-size: 1.6rem;">GALAXY BURGERS</span>
+            <span class="brand-subtitle" style="font-size: 0.58rem;">SABOR CÓSMICO &bull; CARACAS</span>
           </div>
         </a>
         <p>
-          We serve delicious food made with the best ingredients. Enjoy your meal, your way! Carne 100% Angus, horneado diario y delivery express.
+          Servimos deliciosa comida preparada con los mejores ingredientes. ¡Disfruta tu comida como más te gusta! Carne 100% Angus, horneado diario y delivery express garantizado en Caracas.
         </p>
         <div class="footer-social-row">
           <a href="#" class="social-btn" aria-label="Facebook">f</a>
@@ -2008,39 +1997,39 @@ const menuItems = [
       </div>
 
       <div>
-        <h4 class="footer-col-title">Quick Links</h4>
+        <h4 class="footer-col-title">Enlaces Rápidos</h4>
         <ul class="footer-links-list">
-          <li><a href="/">Home</a></li>
-          <li><a href="#bestsellers">Menu</a></li>
-          <li><a href="#offers">Offers</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="#bestsellers">Menú</a></li>
+          <li><a href="#offers">Ofertas</a></li>
+          <li><a href="#about">Nosotros</a></li>
+          <li><a href="#contact">Contacto</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="footer-col-title">Customer Care</h4>
+        <h4 class="footer-col-title">Atención al Cliente</h4>
         <ul class="footer-links-list">
-          <li><a href="/app">My Orders</a></li>
-          <li><a href="#">Delivery Info</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
-          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="/app">Mis Pedidos</a></li>
+          <li><a href="#">Información de Delivery</a></li>
+          <li><a href="#">Preguntas Frecuentes</a></li>
+          <li><a href="#">Términos & Condiciones</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
         </ul>
       </div>
 
       <div class="app-badges-col">
-        <h4 class="footer-col-title">Contact Us</h4>
-        <p style="margin-bottom: 0.35rem; color: #FFFFFF;">📞 +1 (555) 123-4567</p>
-        <p style="margin-bottom: 0.35rem;">✉️ hello@tastybites.com</p>
-        <p style="margin-bottom: 1.5rem;">📍 123 Food Street, New York, NY 10001</p>
+        <h4 class="footer-col-title">Contáctanos</h4>
+        <p style="margin-bottom: 0.35rem; color: #FFFFFF;">📞 +58 414-2899554</p>
+        <p style="margin-bottom: 0.35rem;">✉️ contacto@galaxyburgers.com</p>
+        <p style="margin-bottom: 1.5rem; color: #FFFFFF;">📍 Caracas - Venezuela</p>
 
-        <h4 class="footer-col-title" style="font-size: 0.85rem; margin-bottom: 0.6rem;">DOWNLOAD OUR APP</h4>
+        <h4 class="footer-col-title" style="font-size: 0.85rem; margin-bottom: 0.6rem;">DESCARGA NUESTRA APP</h4>
         
         <a href="/app" class="app-store-badge">
           <span class="badge-icon">🍏</span>
           <div class="badge-texts">
-            <span class="badge-sub">Download on the</span>
+            <span class="badge-sub">Descárgala en el</span>
             <span class="badge-main">App Store</span>
           </div>
         </a>
@@ -2048,7 +2037,7 @@ const menuItems = [
         <a href="/app" class="app-store-badge">
           <span class="badge-icon">▶</span>
           <div class="badge-texts">
-            <span class="badge-sub">GET IT ON</span>
+            <span class="badge-sub">DISPONIBLE EN</span>
             <span class="badge-main">Google Play</span>
           </div>
         </a>
@@ -2056,7 +2045,7 @@ const menuItems = [
     </div>
 
     <div class="footer-bottom-bar">
-      <div>&copy; 2024 TastyBites. All Rights Reserved. Arquitectura MasterGeniusjoa.</div>
+      <div>&copy; 2026 Galaxy Burgers. Todos los derechos reservados. Arquitectura MasterGeniusjoa.</div>
       <div style="display: flex; gap: 1.5rem;">
         <a href="/" style="color: #6B7280; text-decoration: none;">Landing E-commerce</a>
         <a href="/app" style="color: #6B7280; text-decoration: none;">Capa PWA</a>
@@ -2065,16 +2054,16 @@ const menuItems = [
     </div>
   </footer>
 
-  <!-- Interactive Cart Drawer -->
+  <!-- Drawer Interactivo de Carrito -->
   <div id="cartDrawerBackdrop" class="cart-drawer-backdrop">
     <div class="cart-drawer">
       <div class="cart-header">
-        <h3>Tu Orden Online</h3>
+        <h3>Tu Orden en Línea</h3>
         <button id="closeCartBtn" class="cart-close-btn">&times;</button>
       </div>
 
       <div id="cartItemsContainer" class="cart-items-wrap">
-        <div class="cart-empty-text">Tu bolsa de TastyBites está vacía.<br/>Agrega hamburguesas o bestsellers pulsando <strong>+</strong>.</div>
+        <div class="cart-empty-text">Tu bolsa de Galaxy Burgers está vacía.<br/>Agrega hamburguesas o especialidades pulsando <strong>+</strong>.</div>
       </div>
 
       <div class="cart-footer">
@@ -2089,7 +2078,7 @@ const menuItems = [
     </div>
   </div>
 
-  <!-- Detailed Specs Modal -->
+  <!-- Modal de Especificaciones y Ficha Técnica -->
   <div id="specsModal" class="modal-overlay">
     <div class="modal-box">
       <button id="closeSpecsModal" class="modal-close-icon">&times;</button>
@@ -2138,18 +2127,18 @@ const menuItems = [
     </div>
   </div>
 
-  <!-- Video Modal -->
+  <!-- Modal de Video -->
   <div id="videoModal" class="modal-overlay">
     <div class="video-modal-box">
       <button id="closeVideoModal" class="modal-close-icon">&times;</button>
       <h3 style="font-family: var(--font-display); font-size: 1.8rem; letter-spacing: 0.05em; color: var(--primary-amber); margin-bottom: 1rem; text-transform: uppercase;">
-        TastyBites Craft & Gourmet Experience
+        Experiencia Gourmet y Artesanal de Galaxy Burgers
       </h3>
       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; background: #111;">
         <iframe 
           style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border: 0;"
           src="https://www.youtube-nocookie.com/embed/g6t83dU4cgk?autoplay=0" 
-          title="TastyBites Burger Craft Video" 
+          title="Galaxy Burgers - Preparación Artesanal" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowfullscreen>
         </iframe>
@@ -2157,9 +2146,9 @@ const menuItems = [
     </div>
   </div>
 
-  <!-- Client-side Scripts -->
+  <!-- Lógica JavaScript del Cliente -->
   <script>
-    // 1. Interactive Shopping Cart
+    // 1. Carrito de Compras Interactivo
     interface CartItem {
       id: string;
       name: string;
@@ -2191,7 +2180,7 @@ const menuItems = [
       if (cartItemsContainer) {
         if (cart.length === 0) {
           cartItemsContainer.innerHTML = `
-            <div class="cart-empty-text">Tu bolsa de TastyBites está vacía.<br/>Agrega hamburguesas o bestsellers pulsando <strong>+</strong>.</div>
+            <div class="cart-empty-text">Tu bolsa de Galaxy Burgers está vacía.<br/>Agrega hamburguesas o especialidades pulsando <strong>+</strong>.</div>
           `;
         } else {
           cartItemsContainer.innerHTML = cart.map((item, idx) => `
@@ -2205,7 +2194,7 @@ const menuItems = [
             </div>
           `).join('');
 
-          // Bind remove buttons
+          // Enlazar botones de eliminación
           cartItemsContainer.querySelectorAll('.cart-item-remove').forEach(btn => {
             btn.addEventListener('click', (e) => {
               const target = e.currentTarget as HTMLElement;
@@ -2218,11 +2207,11 @@ const menuItems = [
       }
     }
 
-    // Add to cart buttons
+    // Botones de agregar al carrito (+)
     document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const id = btn.getAttribute('data-id') || '0';
-        const name = btn.getAttribute('data-name') || 'Item';
+        const name = btn.getAttribute('data-name') || 'Producto';
         const price = parseFloat(btn.getAttribute('data-price') || '0');
         const image = btn.getAttribute('data-image') || '';
 
@@ -2252,7 +2241,7 @@ const menuItems = [
       }
     });
 
-    // 2. Category Strip Interactive Filter
+    // 2. Filtro Interactivo de Barra de Categorías
     const catButtons = document.querySelectorAll('.cat-item-btn');
     const catalogCards = document.querySelectorAll('.menu-card');
 
@@ -2278,7 +2267,7 @@ const menuItems = [
       });
     });
 
-    // 3. Secondary Filter Pills for Full Catalog
+    // 3. Filtros secundarios del Menú Completo
     const filterPills = document.querySelectorAll('.filter-btn');
     filterPills.forEach(pill => {
       pill.addEventListener('click', () => {
@@ -2297,7 +2286,7 @@ const menuItems = [
       });
     });
 
-    // 4. Detailed Specs Modal
+    // 4. Modal de Especificaciones Técnicas
     const specsModal = document.getElementById('specsModal');
     const closeSpecsModal = document.getElementById('closeSpecsModal');
     const openSpecBtns = document.querySelectorAll('.open-spec-modal');
@@ -2384,7 +2373,7 @@ const menuItems = [
       }
     });
 
-    // 5. Video Modal
+    // 5. Modal de Video
     const videoModal = document.getElementById('videoModal');
     const watchVideoBtn = document.getElementById('watchVideoBtn');
     const closeVideoModal = document.getElementById('closeVideoModal');
@@ -2406,7 +2395,7 @@ const menuItems = [
       }
     });
 
-    // Close on Escape key
+    // Cerrar modales con tecla Escape
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         specsModal?.classList.remove('open');

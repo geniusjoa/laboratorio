@@ -1,4 +1,4 @@
-# 🍔 NextCollege - MasterGeniusjoa | Plataforma Comercial de Alto Rendimiento
+# 🍔 NextCollege - MasterGeniusjoa | Galaxy Burgers
 
 > **Scaffold Profesional y Template Repository** diseñado para webinars, masterclasses y entornos de producción. Integra un ecosistema full-stack unificado con **Landing E-commerce (Astro)**, **PWA Móvil (React)** y **Panel de Administración (React)**, respaldado por una **API REST en Node.js/Express** con persistencia dual (**MySQL / In-Memory**) y despliegue automatizado con **Docker y Dokploy**.
 
@@ -6,55 +6,63 @@
 
 ## 🎨 Referencia Visual y Rediseño de UI de la Landing E-commerce
 
-La interfaz de usuario de la capa **Landing E-commerce** ha sido renovada adoptando el diseño de la referencia visual ubicada en:
+La interfaz de usuario de la capa **Landing E-commerce** ha sido renovada adoptando la paleta de colores, componentes y estilo visual de la referencia gráfica ubicada en:
 
 📍 **Ruta local de la imagen de referencia:**  
 `D:\NetxCollege\Laboratorio\laboratorio\imagen\7109aefe8e230e92a685dfdb89915bfb.jpg`
+
+### Identidad de Marca y Adaptación al Español:
+* **Nombre Comercial Oficial:** **Galaxy Burgers**
+* **Slogan / Tagline:** *"SABOR CÓSMICO &bull; CARACAS"*
+* **Datos de Contacto y Ubicación Oficial:**
+  * 📞 **Teléfono:** `+58 414-2899554`
+  * ✉️ **Correo Electrónico:** `contacto@galaxyburgers.com`
+  * 📍 **Ubicación:** `Caracas - Venezuela`
 
 ### Elementos Visuales y Paleta Adoptada:
 * **Paleta de Colores Dark Gourmet:**
   * **Fondo Principal (Background):** Deep Obsidian y Dark Slate (`#0B0C10`, `#14161E`).
   * **Acento Primario (Primary Amber):** Ámbar dorado y naranja vibrante (`#FF9F1C`, `#FFA200`, `#F59E0B`).
   * **Bordes y Superficies:** Tarjetas oscuras con relieve sutil (`#1B1E28`, bordes `#232733`).
-  * **Tipografía:** Títulos en mayúsculas display condensadas (*Bebas Neue* / *Plus Jakarta Sans*), combinados con acentos caligráficos en script (*Caveat*).
-* **Cabecera y Navegación:**
-  * Logotipo de marca con icono de hamburguesa y lema *"TASTYBITES &bull; EAT. ENJOY. REPEAT."*.
-  * Menú de navegación con estado activo resaltado (`HOME`, `MENU`, `OFFERS`, `ABOUT US`, `CONTACT`).
-  * Acceso rápido a las capas del sistema (`PWA`, `Admin`) y botón píldora **"ORDER ONLINE 👜"** con contador de ítems en vivo.
+  * **Tipografía:** Títulos en mayúsculas display condensadas (*Bebas Neue* / *Plus Jakarta Sans*), combinados con acentos caligráficos fluidos (*Caveat*).
+* **Cabecera y Navegación (100% en Español):**
+  * Logotipo de marca con icono de hamburguesa y nombre **Galaxy Burgers**.
+  * Menú de navegación con estado activo resaltado (`INICIO`, `MENÚ`, `OFERTAS`, `NOSOTROS`, `CONTACTO`).
+  * Acceso directo a las capas del sistema (`PWA`, `Admin`) y botón píldora **"PEDIR EN LÍNEA 👜"** con contador interactivo de ítems en tiempo real.
 * **Hero Section de Alto Impacto:**
-  * Subtítulo en caligrafía *"Craving Something"*.
-  * Titular gigante *"Delicious BURGERS"* con efecto tipográfico dual (blanco script + ámbar display).
-  * Píldora de atributos de frescura: `HOT • FRESH • TASTY`.
-  * Llamados a la acción principales: Botón de orden inmediata `ORDER NOW →` y botón interactivo `▶ WATCH VIDEO` con reproducción de video de preparación artesanal.
-  * Sello circular de garantía: `★★★ 100% FRESH & PREMIUM ★★★`.
-  * Composición fotográfica gastronómica en tabla de piedra con hamburguesa, patatas fritas y vaso térmico.
+  * Subtítulo en caligrafía script: *"¿Antojo de algo especial?"*.
+  * Titular principal gigante: *"Deliciosas HAMBURGUESAS"* con efecto tipográfico dual (blanco script + ámbar display).
+  * Píldora de frescura: `CALIENTE • FRESCO • SABOR CÓSMICO`.
+  * Llamados a la acción: Botón de orden inmediata `PEDIR AHORA →` y botón interactivo `▶ VER VIDEO` con reproducción de preparación artesanal.
+  * Sello circular de garantía gastronómica: `★★★ 100% FRESCO & PREMIUM ★★★`.
+  * Composición fotográfica en alta resolución sobre tabla de corte con hamburguesa artesanal, papas fritas y bebida fría.
 * **Barra Flotante de Categorías (Category Strip):**
-  * Contenedor flotante tipo píldora blanca con 6 categorías ilustradas con microinteracciones:
-    1. 🍔 **BURGERS** (*Juicy & Cheesy*)
-    2. 🍟 **FRIES** (*Crispy & Golden*)
-    3. 🍕 **PIZZA** (*Hot & Delicious*)
-    4. 🥤 **DRINKS** (*Chill & Refreshing*)
-    5. 🍗 **CHICKEN** (*Crispy & Spicy*)
-    6. 🍨 **DESSERTS** (*Sweet Treats*)
-  * Filtro interactivo que actualiza instantáneamente el catálogo de productos.
-* **Sección "Popular Picks & OUR BESTSELLERS":**
-  * Encabezado decorativo con filetes dorados simétricos.
-  * Grilla de 4 tarjetas oscuras con badge circular de **"BEST SELLER"**:
-    * **Signature Burger** ($5.49) &bull; *Loaded with cheese & special sauce*.
-    * **Cheesy Pizza** ($8.49) &bull; *Fresh veggies, italian herbs & cheese*.
-    * **Crispy Chicken** ($5.99) &bull; *Golden fried & perfectly seasoned*.
-    * **Loaded Fries** ($2.99) &bull; *Crispy fries with cheese & sauce*.
-  * Botón circular naranja **`+`** para adición inmediata al carrito.
+  * Contenedor flotante tipo píldora blanca con 6 categorías en español con microinteracciones:
+    1. 🍔 **HAMBURGUESAS** (*Jugosas & Con Queso*)
+    2. 🍟 **PAPAS FRITAS** (*Crujientes & Doradas*)
+    3. 🍕 **PIZZAS** (*Calientes & Deliciosas*)
+    4. 🥤 **BEBIDAS** (*Frías & Refrescantes*)
+    5. 🍗 **POLLO** (*Crujiente & Especiado*)
+    6. 🍨 **POSTRES** (*Delicias Dulces*)
+  * Filtro interactivo en cliente que actualiza y desplaza suavemente hacia el catálogo.
+* **Sección "Las Más Populares & NUESTROS MÁS VENDIDOS":**
+  * Encabezado con tipografía script y filetes dorados simétricos.
+  * Grilla de 4 tarjetas oscuras con badge circular de **"MÁS VENDIDO"**:
+    * **Signature Burger** ($5.49) &bull; *Cargada con abundante queso y salsa especial*.
+    * **Cheesy Pizza** ($8.49) &bull; *Vegetales frescos, hierbas italianas y queso fundido*.
+    * **Crispy Chicken** ($5.99) &bull; *Pollo frito dorado y perfectamente sazonado*.
+    * **Loaded Fries** ($2.99) &bull; *Papas crujientes con queso fundido y tocineta*.
+  * Botón circular naranja **`+`** para adición rápida a la orden en línea.
 * **Banner Promocional de Delivery:**
-  * Bloque con degradado ámbar cálido y borde segmentado: *"HUNGRY? We Deliver To You!"*.
-  * Ilustración animada de mensajero en scooter de entrega rápida.
-  * Oferta especial: **"GET 20% OFF ON YOUR FIRST ORDER"** con código de cupón **`WELCOME20`**.
+  * Bloque con degradado ámbar y borde segmentado: *"¿CON HAMBRE? ¡Te lo Llevamos a Casa!"*.
+  * Ilustración animada de mensajero en scooter de entrega rápida express.
+  * Oferta especial: **"OBTÉN 20% OFF EN TU PRIMER PEDIDO"** con código de cupón **`WELCOME20`**.
 * **Drawer de Carrito y Modales Interactivos:**
-  * Carrito de compras deslizante (*Cart Drawer*) con cálculo de total, listado de ítems y botón de checkout sincronizado hacia la PWA.
-  * Modal detallado de ingredientes, desglose nutricional (calorías, gramaje de carne, tiempo de cocción) y especificaciones técnicas.
+  * Carrito de compras deslizante lateral (*Cart Drawer*) con cálculo de subtotal en vivo, listado de productos y botón de checkout sincronizado hacia la PWA.
+  * Modal detallado de ingredientes, desglose nutricional (calorías, gramaje de carne/base, tiempo de preparación) y especificaciones técnicas.
 * **Footer Corporativo Completo:**
   * Resumen de marca, canales sociales (Facebook, Instagram, X, TikTok, YouTube).
-  * Columnas de navegación: *Quick Links*, *Customer Care*, datos de contacto (+1 (555) 123-4567, hello@tastybites.com).
+  * Columnas de navegación: *Enlaces Rápidos*, *Atención al Cliente*, datos de contacto (+58 414-2899554, contacto@galaxyburgers.com, Caracas - Venezuela).
   * Insignias oficiales para descarga de app móvil (*App Store* y *Google Play*) con redirección directa a la PWA.
 
 ---
@@ -89,10 +97,10 @@ laboratorio/
 * **Ruta de Acceso en Servidor:** `/` (Raíz).
 * **Propósito y Capacidades:**
   * Creada para maximizar la velocidad de carga (Core Web Vitals óptimos) sin sobrecargar al cliente con JavaScript innecesario.
-  * Implementa la identidad visual moderna (TastyBites Dark Luxury).
-  * Catálogo completo con 10 variedades gastronómicas maestras (burgers de autor, pollo crispy, papas con trufa, pizzas artesanales y postres).
-  * Filtrado reactivo en el navegador por categorías (*Burgers, Chicken, Fries, Pizza, Desserts*).
-  * Modal interactivo para inspección de especificaciones gastronómicas: gramaje, calorías, tiempo de cocción y listado de ingredientes.
+  * Implementa la identidad visual moderna (Galaxy Burgers Dark Gourmet).
+  * Catálogo completo con 10 creaciones gastronómicas maestras de autor (burgers gourmet, pollo crispy, papas con trufa, pizzas artesanales y postres).
+  * Filtrado reactivo en el navegador por categorías (*Hamburguesas, Pollo, Papas, Pizzas, Postres*).
+  * Modal interactivo para inspección de especificaciones: gramaje de carne, calorías, tiempo de cocción y listado de ingredientes.
   * Carrito de compras deslizante en memoria (*Cart Drawer*) con badges dinámicos y redirección fluida hacia la experiencia de compra en la PWA.
   * Sección destacada con llamado a la acción para la descarga o uso de la PWA móvil.
 
