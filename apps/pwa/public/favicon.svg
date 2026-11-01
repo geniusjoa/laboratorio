@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#1E1028"/>
+      <stop offset="70%" stop-color="#0E0715"/>
+      <stop offset="100%" stop-color="#050308"/>
+    </radialGradient>
+
+    <!-- Outer Glow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Bun Top Gradient -->
+    <linearGradient id="bunTop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFB03A"/>
+      <stop offset="60%" stop-color="#E67300"/>
+      <stop offset="100%" stop-color="#B84E00"/>
+    </linearGradient>
+
+    <!-- Bun Bottom Gradient -->
+    <linearGradient id="bunBottom" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF9F1C"/>
+      <stop offset="100%" stop-color="#C25400"/>
+    </linearGradient>
+
+    <!-- Patty Gradient -->
+    <linearGradient id="pattyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5C2410"/>
+      <stop offset="100%" stop-color="#361205"/>
+    </linearGradient>
+
+    <!-- Cheese Gradient -->
+    <linearGradient id="cheeseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFE066"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <!-- Cosmic Ring Gradient -->
+    <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5722"/>
+      <stop offset="50%" stop-color="#FFB03A"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle Base -->
+  <rect x="4" y="4" width="120" height="120" rx="30" fill="url(#bgGrad)" stroke="#FF7518" stroke-width="2.5" stroke-opacity="0.6"/>
+
+  <!-- Cosmic Orbit Ring -->
+  <ellipse cx="64" cy="65" rx="54" ry="24" fill="none" stroke="url(#orbitGrad)" stroke-width="3" stroke-dasharray="8 4" transform="rotate(-22 64 65)" opacity="0.85" filter="url(#glow)"/>
+
+  <!-- Sparkles / Galaxy Stars -->
+  <path d="M102 24 Q102 30 108 30 Q102 30 102 36 Q102 30 96 30 Q102 30 102 24 Z" fill="#FFD166"/>
+  <circle cx="22" cy="38" r="2" fill="#FF7518"/>
+  <circle cx="106" cy="94" r="1.8" fill="#FF5722"/>
+
+  <!-- Top Brioche Bun -->
+  <path d="M30 54 C30 32, 42 22, 64 22 C86 22, 98 32, 98 54 C98 57, 96 58, 92 58 L36 58 C32 58, 30 57, 30 54 Z" fill="url(#bunTop)"/>
+  
+  <!-- Sesame Seeds -->
+  <ellipse cx="50" cy="34" rx="2.2" ry="1.2" fill="#FFF2CC" transform="rotate(-15 50 34)"/>
+  <ellipse cx="64" cy="30" rx="2.2" ry="1.2" fill="#FFF2CC"/>
+  <ellipse cx="78" cy="35" rx="2.2" ry="1.2" fill="#FFF2CC" transform="rotate(15 78 35)"/>
+  <ellipse cx="58" cy="42" rx="2.2" ry="1.2" fill="#FFF2CC" transform="rotate(20 58 42)"/>
+  <ellipse cx="70" cy="43" rx="2.2" ry="1.2" fill="#FFF2CC" transform="rotate(-10 70 43)"/>
+  <ellipse cx="44" cy="46" rx="2" ry="1" fill="#FFF2CC" transform="rotate(-25 44 46)"/>
+  <ellipse cx="84" cy="47" rx="2" ry="1" fill="#FFF2CC" transform="rotate(25 84 47)"/>
+
+  <!-- Fresh Green Lettuce Waves -->
+  <path d="M26 60 Q32 55, 38 60 Q44 65, 50 60 Q56 55, 62 60 Q68 65, 74 60 Q80 55, 86 60 Q92 65, 98 60 Q104 55, 106 61 C106 64, 102 65, 98 64 L30 64 C26 65, 24 63, 26 60 Z" fill="#10B981"/>
+
+  <!-- Melted Cheddar Cheese with drips -->
+  <path d="M28 66 L100 66 L94 76 L86 70 L76 79 L68 71 L56 82 L48 70 L38 77 L32 69 Z" fill="url(#cheeseGrad)"/>
+
+  <!-- Grilled Angus Patty -->
+  <rect x="25" y="70" width="78" height="15" rx="7.5" fill="url(#pattyGrad)"/>
+  <!-- Grill Marks -->
+  <line x1="38" y1="73" x2="48" y2="82" stroke="#240A02" stroke-width="2" stroke-linecap="round"/>
+  <line x1="54" y1="73" x2="64" y2="82" stroke="#240A02" stroke-width="2" stroke-linecap="round"/>
+  <line x1="70" y1="73" x2="80" y2="82" stroke="#240A02" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Bottom Brioche Bun -->
+  <path d="M30 87 C30 85, 33 84, 38 84 L90 84 C95 84, 98 85, 98 87 C98 99, 86 104, 64 104 C42 104, 30 99, 30 87 Z" fill="url(#bunBottom)"/>
+</svg>

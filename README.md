@@ -41,6 +41,9 @@ La interfaz de usuario de la capa **Landing E-commerce** ha sido desarrollada e 
   * Al pasar sobre botones y enlaces interactivos, se transforma en araña sobre telaraña (`🕷️🕸️`).
   * Al hacer clic activo, la araña ataca dejando una gota de sangre (`🕷️🩸`).
   * Un hilo de seda translúcido se suspende dinámicamente desde el techo de la pantalla siguiendo a la araña en tiempo real.
+* **Favicon Oficial Galaxy Burgers (SVG Vectorial):**
+  * Diseño de alta fidelidad con base squircle oscura, anillo orbital galáctico con degradado fuego/violeta, pan brioche dorado con semillas de sésamo, lechuga rizada, queso cheddar fundente y carne Angus a la parrilla con marcas de sellado.
+  * Implementado de manera unificada en las 3 capas: **Landing E-commerce** (`/favicon.svg`), **PWA Móvil** (`/app/favicon.svg` e iconos PWA 192/512) y **Panel de Administración** (`/admin/favicon.svg`).
 
 ### Elementos Visuales y Paleta Adoptada:
 * **Paleta de Colores Dark Gourmet:**
