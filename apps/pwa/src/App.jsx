@@ -243,16 +243,16 @@ export default function App() {
   const handleApplyCoupon = (e) => {
     e.preventDefault();
     const code = couponCode.trim().toUpperCase();
-    if (code === 'SPOOKY20' || code === 'WELCOME20' || code === 'GALAXYVIP' || code === 'RAPIDVIP' || code === 'GALAXYFIRST' || code === 'RAPIDFIRST') {
+    if (code === 'NAVIDAD20' || code === 'SANTA20' || code === 'SPOOKY20' || code === 'WELCOME20' || code === 'GALAXYVIP' || code === 'RAPIDVIP' || code === 'GALAXYFIRST' || code === 'RAPIDFIRST') {
       setCouponDiscount(3.50);
       setCouponApplied(true);
-      showToast('🎃 ¡Cupón SPOOKY20 aplicado con éxito: -$3.50!');
+      showToast('🎄 ¡Cupón NAVIDAD20 aplicado con éxito: -$3.50!');
     } else if (code === 'GALAXY10' || code === 'RAPID10') {
       setCouponDiscount(2.00);
       setCouponApplied(true);
-      showToast('🎉 ¡Cupón aplicado: -$2.00!');
+      showToast('🎁 ¡Cupón aplicado: -$2.00!');
     } else {
-      showToast('⚠️ Cupón no válido. Prueba SPOOKY20 o WELCOME20');
+      showToast('⚠️ Cupón no válido. Prueba NAVIDAD20 o WELCOME20');
     }
   };
 
@@ -475,19 +475,19 @@ export default function App() {
               boxShadow: 'var(--shadow-md)'
             }}>
               <div>
-                <span style={{ fontSize: '0.72rem', background: '#FFEDD5', color: '#C2410C', padding: '3px 8px', borderRadius: '9999px', fontWeight: '800', textTransform: 'uppercase' }}>
-                  🎃 Cupón SPOOKY20
+                <span style={{ fontSize: '0.72rem', background: '#DCFCE7', color: '#166534', padding: '3px 8px', borderRadius: '9999px', fontWeight: '800', textTransform: 'uppercase' }}>
+                  🎄 Cupón NAVIDAD20
                 </span>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: '800', margin: '6px 0 2px' }}>$3.50 OFF Especial Halloween</h3>
-                <p style={{ fontSize: '0.75rem', color: '#A8A29E' }}>Válido para todas las burgers en Caracas</p>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: '800', margin: '6px 0 2px' }}>$3.50 OFF Especial Navidad 🎅</h3>
+                <p style={{ fontSize: '0.75rem', color: '#A8A29E' }}>Válido para todos los banquetes en Caracas</p>
               </div>
               <button
                 onClick={() => {
-                  setCouponCode('SPOOKY20');
+                  setCouponCode('NAVIDAD20');
                   setIsCartOpen(true);
                 }}
                 style={{
-                  background: '#EA580C',
+                  background: 'linear-gradient(135deg, #DC2626, #16A34A)',
                   color: 'white',
                   border: 'none',
                   padding: '8px 14px',
@@ -497,7 +497,7 @@ export default function App() {
                   cursor: 'pointer'
                 }}
               >
-                Aplicar 🎃
+                Aplicar 🎄
               </button>
             </div>
 

@@ -4,6 +4,51 @@
 
 ---
 
+## 🎄 Rediseño de Temporada: Navidad & Año Nuevo 2026 (Galaxy Burgers)
+
+El sitio web y la experiencia digital de **Galaxy Burgers** han sido transformados para la **Temporada Navideña y de Fin de Año 2026**, vistiendo tanto la **Landing E-commerce** como la **PWA Móvil** con una estética festiva, cálida y gourmet de alta gama:
+
+### 🎅 Elementos Clave del Rediseño Navideño:
+* **Paleta Festiva de Temporada:**
+  * **Verde Pino Profundo (Deep Holiday Pine):** `#061512` y `#0A221B` como base atmosférica envolvente.
+  * **Rojo Carmesí Navideño (Holiday Crimson):** `#DC2626` y `#991B1B` para llamados a la acción, cintas y gorros festivos.
+  * **Dorado Navideño & Ámbar Festivo (Holiday Gold):** `#F59E0B` y `#FBBF24` para destellos, estrellas y acentos de lujo.
+  * **Verde Esmeralda (Holiday Emerald):** `#059669` y `#10B981` en insignias de calidad y badges de frescura.
+* **Tipografía Sofisticada de Navidad:**
+  * Inclusión de **Playfair Display** (Google Fonts) para títulos y firmas festivas con elegancia serif e itálica.
+  * Combinada con **Bebas Neue** para titulares de impacto y **Plus Jakarta Sans** para lectura impecable.
+* **Efectos y Microinteracciones Navideñas:**
+  * **Guirnalda de Luces Navideñas:** Barra superior animada con bombillas multicolores resplandecientes (`.christmas-lights-bar`, `.holiday-bulb`).
+  * **Nevada Dinámica en Pantalla:** Copos de nieve flotantes cayendo suavemente sobre la interfaz (`.snowflake`).
+  * **Puntero del Mouse Navideño (Holiday Cursor):** Puntero por defecto como estrella dorada (`⭐`), sobre botones e interactivos como regalo navideño (`🎁`), y al hacer clic activo como destello mágico (`✨`).
+* **Hero Festivo "La Magia de la Navidad":**
+  * Corona con gorro de Santa Claus (`🎅`), regalos (`🎁`), campanas (`🔔`) y destellos luminosos.
+  * Titular: `SABOR CÓSMICO BANQUETE NAVIDEÑO 2026`.
+  * Píldora festiva: `🎄 EDICIÓN NAVIDEÑA • 🥩 100% ANGUS FESTIVO • 🎁 RECETA EXCLUSIVA • ⚡ 20 MIN CARACAS`.
+  * Botón de orden con degradado carmesí y dorado: `¡PEDIR BANQUETE DE NAVIDAD! 🎄🎁`.
+* **Ticket Cupón Navideño Perforado (-20% OFF):**
+  * Tarjeta con muescas laterales decorada con nieve y estrellas doradas.
+  * Título: `¡El Sabor Más Exclusivo de Caracas Llega Caliente a Tu Mesa! 🎅`.
+  * Código de cupón oficial: **`NAVIDAD20`** (con soporte retrocompatible para `SANTA20`).
+* **Menú Festivo de Bestsellers:**
+  * `Burger Navideña Imperial` ($6.49) &bull; *Medallón 220g Angus a la brasa con queso gouda fundido, tocineta glaseada y salsa secreta*.
+  * `Pizza Festiva Napolitana` ($9.99) &bull; *Masa madre 48h con queso mozzarella fresco, albahaca y tomates confitados*.
+  * `Crispy Golden Chicken` ($6.99) &bull; *Suprema de pollo extra crujiente con especias navideñas doradas*.
+  * `Loaded Holiday Fries` ($3.99) &bull; *Papas rústicas con salsa de cuatro quesos, tocineta crocante y ciboulette*.
+* **PWA Móvil Sincronizada:**
+  * Banner promocional navideño con canje directo del cupón `NAVIDAD20` (-$3.50 OFF).
+  * Cursor festivo adaptado.
+
+### Identidad de Marca y Datos de Contacto Oficiales:
+* **Nombre Comercial Oficial:** **Galaxy Burgers**
+* **Slogan / Tagline:** *"SABOR CÓSMICO • CARACAS"* (*Edición Especial: "LA MAGIA DE LA NAVIDAD EN CARACAS"*)
+* **Datos de Contacto y Ubicación Oficial:**
+  * 📞 **Teléfono:** `+58 414-2899554`
+  * ✉️ **Correo Electrónico:** `contacto@galaxyburgers.com`
+  * 📍 **Ubicación:** `Caracas - Venezuela`
+
+---
+
 ## 🎨 Referencias Visuales y Rediseño de UI de la Landing E-commerce
 
 La interfaz de usuario de la capa **Landing E-commerce** ha sido desarrollada e intensificada tomando como inspiración dos referencias visuales clave:
@@ -12,37 +57,12 @@ La interfaz de usuario de la capa **Landing E-commerce** ha sido desarrollada e 
    `D:\NetxCollege\Laboratorio\laboratorio\imagen\7109aefe8e230e92a685dfdb89915bfb.jpg`  
    *Proporciona la arquitectura de componentes, distribución del hero, category strip, grilla de 4 bestsellers y catálogo de creaciones de autor.*
 
-2. 📍 **Referencia de Diseño de Terror Infernal & Noche de Brujas (Halloween Extremo):**  
+2. 📍 **Referencia de Estructura de Hero y Cuponera:**  
    `D:\NetxCollege\Laboratorio\laboratorio\imagen\5750a1fa7a4ced11fceee22fa76fa813.jpg`  
-   *Estilo visual **Burger Chief** con textura de carbón volcánico oscuro, brasas al rojo vivo y chispas ardientes flotantes (`embers`), resplandor infernal de llamas (`hellfire aura`), tipografía de terror gótico (*Creepster* + *Bebas Neue* con glow de sangre y fuego), ají picante `🌶️`, botón de llamado a la acción ardiente `¡PEDIR AL AVERNO AHORA! 🌶️🔥` y ticket cupón perforado de descuento con muescas laterales.*
+   *Proporciona el formato de cupón perforado con muescas laterales, badges de delivery express y promociones de temporada.*
 
-### Identidad de Marca y Adaptación al Español:
-* **Nombre Comercial Oficial:** **Galaxy Burgers**
-* **Slogan / Tagline:** *"SABOR CÓSMICO &bull; CARACAS"*
-* **Datos de Contacto y Ubicación Oficial:**
-  * 📞 **Teléfono:** `+58 414-2899554`
-  * ✉️ **Correo Electrónico:** `contacto@galaxyburgers.com`
-  * 📍 **Ubicación:** `Caracas - Venezuela`
-
-### 🎃 Ambientación de Terror Infernal de Halloween (Referencia 5750a1fa7a4ced11fceee22fa76fa813.jpg):
-* **Fondo de Carbón y Brasas Volcánicas:** Fondo negro ceniza con gradientes radiales de fuego líquido, destellos sutiles de relámpagos de tormenta y partículas de ascuas ardientes ascendentes en animación CSS continua.
-* **Hero "Burger Chief del Averno":**
-  * Título monumental: `SANGRIENTAS & AL CARBÓN BURGER CHIEF`.
-  * Aura de llamaradas y resplandor al rojo vivo detrás de la hamburguesa principal.
-  * Ojos demoníacos parpadeantes en la penumbra, calaveras flotantes, murciélagos animados y telarañas góticas.
-  * Píldora de frescura diabólica: `🌶️ PICANTE DIABÓLICO • 🥩 100% ANGUS AL FUEGO • 🩸 LAVA DE CHEDDAR • ⚡ 20 MIN O MUERTE`.
-  * Botón de orden con degradado de fuego ardiente: `¡PEDIR AL AVERNO AHORA! 🌶️🔥`.
-* **Ticket Cupón Promocional Perforado (-20% OFF):**
-  * Diseño fiel a la referencia `5750a1fa7a4ced11fceee22fa76fa813.jpg`: tarjeta en degradado de fuego vivo con muescas semicirculares laterales (*ticket notches*), borde punteado de corte, badge de entrega express diabólica y código de cupón **`SPOOKY20`**.
-* **Barra Flotante de Categorías y Tarjetas de Bestsellers:**
-  * Rediseñadas en obsidiana oscura con relieves en naranja y rojo fuego, eliminando fondos planos para una inmersión completa en la atmósfera de terror.
-* **Puntero del Mouse de Araña & Hilo de Seda (Halloween Cursor):**
-  * El cursor del mouse se convierte en una araña siniestra (`🕷️`).
-  * Al pasar sobre botones y enlaces interactivos, se transforma en araña sobre telaraña (`🕷️🕸️`).
-  * Al hacer clic activo, la araña ataca dejando una gota de sangre (`🕷️🩸`).
-  * Un hilo de seda translúcido se suspende dinámicamente desde el techo de la pantalla siguiendo a la araña en tiempo real.
 * **Favicon Oficial Galaxy Burgers (SVG Vectorial):**
-  * Diseño de alta fidelidad con base squircle oscura, anillo orbital galáctico con degradado fuego/violeta, pan brioche dorado con semillas de sésamo, lechuga rizada, queso cheddar fundente y carne Angus a la parrilla con marcas de sellado.
+  * Diseño de alta fidelidad con base squircle oscura, anillo orbital galáctico con degradado, pan brioche dorado con semillas de sésamo, lechuga rizada, queso cheddar fundente y carne Angus a la parrilla con marcas de sellado.
   * Implementado de manera unificada en las 3 capas: **Landing E-commerce** (`/favicon.svg`), **PWA Móvil** (`/app/favicon.svg` e iconos PWA 192/512) y **Panel de Administración** (`/admin/favicon.svg`).
 
 ### Elementos Visuales y Paleta Adoptada:
